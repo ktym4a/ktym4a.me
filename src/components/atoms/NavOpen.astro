@@ -1,0 +1,67 @@
+---
+import SideMenu from '@/components/organisms/SideMenu.astro'
+
+interface Props {
+    currentPath: string
+}
+
+const { currentPath } = Astro.props
+---
+
+<div
+    class='mt-auto flex w-full flex-col items-center justify-center gap-2 md:w-auto'
+>
+    <button
+        id='navOpen'
+        class='group flex aspect-[1] w-full flex-col items-center justify-center rounded-md bg-ctp-crust bg-opacity-40 p-[2px] outline-dashed outline-0 outline-ctp-overlay2 hover:saturate-50 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-50 dark:hover:saturate-350 dark:focus-visible:saturate-350 md:aspect-auto md:p-1 md:outline-2'
+    >
+        <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='hidden h-6 w-6 group-[.current]:block md:h-8 md:w-8'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+        >
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <path
+                d='M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2'
+            >
+            </path>
+        </svg>
+        <svg
+            xmlns='http://www.w3.org/2000/svg'
+            class='h-6 w-6 group-[.current]:hidden md:h-8 md:w-8'
+            viewBox='0 0 24 24'
+            stroke-width='2'
+            stroke='currentColor'
+            fill='none'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+        >
+            <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+            <path
+                d='M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2'
+            >
+            </path>
+        </svg>
+    </button>
+</div>
+<div
+    id='nav'
+    class='fixed bottom-0 left-11 right-0 top-0 max-h-dvh flex-auto translate-x-full overflow-y-auto bg-ctp-surface0 px-4 py-6 ease-in-out motion-safe:transition-transform motion-safe:duration-200 dark:bg-ctp-base md:hidden md:px-6'
+    transition:animate='none'
+>
+    <SideMenu currentPath={currentPath} />
+</div>
+
+<script is:inline>
+    document.addEventListener('astro:page-load', () => {
+        document.getElementById('navOpen').addEventListener('click', () => {
+            document.querySelector('#navOpen').classList.toggle('current')
+            document.querySelector('#nav').classList.toggle('translate-x-full')
+        })
+    })
+</script>

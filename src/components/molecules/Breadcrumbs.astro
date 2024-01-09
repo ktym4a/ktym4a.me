@@ -1,0 +1,73 @@
+---
+import Breadcrumb from '@/components/atoms/Breadcrumb.astro'
+import { COLORS, type ColorType } from '@/types/index'
+
+interface Props {
+    currentPath: string
+    position: 'left' | 'main'
+    routes: string[]
+}
+
+const { currentPath, position, routes } = Astro.props
+
+type Path = {
+    href: string
+    name: string
+    colors: ColorType
+}
+
+const wrapClass =
+    position === 'left'
+        ? 'mt-2 flex gap-4'
+        : 'ml-1 md:ml-2 flex gap-2 md:gap-4 pr-4'
+
+const rootPath = Astro.site?.pathname ?? '/'
+
+const paths: Path[] = [
+    {
+        href: rootPath,
+        name: 'ktym4a',
+        colors: {
+            ...COLORS.GREEN
+        }
+    }
+]
+if (currentPath === '404') {
+    paths.push({
+        href: paths.at(-1)?.href + '404/',
+        name: '404',
+        colors: {
+            ...COLORS.PINK
+        }
+    })
+} else {
+    routes.forEach((path) => {
+        const color = path === 'about' ? COLORS.PINK : COLORS.GREEN
+        paths.push({
+            href: paths.at(-1)?.href + path + '/',
+            name: path,
+            colors: {
+                ...color
+            }
+        })
+    })
+}
+---
+
+<div
+    class='flex items-center whitespace-nowrap text-xs italic text-ctp-subtext1 md:text-sm lg:[writing-mode:vertical-rl]'
+>
+    <span aria-hidden='true' class='font-bold'>.</span>
+    <div class={wrapClass}>
+        {
+            paths.map((path) => (
+                <Breadcrumb
+                    colors={path.colors}
+                    currentPath={currentPath}
+                    href={path.href}
+                    name={path.name}
+                />
+            ))
+        }
+    </div>
+</div>

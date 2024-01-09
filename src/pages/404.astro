@@ -1,0 +1,33 @@
+---
+import Tag from '@/components/atoms/Tag.astro'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout title='404 - ktym4a' description='Page not found'>
+    <div class='flex flex-col gap-2'>
+        <div class='flex flex-col gap-4 md:gap-6'>
+            <Tag text='StatusCode'>
+                <h1
+                    class='mb-0 break-all text-2xl font-bold tracking-wide md:mb-1 md:text-4xl lg:text-6xl'
+                >
+                    <span class='text-ctp-green'>4</span><span
+                        class='text-ctp-pink'>0</span
+                    ><span class='text-ctp-blue'>4</span>
+                </h1>
+                <p
+                    class='mb-0 text-xl font-bold text-ctp-peach md:mb-1 md:text-2xl lg:text-4xl'
+                    >Not Found</p
+                >
+            </Tag>
+            <Tag text='Message' className='gap-2'>
+                <p
+                    class='mb-1 text-2xl font-bold text-ctp-green md:mb-3 md:text-4xl'
+                    >( ._.)</p
+                >
+                <p class='text-md font-mono font-bold md:text-xl'
+                    >The page you are looking for does not exist.</p
+                >
+            </Tag>
+        </div>
+    </div>
+</Layout>
