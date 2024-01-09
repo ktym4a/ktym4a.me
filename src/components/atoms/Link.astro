@@ -1,0 +1,23 @@
+---
+import type { ColorType } from '@/types/index'
+interface Props {
+    class: string
+    colors: ColorType
+    href: string
+    target?: '_self' | '_blank' | '_parent' | '_top'
+    title?: string
+}
+
+const { class: className, colors, href, target = '_self', title } = Astro.props
+
+const colorClass = Object.values(colors).reduce((acc, value) => {
+    return `${acc} ${value}`
+}, '')
+---
+
+<a
+    href={href}
+    class={`motion-safe:transition-filter ease-in-out motion-safe:duration-1000 decoration-dashed underline-offset-2 focus-visible:outline-dashed focus-visible:outline-2 dark:focus-visible:saturate-350 focus-visible:saturate-50 focus-visible:no-underline dark:hover:saturate-350 hover:saturate-50 ${colorClass} ${className}`}
+    target={target}
+    title={title}><slot /></a
+>

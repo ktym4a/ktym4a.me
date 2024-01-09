@@ -1,0 +1,280 @@
+---
+import { Head as HeadCapo } from 'astro-capo'
+import { SEO } from 'astro-seo'
+import { ViewTransitions } from 'astro:transitions'
+
+interface Props {
+    title: string
+    description: string
+    og?: {
+        type?: string
+        image?: string
+    }
+}
+
+const { title, description, og } = Astro.props
+---
+
+<HeadCapo>
+    <SEO
+        title={title}
+        description={description}
+        charset='UTF-8'
+        openGraph={{
+            basic: {
+                title,
+                type: og?.type || 'website',
+                image: og?.image || `${Astro.site}images/default_ogp.png`
+            },
+            optional: {
+                description,
+                siteName: 'ktym4a'
+            },
+            image: {
+                type: 'image/png',
+                width: 700,
+                height: 700,
+                alt: 'ktym4a'
+            }
+        }}
+        twitter={{
+            card: 'summary',
+            creator: '@ktym4a_s',
+            site: '@ktym4a_s'
+        }}
+        extend={{
+            link: [
+                { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+                {
+                    rel: 'sitemap',
+                    href: '/sitemap-index.xml'
+                }
+            ],
+            meta: [
+                {
+                    name: 'viewport',
+                    content: 'width=device-width, initial-scale=1.0'
+                },
+                {
+                    name: 'generator',
+                    content: Astro.generator
+                }
+            ]
+        }}
+    />
+    <ViewTransitions />
+
+    <style>
+        @font-face {
+            src: url(/fonts/0-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+0020-007F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/1-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+0020-007F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/2-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+2000-206F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/3-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+2000-206F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/4-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+3000-303F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/5-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+3000-303F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/6-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+2600-26FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/7-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+2600-26FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/8-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+2700-27BF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/9-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+2700-27BF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/10-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+2300-23FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/11-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+2300-23FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/12-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+2200-22FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/13-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+2200-22FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/14-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+2580-259F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/15-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+2580-259F;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/16-normal.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: normal;
+            unicode-range: U+02B0-02FF;
+            font-display: swap;
+        }
+
+        @font-face {
+            src: url(/fonts/17-italic.woff2) format('woff2');
+            font-family: ml;
+            font-weight: 100 900;
+            font-style: italic;
+            unicode-range: U+02B0-02FF;
+            font-display: swap;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+        }
+        @keyframes slideBack {
+            0% {
+                transform: translateX(0%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <script is:inline>
+        const setTtheme = (document) => {
+            const element = document.documentElement
+            element.classList.remove('ctp-latte', 'ctp-mocha')
+
+            let theme = 'ctp-latte'
+
+            if (
+                typeof localStorage !== 'undefined' &&
+                localStorage.getItem('theme')
+            ) {
+                theme = localStorage.getItem('theme')
+            } else {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    theme = 'ctp-mocha'
+                }
+            }
+            document.documentElement.classList.add(theme)
+
+            window.localStorage.setItem('theme', theme)
+        }
+
+        setTtheme(document)
+
+        document.addEventListener('astro:before-swap', (ev) => {
+            setTtheme(ev.newDocument)
+        })
+    </script>
+</HeadCapo>

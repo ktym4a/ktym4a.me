@@ -1,0 +1,45 @@
+---
+import Tag from '@/components/atoms/Tag.astro'
+import NavItem from '@/components/molecules/NavItem.astro'
+import { COLORS } from '@/types/index'
+
+interface Props {
+    currentPath: string
+}
+
+const { currentPath } = Astro.props
+---
+
+<nav class='flex flex-col gap-1'>
+    <Tag text='Nav' className='gap-1'>
+        <ul class='flex flex-col gap-1'>
+            <NavItem
+                href='/'
+                current={currentPath === 'ktym4a'}
+                colors={{
+                    text: COLORS.GREEN.text
+                }}
+                title='ktym4a'
+            />
+            <NavItem
+                href='/about/'
+                current={currentPath === 'about'}
+                colors={{
+                    text: COLORS.PINK.text
+                }}
+                title='about'
+            />
+            <li class='text-ctp-subtext0'>{`{/* WIP`}</li>
+            <NavItem
+                href='/about/me/'
+                current={currentPath === 'me'}
+                colors={{
+                    text: COLORS.BLUE.text
+                }}
+                title='projects'
+                wip={true}
+            />
+            <li class='text-ctp-subtext0'>{`*/}`}</li>
+        </ul>
+    </Tag>
+</nav>
