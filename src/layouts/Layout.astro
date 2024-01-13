@@ -5,25 +5,29 @@ import Tag from '@/components/atoms/Tag.astro'
 import ThemeIcon from '@/components/atoms/ThemeIcon.astro'
 import Breadcrumbs from '@/components/molecules/Breadcrumbs.astro'
 import SideMenu from '@/components/organisms/SideMenu.astro'
-import { MAIN_SLIDE_ANIMATION } from '@/types/index'
+import { MAIN_SLIDE_ANIMATION, type ColorType } from '@/types/index'
 
 interface Props {
     title: string
     description: string
+    baseColor: ColorType
 }
 
-const { title, description } = Astro.props
+const { title, description, baseColor } = Astro.props
 const routes = Astro.url.pathname.split('/').filter((path) => path)
 const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 ---
 
 <!doctype html>
-<html lang='en' class='ctp-mocha min-h-dvh bg-ctp-base overflow-hidden font-mono'>
+<html
+    lang='en'
+    class='ctp-mocha min-h-dvh overflow-hidden bg-ctp-surface0 font-mono'
+>
     <head>
         <Head title={title} description={description} />
     </head>
     <body
-        class='relative min-h-dvh bg-ctp-surface0 from-ctp-surface0 to-ctp-base text-ctp-text dark:bg-gradient-to-br dark:md:bg-gradient-to-r'
+        class={`relative min-h-dvh from-ctp-surface0 text-ctp-text from-40% to-100% bg-gradient-to-br ${baseColor.backgroundGradient}`}
     >
         <div
             class='m-auto grid min-h-dvh max-w-7xl grid-cols-[2.75rem_1fr] md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
