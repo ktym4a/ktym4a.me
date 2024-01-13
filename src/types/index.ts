@@ -52,6 +52,7 @@ export type ColorType = {
     hoverText?: string
     focusText?: string
     background?: string
+    backgroundGradient?: string
     hoverBackground?: string
     focusBackground?: string
     outline?: string
@@ -67,6 +68,7 @@ export const COLORS: {
         hoverText: 'hover:text-ctp-blue',
         focusText: 'focus-visible:text-ctp-blue',
         background: 'bg-ctp-blue',
+        backgroundGradient: 'to-ctp-blue/20',
         hoverBackground: 'hover:bg-ctp-blue',
         focusBackground: 'focus-visible:bg-ctp-blue',
         outline: 'outline-ctp-blue',
@@ -78,6 +80,7 @@ export const COLORS: {
         hoverText: 'hover:text-ctp-green',
         focusText: 'focus-visible:text-ctp-green',
         background: 'bg-ctp-green',
+        backgroundGradient: 'to-ctp-green/20',
         hoverBackground: 'hover:bg-ctp-green',
         focusBackground: 'focus-visible:bg-ctp-green',
         outline: 'outline-ctp-green',
@@ -89,6 +92,7 @@ export const COLORS: {
         hoverText: 'hover:text-ctp-peach',
         focusText: 'focus-visible:text-ctp-peach',
         background: 'bg-ctp-peach',
+        backgroundGradient: 'to-ctp-peach/20',
         hoverBackground: 'hover:bg-ctp-peach',
         focusBackground: 'focus-visible:bg-ctp-peach',
         outline: 'outline-ctp-peach',
@@ -100,6 +104,7 @@ export const COLORS: {
         hoverText: 'hover:text-ctp-pink',
         focusText: 'focus-visible:text-ctp-pink',
         background: 'bg-ctp-pink',
+        backgroundGradient: 'to-ctp-pink/20',
         hoverBackground: 'hover:bg-ctp-pink',
         focusBackground: 'focus-visible:bg-ctp-pink',
         outline: 'outline-ctp-pink',

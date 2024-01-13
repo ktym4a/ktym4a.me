@@ -1,29 +1,55 @@
 ---
+import Icon from '@/assets/images/icon.jpg'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
+import { COLORS } from '@/types/index'
+import { Image } from 'astro:assets'
 ---
 
-<Layout title='about - ktym4a' description="ktym4a's about page">
+<Layout title='about - ktym4a' description="ktym4a's about page" baseColor={COLORS.PINK}>
     <div class='flex flex-col gap-2'>
         <div class='flex flex-col gap-4 md:gap-6'>
-            <Tag text='StatusCode'>
-                <h1
-                    class='mb-0 break-all text-2xl font-bold tracking-wide md:mb-1 md:text-4xl lg:text-6xl'
-                >
-                    <span class='text-ctp-green'>W</span><span
-                        class='text-ctp-pink'>I</span
-                    ><span class='text-ctp-blue'>P</span>
-                </h1>
-            </Tag>
-            <Tag text='Message' className='gap-2'>
-                <p
-                    class='mb-1 text-2xl font-bold text-ctp-green md:mb-3 md:text-4xl'
-                    >( ._.)</p
-                >
-                <p class='text-md font-mono font-bold md:text-xl'
-                    >Sorry, this page is work in progress.</p
+            <Tag text='title' className='gap-1'>
+                <h1 class='text-2xl font-bold md:text-4xl'>
+                    # <span class='text-ctp-pink'>About</span></h1
                 >
             </Tag>
+            <section id='profile'>
+                <Tag text='Profile' className='gap-2'>
+                    <div class='flex gap-4'>
+                        <div class='flex-shrink-0'>
+                            <Image
+                                src={Icon}
+                                alt='ktym4a'
+                                class='h-32 w-32 rounded-full'
+                            />
+                        </div>
+                        <div>
+                            <p
+                                class='mb-1 font-mono text-xl font-bold md:text-4xl'
+                                >Hi, I'm <span class='text-ctp-green'>kt</span
+                                ><span class='text-ctp-pink'>ym</span><span
+                                    class='text-ctp-blue'>4</span
+                                ><span class='text-ctp-peach'>a</span>.
+                            </p>
+                            <p class='text-md mb-6 font-mono md:text-xl'>
+                                full-stack web developer</p
+                            >
+                            <p class='text-md font-mono md:text-xl'>
+                                I work every day to <span
+                                    class='font-mono-script font-bold italic text-ctp-pink'
+                                    >"Make the world better than it was
+                                    yesterday".</span
+                                ><br />
+                                <br />
+                                I make a better web that is fast, easy to use, and
+                                beautiful. and I'm also always thinking and working
+                                on simplicity, fast, and scale.</p
+                            >
+                        </div>
+                    </div>
+                </Tag>
+            </section>
         </div>
     </div>
 </Layout>
