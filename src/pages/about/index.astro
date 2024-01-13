@@ -11,46 +11,94 @@ import { Image } from 'astro:assets'
     description="ktym4a's about page"
     baseColor={COLORS.PINK}
 >
-    <div class='flex flex-col gap-2'>
-        <div class='flex flex-col gap-4 md:gap-6'>
-            <Tag text='title' className='gap-1'>
+    <div class='space-y-2'>
+        <div class='space-y-4 md:space-y-6'>
+            <Tag text='h1'>
                 <h1 class='text-2xl font-bold md:text-4xl'>
                     # <span class='text-ctp-pink'>About</span></h1
                 >
             </Tag>
             <section id='profile'>
                 <Tag text='Profile' className='gap-2'>
-                    <div class='flex gap-4'>
+                    <div class='flex flex-col gap-3 md:flex-row md:gap-4'>
                         <div class='flex-shrink-0'>
                             <Image
                                 src={Icon}
-                                alt='ktym4a'
-                                class='h-32 w-32 rounded-full'
+                                alt="ktym4a's icon"
+                                class='h-20 w-20 rounded-full md:h-28 md:w-28 lg:h-32 lg:w-32'
+                                width={112}
+                                height={112}
+                                densities={[1.5, 2]}
                             />
                         </div>
                         <div>
                             <p
-                                class='mb-1 font-mono text-xl font-bold md:text-4xl'
+                                class='mb-0 md:mb-1 font-mono text-xl font-bold md:text-2xl lg:text-4xl'
                                 >Hi, I'm <span class='text-ctp-green'>kt</span
                                 ><span class='text-ctp-pink'>ym</span><span
                                     class='text-ctp-blue'>4</span
                                 ><span class='text-ctp-peach'>a</span>.
                             </p>
-                            <p class='text-md mb-6 font-mono md:text-xl'>
+                            <p class='mb-4 md:mb-6 font-mono md:text-xl'>
                                 full-stack web developer</p
                             >
-                            <p class='text-md font-mono md:text-xl'>
+                            <p class='font-mono md:text-lg'>
                                 I work every day to <span
                                     class='font-mono-script font-bold italic text-ctp-pink'
                                     >"Make the world better than it was
-                                    yesterday".</span
-                                ><br />
+                                    yesterday"</span
+                                >.<br />
                                 <br />
                                 I make a better web that is fast, easy to use, and
                                 beautiful. and I'm also always thinking and working
                                 on simplicity, fast, and scale.</p
                             >
                         </div>
+                    </div>
+                </Tag>
+            </section>
+            <section id='experience'>
+                <Tag text='Experience' className='gap-2'>
+                    <div class='space-y-4'>
+                        <Tag text='h2' className='sticky -top-4 left-0'>
+                            <h1 class='text-lg font-bold md:text-2xl'>
+                                ## <span class='text-ctp-pink'>Experience</span
+                                ></h1
+                            >
+                        </Tag>
+                        <ul class='list-outside list-disc space-y-1 pl-8'>
+                            <li>Front-end Web Development</li>
+                            <li>Backend-end Web Development</li>
+                            <li>Software Design and Architecture</li>
+                            <li>Tech Lead</li>
+                            <li>Product Management</li>
+                            <li>Engineering Management</li>
+                            <li>Team Building</li>
+                            <li>HR for Engineers</li>
+                            <li>Director</li>
+                        </ul>
+                    </div>
+                </Tag>
+            </section>
+            <section id='interest'>
+                <Tag text='Interest' className='gap-2'>
+                    <div class='space-y-4'>
+                        <Tag text='h2' className='sticky -top-4 left-0'>
+                            <h1 class='text-lg font-bold md:text-2xl'>
+                                ## <span class='text-ctp-pink'>Interest</span
+                                ></h1
+                            >
+                        </Tag>
+                        <ul class='list-outside list-disc space-y-1 pl-8'>
+                            <li>A11y(Accessibility)</li>
+                            <li>Architecture</li>
+                            <li>Cloud Computing</li>
+                            <li>DX(Developer Experience)</li>
+                            <li>Edge Workers</li>
+                            <li>Performance</li>
+                            <li>Wasm(WebAssembly)</li>
+                            <li>WebRTC</li>
+                        </ul>
                     </div>
                 </Tag>
             </section>
