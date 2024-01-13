@@ -20,26 +20,26 @@ import { Image } from 'astro:assets'
             </Tag>
             <section id='profile'>
                 <Tag text='Profile' className='gap-2'>
-                    <div class='flex gap-4'>
+                    <div class='flex gap-4 flex-col md:flex-row'>
                         <div class='flex-shrink-0'>
                             <Image
                                 src={Icon}
                                 alt='ktym4a'
-                                class='h-32 w-32 rounded-full'
+                                class='h-20 w-20 md:h-28 md:w-28 lg:h-32 lg:w-32 rounded-full'
                             />
                         </div>
                         <div>
                             <p
-                                class='mb-1 font-mono text-xl font-bold md:text-4xl'
+                                class='mb-1 font-mono text-xl font-bold md:text-2xl lg:text-4xl'
                                 >Hi, I'm <span class='text-ctp-green'>kt</span
                                 ><span class='text-ctp-pink'>ym</span><span
                                     class='text-ctp-blue'>4</span
                                 ><span class='text-ctp-peach'>a</span>.
                             </p>
-                            <p class='text-md mb-6 font-mono md:text-xl'>
+                            <p class='text-md mb-6 font-mono md:text-xl lg:text-2xl'>
                                 full-stack web developer</p
                             >
-                            <p class='text-md font-mono md:text-xl'>
+                            <p class='text-md font-mono md:text-lg lg:text-xl'>
                                 I work every day to <span
                                     class='font-mono-script font-bold italic text-ctp-pink'
                                     >"Make the world better than it was
