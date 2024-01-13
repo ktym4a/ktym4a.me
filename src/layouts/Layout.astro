@@ -21,7 +21,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 <!doctype html>
 <html
     lang='en'
-    class='ctp-mocha min-h-dvh overflow-hidden bg-ctp-surface0 font-mono'
+    class='ctp-mocha min-h-dvh overflow-hidden scroll-smooth bg-ctp-surface0 font-mono'
 >
     <head>
         <Head title={title} description={description} />
@@ -43,7 +43,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                             routes={routes}
                         />
                     </div>
-                    <div class='mt-auto flex w-full flex-col gap-2 md:w-auto'>
+                    <div class='mt-auto w-full space-y-2 md:w-auto'>
                         <div class='md:hidden'>
                             <NavOpen currentPath={currentPath} />
                         </div>
