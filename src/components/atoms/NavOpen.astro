@@ -1,11 +1,13 @@
 ---
 import SideMenu from '@/components/organisms/SideMenu.astro'
+import type { ColorType } from '@/types/index'
 
 interface Props {
     currentPath: string
+    baseColor: ColorType
 }
 
-const { currentPath } = Astro.props
+const { currentPath, baseColor } = Astro.props
 ---
 
 <div
@@ -52,7 +54,7 @@ const { currentPath } = Astro.props
 </div>
 <div
     id='nav'
-    class='fixed bottom-0 left-11 right-0 top-0 max-h-dvh flex-auto translate-x-full overflow-y-auto bg-ctp-surface0 px-4 py-6 ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden md:px-6'
+    class={`fixed left-11 right-0 top-0 max-h-dvh flex-auto translate-x-full overflow-y-auto bg-ctp-surface0 px-4 py-6 ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden md:px-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     transition:animate='none'
 >
     <SideMenu currentPath={currentPath} />
