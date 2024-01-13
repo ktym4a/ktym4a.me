@@ -54,7 +54,7 @@ const { currentPath, baseColor } = Astro.props
 </div>
 <div
     id='nav'
-    class={`fixed left-11 right-0 top-0 max-h-dvh flex-auto translate-x-full overflow-y-auto bg-ctp-surface0 px-4 py-6 ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden md:px-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+    class={`fixed grid left-11 right-0 min-h-dvh top-0 max-h-dvh flex-auto translate-x-full overflow-y-auto bg-ctp-surface0 px-4 py-6 ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden md:px-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     transition:animate='none'
 >
     <SideMenu currentPath={currentPath} />
