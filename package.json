@@ -20,10 +20,10 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
-        "@astrojs/check": "^0.4.0",
+        "@astrojs/check": "^0.4.1",
         "@astrojs/sitemap": "^3.0.4",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.1.1",
+        "astro": "^4.1.2",
         "astro-capo": "^0.0.1",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.0",
