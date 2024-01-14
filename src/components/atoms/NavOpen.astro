@@ -54,15 +54,27 @@ const { currentPath, baseColor } = Astro.props
 </div>
 <div
     id='nav'
-    class={`fixed grid left-11 right-0 min-h-dvh top-0 max-h-dvh flex-auto translate-x-full overflow-y-auto scroll-smooth bg-ctp-surface0 px-4 py-6 ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden md:px-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+    class={`fixed grid left-0 right-0 min-h-dvh top-0 translate-x-full md:hidden ease-in-out motion-safe:transition-transform motion-safe:duration-200`}
     transition:animate='none'
 >
-    <SideMenu currentPath={currentPath} />
+    <button
+        type='button'
+        id='closeNav'
+        class='absolute bottom-0 left-0 top-0 w-11'></button>
+    <div
+        class={`grid ml-11 max-h-dvh overflow-y-auto bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+    >
+        <SideMenu currentPath={currentPath} />
+    </div>
 </div>
 
 <script is:inline>
     document.addEventListener('astro:page-load', () => {
         document.getElementById('navOpen').addEventListener('click', () => {
+            document.querySelector('#navOpen').classList.toggle('current')
+            document.querySelector('#nav').classList.toggle('translate-x-full')
+        })
+        document.getElementById('closeNav').addEventListener('click', () => {
             document.querySelector('#navOpen').classList.toggle('current')
             document.querySelector('#nav').classList.toggle('translate-x-full')
         })
