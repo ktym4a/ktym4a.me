@@ -1,13 +1,14 @@
 ---
 import Link from '@/components/atoms/Link.astro'
+import PageWrapper from '@/components/atoms/PageWrapper.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
 ---
 
 <Layout title='ktym4a' description="ktym4a's website" baseColor={COLORS.GREEN}>
-    <div class='space-y-2'>
-        <div class='space-y-4 md:space-y-6'>
+    <PageWrapper>
+        <div class='space-y-2'>
             <Tag text='SiteName'>
                 <h1
                     class='mb-2 break-all text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
@@ -56,33 +57,33 @@ import { COLORS } from '@/types/index'
                     </div>
                 </div>
             </Tag>
+            <p class='text-right text-xs md:text-sm'>
+                Made with <Link
+                    href='https://github.com/catppuccin/catppuccin'
+                    colors={{
+                        hoverText: COLORS.GREEN.hoverText,
+                        focusText: COLORS.GREEN.focusText,
+                        focusOutline: COLORS.GREEN.focusOutline
+                    }}
+                    class='underline'
+                    target='_blank'
+                    title='Catppuccin theme'
+                >
+                    {'Catppuccin theme'}
+                </Link> & <Link
+                    href='https://www.monolisa.dev/'
+                    colors={{
+                        hoverText: COLORS.GREEN.hoverText,
+                        focusText: COLORS.GREEN.focusText,
+                        focusOutline: COLORS.GREEN.focusOutline
+                    }}
+                    class='underline'
+                    target='_blank'
+                    title='MonoLisa Font'
+                >
+                    {'MonoLisa Font'}
+                </Link>
+            </p>
         </div>
-        <p class='text-right text-xs md:text-sm'>
-            Made with <Link
-                href='https://github.com/catppuccin/catppuccin'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText,
-                    focusText: COLORS.GREEN.focusText,
-                    focusOutline: COLORS.GREEN.focusOutline
-                }}
-                class='underline'
-                target='_blank'
-                title='Catppuccin theme'
-            >
-                {'Catppuccin theme'}
-            </Link> & <Link
-                href='https://www.monolisa.dev/'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText,
-                    focusText: COLORS.GREEN.focusText,
-                    focusOutline: COLORS.GREEN.focusOutline
-                }}
-                class='underline'
-                target='_blank'
-                title='MonoLisa Font'
-            >
-                {'MonoLisa Font'}
-            </Link>
-        </p>
-    </div>
+    </PageWrapper>
 </Layout>
