@@ -1,49 +1,26 @@
 ---
 import NavLink from '@/components/atoms/NavLink.astro'
+import NavLinkIcon from '@/components/atoms/NavLinkIcon.astro'
+import NavLinkWIP from '@/components/atoms/NavLinkWIP.astro'
 import type { ColorType } from '@/types/index'
-import NavLinkWIP from '../atoms/NavLinkWIP.astro'
 
 interface Props {
     colors: ColorType
     current: boolean
     href: string
     title: string
+    type: 'file' | 'folder'
     wip?: boolean
 }
 
-const { colors, current, href, title, wip = false } = Astro.props
+const { colors, current, href, title, type, wip = false } = Astro.props
 ---
 
-<li class='relative'>
+<li class={`relative group ${current ? 'current' : ''}`}>
     {
         wip ? (
             <NavLinkWIP title={title}>
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='mt-1 hidden h-5 w-5 group-hover:block group-focus-visible:block group-[.current]:block'
-                    viewBox='0 0 24 24'
-                    stroke-width='2'
-                    stroke='currentColor'
-                    fill='none'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                >
-                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                    <path d='M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2' />
-                </svg>
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='mt-1 block h-5 w-5 group-hover:hidden group-focus-visible:hidden group-[.current]:hidden'
-                    viewBox='0 0 24 24'
-                    stroke-width='2'
-                    stroke='currentColor'
-                    fill='none'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                >
-                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                    <path d='M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2' />
-                </svg>
+                <NavLinkIcon type={type} />
                 <span class='flex-1'>{title}</span>
             </NavLinkWIP>
         ) : (
@@ -53,32 +30,7 @@ const { colors, current, href, title, wip = false } = Astro.props
                 colors={colors}
                 title={title}
             >
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='mt-1 hidden h-5 w-5 group-hover:block group-focus-visible:block group-[.current]:block'
-                    viewBox='0 0 24 24'
-                    stroke-width='2'
-                    stroke='currentColor'
-                    fill='none'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                >
-                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                    <path d='M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2' />
-                </svg>
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='mt-1 block h-5 w-5 group-hover:hidden group-focus-visible:hidden group-[.current]:hidden'
-                    viewBox='0 0 24 24'
-                    stroke-width='2'
-                    stroke='currentColor'
-                    fill='none'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                >
-                    <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                    <path d='M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2' />
-                </svg>
+                <NavLinkIcon type={type} />
                 <span class='flex-1'>{title}</span>
             </NavLink>
         )

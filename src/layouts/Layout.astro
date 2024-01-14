@@ -34,7 +34,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
         >
             <div class='flex'>
                 <div
-                    class={`fixed left-0 top-0 z-20 flex max-h-dvh min-h-dvh w-11 flex-col items-center overflow-y-auto border-r-2 border-dashed border-ctp-overlay2 px-1 pt-6 md:relative md:hidden md:w-16 md:justify-between md:gap-12 md:border-r-0 md:pl-0 md:pr-2 lg:flex [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+                    class={`fixed left-0 top-0 z-20 flex max-h-dvh min-h-dvh w-11 flex-col items-center overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-1 pt-6 md:relative md:hidden md:w-16 md:justify-between md:gap-12 md:border-r-0 md:pl-0 md:pr-2 lg:flex [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
                 >
                     <div class='hidden justify-center lg:flex'>
                         <Breadcrumbs
@@ -54,7 +54,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                     </div>
                 </div>
                 <aside
-                    class={`hidden max-h-dvh flex-auto overflow-y-auto border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+                    class={`hidden max-h-dvh flex-auto overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
                 >
                     <SideMenu currentPath={currentPath} />
                 </aside>
@@ -64,7 +64,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                 transition:animate={MAIN_SLIDE_ANIMATION}
             >
                 <div
-                    class={`grid max-h-dvh min-h-dvh auto-cols-full grid-rows-[auto_1fr] gap-4 overflow-y-auto overflow-x-hidden
+                    class={`grid max-h-dvh min-h-dvh auto-cols-full grid-rows-[auto_1fr] gap-4 scroll-smooth overflow-y-auto overflow-x-hidden
                     px-4 py-6 md:px-6 lg:grid-rows-[1fr] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
                 >
                     <div class='block lg:hidden'>

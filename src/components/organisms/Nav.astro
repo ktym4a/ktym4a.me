@@ -20,6 +20,7 @@ const { currentPath } = Astro.props
                     text: COLORS.GREEN.text
                 }}
                 title='ktym4a'
+                type='file'
             />
             <NavItem
                 href='/about/'
@@ -28,6 +29,7 @@ const { currentPath } = Astro.props
                     text: COLORS.PINK.text
                 }}
                 title='about'
+                type='file'
             />
             <li class='text-ctp-subtext0'>{`{/* WIP`}</li>
             <NavItem
@@ -38,6 +40,7 @@ const { currentPath } = Astro.props
                 }}
                 title='projects'
                 wip={true}
+                type='folder'
             />
             <li class='text-ctp-subtext0'>{`*/}`}</li>
         </ul>
