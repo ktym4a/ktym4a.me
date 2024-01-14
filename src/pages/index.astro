@@ -20,14 +20,14 @@ import { COLORS } from '@/types/index'
             </h1>
         </Tag>
         <Tag text='Quote' className='gap-2'>
-            <div class='inline-flex flex-col'>
+            <blockquote class='inline-flex flex-col'>
                 <div
                     class='h-4 text-left text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
                 >
                     “
                 </div>
-                <h2
-                    class='px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
+                <p
+                    class='text-pretty px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
                 >
                     <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
                         >Do</span
@@ -45,40 +45,81 @@ import { COLORS } from '@/types/index'
                     <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
                         >do</span
                     >.
-                </h2>
+                </p>
                 <div
                     class='h-4 text-right text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
                 >
                     ”
                 </div>
-            </div>
+            </blockquote>
         </Tag>
+        <p class='ml-auto mt-4 text-pretty text-left text-xs'>
+            Designed and Coded by yours truly. Color palette used <Link
+                href='https://github.com/catppuccin/catppuccin'
+                colors={{
+                    hoverText: COLORS.GREEN.hoverText,
+                    focusText: COLORS.GREEN.focusText,
+                    focusOutline: COLORS.GREEN.focusOutline,
+                    text: COLORS.GREEN.text
+                }}
+                class='underline'
+                target='_blank'
+                title='Catppuccin'
+            >
+                {'Catppuccin'}
+            </Link>. Built with <Link
+                href='https://astro.build/'
+                colors={{
+                    hoverText: COLORS.GREEN.hoverText,
+                    focusText: COLORS.GREEN.focusText,
+                    focusOutline: COLORS.GREEN.focusOutline,
+                    text: COLORS.GREEN.text
+                }}
+                class='underline'
+                target='_blank'
+                title='Astro'
+            >
+                {'Astro'}
+            </Link> and <Link
+                href='https://tailwindcss.com/'
+                colors={{
+                    hoverText: COLORS.GREEN.hoverText,
+                    focusText: COLORS.GREEN.focusText,
+                    focusOutline: COLORS.GREEN.focusOutline,
+                    text: COLORS.GREEN.text
+                }}
+                class='underline'
+                target='_blank'
+                title='Tailwind CSS'
+            >
+                {'Tailwind CSS'}
+            </Link>, Deployed with <Link
+                href='https://pages.cloudflare.com/'
+                colors={{
+                    hoverText: COLORS.GREEN.hoverText,
+                    focusText: COLORS.GREEN.focusText,
+                    focusOutline: COLORS.GREEN.focusOutline,
+                    text: COLORS.GREEN.text
+                }}
+                class='underline'
+                target='_blank'
+                title='Cloudflare Pages'
+            >
+                {'Cloudflare Pages'}
+            </Link>, and Use <Link
+                href='https://www.monolisa.dev/'
+                colors={{
+                    hoverText: COLORS.GREEN.hoverText,
+                    focusText: COLORS.GREEN.focusText,
+                    focusOutline: COLORS.GREEN.focusOutline,
+                    text: COLORS.GREEN.text
+                }}
+                class='underline'
+                target='_blank'
+                title='MonoLisa'
+            >
+                {'MonoLisa'}
+            </Link> for all text.
+        </p>
     </PageWrapper>
-    <p class='mt-2 text-right text-xs md:text-sm'>
-        Made with <Link
-            href='https://github.com/catppuccin/catppuccin'
-            colors={{
-                hoverText: COLORS.GREEN.hoverText,
-                focusText: COLORS.GREEN.focusText,
-                focusOutline: COLORS.GREEN.focusOutline
-            }}
-            class='underline'
-            target='_blank'
-            title='Catppuccin theme'
-        >
-            {'Catppuccin theme'}
-        </Link> & <Link
-            href='https://www.monolisa.dev/'
-            colors={{
-                hoverText: COLORS.GREEN.hoverText,
-                focusText: COLORS.GREEN.focusText,
-                focusOutline: COLORS.GREEN.focusOutline
-            }}
-            class='underline'
-            target='_blank'
-            title='MonoLisa Font'
-        >
-            {'MonoLisa Font'}
-        </Link>
-    </p>
 </Layout>
