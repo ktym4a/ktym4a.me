@@ -60,6 +60,7 @@ const { currentPath, baseColor } = Astro.props
     <button
         type='button'
         id='closeNav'
+        aria-label='Close navigation menu'
         class='absolute bottom-0 left-0 top-0 w-11'></button>
     <div
         class={`grid ml-11 max-h-dvh overflow-y-auto bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
