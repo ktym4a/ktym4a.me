@@ -8,82 +8,77 @@ import { COLORS } from '@/types/index'
 
 <Layout title='ktym4a' description="ktym4a's website" baseColor={COLORS.GREEN}>
     <PageWrapper>
-        <div class='space-y-2'>
-            <Tag text='SiteName'>
-                <h1
-                    class='mb-2 break-all text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+        <Tag text='SiteName'>
+            <h1
+                class='mb-2 break-all text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+            >
+                <span class='text-ctp-green'>kt</span><span
+                    class='text-ctp-pink'>ym</span
+                ><span class='text-ctp-blue'>4</span><span
+                    class='text-ctp-peach'>a</span
                 >
-                    <span class='text-ctp-green'>kt</span><span
-                        class='text-ctp-pink'>ym</span
-                    ><span class='text-ctp-blue'>4</span><span
-                        class='text-ctp-peach'>a</span
-                    >
-                </h1>
-            </Tag>
-            <Tag text='Quote' className='gap-2'>
-                <div class='inline-flex flex-col'>
-                    <div
-                        class='h-4 text-left text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
-                    >
-                        “
-                    </div>
-                    <h2
-                        class='px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
-                    >
-                        <span
-                            class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
-                            >Do</span
-                        >
-                        <span class='text-ctp-blue'>what</span>
-                        <span class='text-ctp-peach'>you</span>
-                        <span
-                            class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
-                            >love</span
-                        >,<br /><span
-                            class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
-                            >Love</span
-                        >
-                        <span class='text-ctp-blue'>what</span>
-                        <span class='text-ctp-peach'>you</span>
-                        <span
-                            class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
-                            >do</span
-                        >.
-                    </h2>
-                    <div
-                        class='h-4 text-right text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
-                    >
-                        ”
-                    </div>
+            </h1>
+        </Tag>
+        <Tag text='Quote' className='gap-2'>
+            <div class='inline-flex flex-col'>
+                <div
+                    class='h-4 text-left text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
+                >
+                    “
                 </div>
-            </Tag>
-            <p class='text-right text-xs md:text-sm'>
-                Made with <Link
-                    href='https://github.com/catppuccin/catppuccin'
-                    colors={{
-                        hoverText: COLORS.GREEN.hoverText,
-                        focusText: COLORS.GREEN.focusText,
-                        focusOutline: COLORS.GREEN.focusOutline
-                    }}
-                    class='underline'
-                    target='_blank'
-                    title='Catppuccin theme'
+                <h2
+                    class='px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
                 >
-                    {'Catppuccin theme'}
-                </Link> & <Link
-                    href='https://www.monolisa.dev/'
-                    colors={{
-                        hoverText: COLORS.GREEN.hoverText,
-                        focusText: COLORS.GREEN.focusText,
-                        focusOutline: COLORS.GREEN.focusOutline
-                    }}
-                    class='underline'
-                    target='_blank'
-                    title='MonoLisa Font'
+                    <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
+                        >Do</span
+                    >
+                    <span class='text-ctp-blue'>what</span>
+                    <span class='text-ctp-peach'>you</span>
+                    <span class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
+                        >love</span
+                    >,<br /><span
+                        class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
+                        >Love</span
+                    >
+                    <span class='text-ctp-blue'>what</span>
+                    <span class='text-ctp-peach'>you</span>
+                    <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
+                        >do</span
+                    >.
+                </h2>
+                <div
+                    class='h-4 text-right text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
                 >
-                    {'MonoLisa Font'}
-                </Link>
-            </p>
-        </div>
+                    ”
+                </div>
+            </div>
+        </Tag>
     </PageWrapper>
+    <p class='mt-2 text-right text-xs md:text-sm'>
+        Made with <Link
+            href='https://github.com/catppuccin/catppuccin'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText,
+                focusText: COLORS.GREEN.focusText,
+                focusOutline: COLORS.GREEN.focusOutline
+            }}
+            class='underline'
+            target='_blank'
+            title='Catppuccin theme'
+        >
+            {'Catppuccin theme'}
+        </Link> & <Link
+            href='https://www.monolisa.dev/'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText,
+                focusText: COLORS.GREEN.focusText,
+                focusOutline: COLORS.GREEN.focusOutline
+            }}
+            class='underline'
+            target='_blank'
+            title='MonoLisa Font'
+        >
+            {'MonoLisa Font'}
+        </Link>
+    </p>
 </Layout>
