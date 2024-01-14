@@ -17,8 +17,8 @@ const colorClass = Object.values(colors).reduce((acc, value) => {
 
 <a
     href={href}
-    class={`flex px-1 pb-1 items-center gap-2 before:absolute before:inset-y-0 before:-translate-x-3.25 outline-none focus-visible:before:content-['>'] focus-visible:bg-ctp-surface0 dark:focus-visible:saturate-350 focus-visible:saturate-50 hover:before:content-['>'] hover:bg-ctp-surface0 underline underline-offset-2 decoration-dashed motion-safe:transition-filter ease-in-out motion-safe:duration-700 group focus-visible:no-underline dark:hover:saturate-350 hover:saturate-50 ${colorClass} ${
-        current ? 'bg-ctp-surface0 before:content-[">"] current' : ''
+    class={`flex px-1 pb-1 items-center gap-2 before:absolute before:inset-y-0 before:-translate-x-3.25 outline-none group-focus-within:before:content-['>'] group-focus-within:bg-ctp-surface0 dark:group-focus-within:saturate-350 group-focus-within:saturate-50 group-hover:before:content-['>'] group-hover:bg-ctp-surface0 underline underline-offset-2 decoration-dashed motion-safe:transition-filter ease-in-out motion-safe:duration-700 group-focus-within:no-underline dark:group-hover:saturate-350 group-hover:saturate-50 ${colorClass} ${
+        current ? 'bg-ctp-surface0 before:content-[">"]' : ''
     }`}
     target={target}
     title={title}><slot /></a
