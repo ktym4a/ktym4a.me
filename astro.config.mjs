@@ -8,11 +8,7 @@ import robotsTxt from 'astro-robots-txt'
 export default defineConfig({
     integrations: [
         tailwind(),
-        sitemap({
-            filter: (page) =>
-                page !== 'https://ktym4a.me/about/' &&
-                page !== 'https://ktym4a.me/about/me/'
-        }),
+        sitemap(),
         robotsTxt({
             sitemap: true
         })
