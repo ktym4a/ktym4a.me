@@ -13,7 +13,7 @@ import { Image } from 'astro:assets'
     baseColor={COLORS.PINK}
 >
     <PageWrapper>
-        <Tag text='h1'>
+        <Tag text='Title'>
             <h1 class='text-2xl font-bold md:text-4xl'>
                 # <span class='text-ctp-pink'>About</span></h1
             >
@@ -34,7 +34,7 @@ import { Image } from 'astro:assets'
                     </div>
                     <div>
                         <p
-                            class='mb-0 text-pretty font-mono text-xl font-bold md:mb-1 md:text-2xl lg:text-4xl'
+                            class='mb-0 text-pretty font-mono text-lg font-bold md:mb-1 md:text-3xl'
                             >Hi, I'm <span class='text-ctp-green'>kt</span><span
                                 class='text-ctp-pink'>ym</span
                             ><span class='text-ctp-blue'>4</span><span
@@ -42,7 +42,7 @@ import { Image } from 'astro:assets'
                             >.
                         </p>
                         <p
-                            class='mb-4 text-pretty font-mono text-sm md:mb-6 md:text-base'
+                            class='mb-4 text-pretty font-mono text-base md:mb-6 md:text-lg'
                         >
                             full-stack web developer</p
                         >
@@ -63,14 +63,12 @@ import { Image } from 'astro:assets'
         </section>
         <section id='experience'>
             <Tag text='Experience' className='gap-2'>
-                <div class='space-y-4'>
-                    <Tag text='h2' className='sticky -top-4 left-0'>
-                        <h2 class='text-lg font-bold md:text-2xl'>
-                            ## <span class='text-ctp-pink'>Experience</span></h2
-                        >
-                    </Tag>
+                <div class='space-y-2'>
+                    <h2 class='text-xl font-bold md:text-2xl'>
+                        ## <span class='text-ctp-pink'>Experience</span></h2
+                    >
                     <ul
-                        class='list-outside list-disc space-y-1 text-pretty pl-8'
+                        class='list-outside list-disc space-y-1 text-pretty pl-6'
                     >
                         <li>Front-end Web Development</li>
                         <li>Backend-end Web Development</li>
@@ -87,14 +85,12 @@ import { Image } from 'astro:assets'
         </section>
         <section id='interests'>
             <Tag text='Interests' className='gap-2'>
-                <div class='space-y-4'>
-                    <Tag text='h2' className='sticky -top-4 left-0'>
-                        <h2 class='text-lg font-bold md:text-2xl'>
-                            ## <span class='text-ctp-pink'>Interests</span></h2
-                        >
-                    </Tag>
+                <div class='space-y-2'>
+                    <h2 class='text-lg font-bold md:text-2xl'>
+                        ## <span class='text-ctp-pink'>Interests</span></h2
+                    >
                     <ul
-                        class='list-outside list-disc space-y-1 text-pretty pl-8'
+                        class='list-outside list-disc space-y-1 text-pretty pl-6'
                     >
                         <li>A11y</li>
                         <li>Architecture</li>
