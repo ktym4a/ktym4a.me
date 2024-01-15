@@ -1,11 +1,8 @@
 ---
 import Head from '@/components/Head.astro'
-import NavOpen from '@/components/atoms/NavOpen.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import ThemeIcon from '@/components/atoms/ThemeIcon.astro'
-import Breadcrumbs from '@/components/molecules/Breadcrumbs.astro'
-import SideMenu from '@/components/organisms/SideMenu.astro'
-import { MAIN_SLIDE_ANIMATION, type ColorType } from '@/types/index'
+import Main from '@/components/organisms/Main.astro'
+import SideBar from '@/components/organisms/SideBar.astro'
+import { type ColorType } from '@/types/index'
 
 interface Props {
     title: string
@@ -32,60 +29,18 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
         <div
             class='m-auto grid min-h-dvh max-w-7xl grid-cols-[2.75rem_1fr] md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
         >
-            <div class='flex'>
-                <div
-                    class={`fixed left-0 top-0 z-20 flex max-h-dvh min-h-dvh w-11 flex-col items-center overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-1 pt-6 md:relative md:hidden md:w-16 md:justify-between md:gap-12 md:border-r-0 md:pl-0 md:pr-2 lg:flex [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
-                >
-                    <div class='hidden justify-center lg:flex'>
-                        <Breadcrumbs
-                            currentPath={currentPath}
-                            position='left'
-                            routes={routes}
-                        />
-                    </div>
-                    <div class='mt-auto w-full space-y-2 md:w-auto'>
-                        <div class='md:hidden'>
-                            <NavOpen
-                                currentPath={currentPath}
-                                baseColor={baseColor}
-                            />
-                        </div>
-                        <ThemeIcon />
-                    </div>
-                </div>
-                <aside
-                    class={`hidden max-h-dvh flex-auto overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
-                >
-                    <SideMenu currentPath={currentPath} />
-                </aside>
-            </div>
-            <div
-                class='overflow-hidden md:ml-0 md:w-full lg:pr-10'
-                transition:animate={MAIN_SLIDE_ANIMATION}
+            <SideBar
+                baseColor={baseColor}
+                currentPath={currentPath}
+                routes={routes}
+            />
+            <Main
+                baseColor={baseColor}
+                currentPath={currentPath}
+                routes={routes}
             >
-                <div
-                    class={`grid max-h-dvh min-h-dvh auto-cols-full grid-rows-[auto_1fr] gap-4 scroll-smooth overflow-y-auto overflow-x-hidden
-                    px-4 py-6 md:px-6 lg:grid-rows-[1fr] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
-                >
-                    <div class='block lg:hidden'>
-                        <Tag
-                            text='Breadcrumbs'
-                            className='gap-1 overflow-x-auto md:gap-0'
-                        >
-                            <Breadcrumbs
-                                currentPath={currentPath}
-                                position='main'
-                                routes={routes}
-                            />
-                        </Tag>
-                    </div>
-                    <main class='grid w-full'>
-                        <Tag text='Main' className='gap-2'>
-                            <slot />
-                        </Tag>
-                    </main>
-                </div>
-            </div>
+                <slot />
+            </Main>
         </div>
     </body></html
 >
