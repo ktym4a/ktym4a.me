@@ -1,125 +1,122 @@
 ---
 import Link from '@/components/atoms/Link.astro'
-import PageWrapper from '@/components/atoms/PageWrapper.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
 ---
 
 <Layout title='ktym4a' description="ktym4a's website" baseColor={COLORS.GREEN}>
-    <PageWrapper>
-        <Tag text='SiteName'>
-            <h1
-                class='mb-2 break-all text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+    <Tag text='SiteName'>
+        <h1
+            class='mb-2 break-all text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+        >
+            <span class='text-ctp-green'>kt</span><span class='text-ctp-pink'
+                >ym</span
+            ><span class='text-ctp-blue'>4</span><span class='text-ctp-peach'
+                >a</span
             >
-                <span class='text-ctp-green'>kt</span><span
-                    class='text-ctp-pink'>ym</span
-                ><span class='text-ctp-blue'>4</span><span
-                    class='text-ctp-peach'>a</span
+        </h1>
+    </Tag>
+    <Tag text='Quote' className='gap-2'>
+        <blockquote class='inline-flex flex-col'>
+            <div
+                class='h-4 text-left text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
+            >
+                “
+            </div>
+            <p
+                class='text-pretty px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
+            >
+                <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
+                    >Do</span
                 >
-            </h1>
-        </Tag>
-        <Tag text='Quote' className='gap-2'>
-            <blockquote class='inline-flex flex-col'>
-                <div
-                    class='h-4 text-left text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
+                <span class='text-ctp-blue'>what</span>
+                <span class='text-ctp-peach'>you</span>
+                <span class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
+                    >love</span
+                >,<br /><span
+                    class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
+                    >Love</span
                 >
-                    “
-                </div>
-                <p
-                    class='text-pretty px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
-                >
-                    <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
-                        >Do</span
-                    >
-                    <span class='text-ctp-blue'>what</span>
-                    <span class='text-ctp-peach'>you</span>
-                    <span class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
-                        >love</span
-                    >,<br /><span
-                        class='text-xl text-ctp-pink md:text-3xl lg:text-4xl'
-                        >Love</span
-                    >
-                    <span class='text-ctp-blue'>what</span>
-                    <span class='text-ctp-peach'>you</span>
-                    <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
-                        >do</span
-                    >.
-                </p>
-                <div
-                    class='h-4 text-right text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
-                >
-                    ”
-                </div>
-            </blockquote>
-        </Tag>
-        <p class='ml-auto mt-4 text-pretty text-left text-xs'>
-            Designed and Coded by yours truly. Color palette used <Link
-                href='https://github.com/catppuccin/catppuccin'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText as string,
-                    focusText: COLORS.GREEN.focusText as string,
-                    focusOutline: COLORS.GREEN.focusOutline as string,
-                    text: COLORS.GREEN.text as string
-                }}
-                class='underline'
-                target='_blank'
-                title='Catppuccin'
+                <span class='text-ctp-blue'>what</span>
+                <span class='text-ctp-peach'>you</span>
+                <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
+                    >do</span
+                >.
+            </p>
+            <div
+                class='h-4 text-right text-2xl font-extrabold text-ctp-green md:text-4xl lg:h-6 lg:text-5xl'
             >
-                {'Catppuccin'}
-            </Link>. Built with <Link
-                href='https://astro.build/'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText as string,
-                    focusText: COLORS.GREEN.focusText as string,
-                    focusOutline: COLORS.GREEN.focusOutline as string,
-                    text: COLORS.GREEN.text as string
-                }}
-                class='underline'
-                target='_blank'
-                title='Astro'
-            >
-                {'Astro'}
-            </Link> and <Link
-                href='https://tailwindcss.com/'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText as string,
-                    focusText: COLORS.GREEN.focusText as string,
-                    focusOutline: COLORS.GREEN.focusOutline as string,
-                    text: COLORS.GREEN.text as string
-                }}
-                class='underline'
-                target='_blank'
-                title='Tailwind CSS'
-            >
-                {'Tailwind CSS'}
-            </Link>, Deployed with <Link
-                href='https://pages.cloudflare.com/'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText as string,
-                    focusText: COLORS.GREEN.focusText as string,
-                    focusOutline: COLORS.GREEN.focusOutline as string,
-                    text: COLORS.GREEN.text as string
-                }}
-                class='underline'
-                target='_blank'
-                title='Cloudflare Pages'
-            >
-                {'Cloudflare Pages'}
-            </Link>, and Use <Link
-                href='https://www.monolisa.dev/'
-                colors={{
-                    hoverText: COLORS.GREEN.hoverText as string,
-                    focusText: COLORS.GREEN.focusText as string,
-                    focusOutline: COLORS.GREEN.focusOutline as string,
-                    text: COLORS.GREEN.text as string
-                }}
-                class='underline'
-                target='_blank'
-                title='MonoLisa'
-            >
-                {'MonoLisa'}
-            </Link> for all text.
-        </p>
-    </PageWrapper>
+                ”
+            </div>
+        </blockquote>
+    </Tag>
+    <p class='ml-auto mt-4 text-pretty text-left text-xs'>
+        Designed and Coded by yours truly. Color palette used <Link
+            href='https://github.com/catppuccin/catppuccin'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText as string,
+                focusText: COLORS.GREEN.focusText as string,
+                focusOutline: COLORS.GREEN.focusOutline as string,
+                text: COLORS.GREEN.text as string
+            }}
+            class='underline'
+            target='_blank'
+            title='Catppuccin'
+        >
+            {'Catppuccin'}
+        </Link>. Built with <Link
+            href='https://astro.build/'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText as string,
+                focusText: COLORS.GREEN.focusText as string,
+                focusOutline: COLORS.GREEN.focusOutline as string,
+                text: COLORS.GREEN.text as string
+            }}
+            class='underline'
+            target='_blank'
+            title='Astro'
+        >
+            {'Astro'}
+        </Link> and <Link
+            href='https://tailwindcss.com/'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText as string,
+                focusText: COLORS.GREEN.focusText as string,
+                focusOutline: COLORS.GREEN.focusOutline as string,
+                text: COLORS.GREEN.text as string
+            }}
+            class='underline'
+            target='_blank'
+            title='Tailwind CSS'
+        >
+            {'Tailwind CSS'}
+        </Link>, Deployed with <Link
+            href='https://pages.cloudflare.com/'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText as string,
+                focusText: COLORS.GREEN.focusText as string,
+                focusOutline: COLORS.GREEN.focusOutline as string,
+                text: COLORS.GREEN.text as string
+            }}
+            class='underline'
+            target='_blank'
+            title='Cloudflare Pages'
+        >
+            {'Cloudflare Pages'}
+        </Link>, and Use <Link
+            href='https://www.monolisa.dev/'
+            colors={{
+                hoverText: COLORS.GREEN.hoverText as string,
+                focusText: COLORS.GREEN.focusText as string,
+                focusOutline: COLORS.GREEN.focusOutline as string,
+                text: COLORS.GREEN.text as string
+            }}
+            class='underline'
+            target='_blank'
+            title='MonoLisa'
+        >
+            {'MonoLisa'}
+        </Link> for all text.
+    </p>
 </Layout>

@@ -1,7 +1,7 @@
 ---
 import Head from '@/components/Head.astro'
-import Main from '@/components/organisms/Main.astro'
-import SideBar from '@/components/organisms/SideBar.astro'
+import SideBar from '@/components/SideBar.astro'
+import MainLayout from '@/layouts/MainLayout.astro'
 import { type ColorType } from '@/types/index'
 
 interface Props {
@@ -34,13 +34,13 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                 currentPath={currentPath}
                 routes={routes}
             />
-            <Main
+            <MainLayout
                 baseColor={baseColor}
                 currentPath={currentPath}
                 routes={routes}
             >
                 <slot />
-            </Main>
+            </MainLayout>
         </div>
     </body></html
 >

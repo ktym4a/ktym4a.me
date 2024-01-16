@@ -1,6 +1,6 @@
 ---
 import Tag from '@/components/atoms/Tag.astro'
-import Breadcrumbs from '@/components/molecules/Breadcrumbs.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import { MAIN_SLIDE_ANIMATION, type ColorType } from '@/types/index'
 
 interface Props {
@@ -31,7 +31,9 @@ const { baseColor, currentPath, routes } = Astro.props
         </div>
         <main class='grid w-full'>
             <Tag text='Main' className='gap-2'>
-                <slot />
+                <div class='space-y-4 md:space-y-6'>
+                    <slot />
+                </div>
             </Tag>
         </main>
     </div>
