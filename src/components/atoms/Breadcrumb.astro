@@ -22,8 +22,8 @@ const { colors, currentPath, href, name } = Astro.props
                 href={href}
                 class={`font-bold underline`}
                 colors={{
-                    text: colors.text,
-                    outline: colors.outline
+                    text: colors.text as string,
+                    outline: colors.outline as string
                 }}
                 title={name}
             >

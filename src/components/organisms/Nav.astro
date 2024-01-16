@@ -17,7 +17,7 @@ const { currentPath } = Astro.props
                 href='/'
                 current={currentPath === 'ktym4a'}
                 colors={{
-                    text: COLORS.GREEN.text
+                    text: COLORS.GREEN.text as string
                 }}
                 title='ktym4a'
                 type='file'
@@ -26,7 +26,7 @@ const { currentPath } = Astro.props
                 href='/about/'
                 current={currentPath === 'about'}
                 colors={{
-                    text: COLORS.PINK.text
+                    text: COLORS.PINK.text as string
                 }}
                 title='about'
                 type='file'
@@ -36,7 +36,7 @@ const { currentPath } = Astro.props
                 href='/about/me/'
                 current={currentPath === 'me'}
                 colors={{
-                    text: COLORS.BLUE.text
+                    text: COLORS.BLUE.text as string
                 }}
                 title='projects'
                 wip={true}
