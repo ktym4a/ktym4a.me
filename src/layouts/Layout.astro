@@ -1,7 +1,7 @@
 ---
 import Head from '@/components/Head.astro'
-import SideBar from '@/components/SideBar.astro'
 import MainLayout from '@/layouts/MainLayout.astro'
+import SideLayout from '@/layouts/SideLayout.astro'
 import { type ColorType } from '@/types/index'
 
 interface Props {
@@ -29,7 +29,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
         <div
             class='m-auto grid min-h-dvh max-w-7xl grid-cols-[2.75rem_1fr] md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
         >
-            <SideBar
+            <SideLayout
                 baseColor={baseColor}
                 currentPath={currentPath}
                 routes={routes}

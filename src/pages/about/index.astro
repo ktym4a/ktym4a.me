@@ -14,8 +14,17 @@ import { Image } from 'astro:assets'
 >
     <Tag text='Title'>
         <h1 class='text-2xl font-bold md:text-4xl'>
-            # <span class='text-ctp-pink'>About</span></h1
-        >
+            <Link
+                href='#about'
+                colors={{
+                    focusOutline: COLORS.PINK.focusOutline as string
+                }}
+                class="before:content-['#']"
+                title='About'
+            >
+                <span class='text-ctp-pink'>About</span>
+            </Link>
+        </h1>
     </Tag>
     <section id='profile'>
         <Tag text='Profile' className='gap-2'>
@@ -69,10 +78,10 @@ import { Image } from 'astro:assets'
                         colors={{
                             focusOutline: COLORS.PINK.focusOutline as string
                         }}
-                        class=''
+                        class="before:content-['##']"
                         title='Experience'
                     >
-                        ## <span class='text-ctp-pink'>Experience</span>
+                        <span class='text-ctp-pink'>Experience</span>
                     </Link></h2
                 >
                 <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>
@@ -98,10 +107,10 @@ import { Image } from 'astro:assets'
                         colors={{
                             focusOutline: COLORS.PINK.focusOutline as string
                         }}
-                        class=''
+                        class="before:content-['##']"
                         title='Interests'
                     >
-                        ## <span class='text-ctp-pink'>Interests</span>
+                        <span class='text-ctp-pink'>Interests</span>
                     </Link></h2
                 >
                 <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>

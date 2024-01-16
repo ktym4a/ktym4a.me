@@ -1,22 +1,40 @@
 ---
-import Nav from '@/components/Nav.astro'
-import SNSLinks from '@/components/SNSLinks.astro'
-import Tag from '@/components/atoms/Tag.astro'
+import NavOpen from '@/components/atoms/NavOpen.astro'
+import ThemeIcon from '@/components/atoms/ThemeIcon.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Menu from '@/components/Menu.astro'
+import type { ColorType } from '@/types/index'
 
 interface Props {
+    baseColor: ColorType
     currentPath: string
+    routes: string[]
 }
 
-const { currentPath } = Astro.props
+const { baseColor, currentPath, routes } = Astro.props
 ---
 
-<Tag text='SideMenu' className='h-full gap-2'>
-    <div class='flex h-full flex-col justify-between gap-4 md:gap-6'>
-        <div class='space-y-4'>
-            <Nav currentPath={currentPath} />
+<div class='flex'>
+    <div
+        class={`fixed left-0 top-0 z-20 flex max-h-dvh min-h-dvh w-11 flex-col items-center overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-1 pt-6 md:relative md:hidden md:w-16 md:justify-between md:gap-12 md:border-r-0 md:pl-0 md:pr-2 lg:flex [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+    >
+        <div class='hidden justify-center lg:flex'>
+            <Breadcrumbs
+                currentPath={currentPath}
+                position='left'
+                routes={routes}
+            />
         </div>
-        <div class='space-y-4'>
-            <SNSLinks />
+        <div class='mt-auto w-full space-y-2 md:w-auto'>
+            <div class='md:hidden'>
+                <NavOpen currentPath={currentPath} baseColor={baseColor} />
+            </div>
+            <ThemeIcon />
         </div>
     </div>
-</Tag>
+    <aside
+        class={`hidden max-h-dvh flex-auto overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+    >
+        <Menu currentPath={currentPath} tagText='SideMenu' />
+    </aside>
+</div>
