@@ -1,8 +1,8 @@
 ---
 import NavOpen from '@/components/atoms/NavOpen.astro'
 import ThemeIcon from '@/components/atoms/ThemeIcon.astro'
-import Breadcrumbs from '@/components/molecules/Breadcrumbs.astro'
-import SideMenu from '@/components/organisms/SideMenu.astro'
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import SideLayout from '@/layouts/SideLayout.astro'
 import type { ColorType } from '@/types/index'
 
 interface Props {
@@ -35,6 +35,6 @@ const { baseColor, currentPath, routes } = Astro.props
     <aside
         class={`hidden max-h-dvh flex-auto overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     >
-        <SideMenu currentPath={currentPath} />
+        <SideLayout currentPath={currentPath} />
     </aside>
 </div>

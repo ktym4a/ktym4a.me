@@ -1,6 +1,6 @@
 ---
 import Icon from '@/assets/images/icon.jpg'
-import PageWrapper from '@/components/atoms/PageWrapper.astro'
+import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
@@ -12,98 +12,110 @@ import { Image } from 'astro:assets'
     description="ktym4a's about page"
     baseColor={COLORS.PINK}
 >
-    <PageWrapper>
-        <Tag text='Title'>
-            <h1 class='text-2xl font-bold md:text-4xl'>
-                # <span class='text-ctp-pink'>About</span></h1
-            >
-        </Tag>
-        <section id='profile'>
-            <Tag text='Profile' className='gap-2'>
-                <div class='flex flex-col gap-3 md:flex-row md:gap-4'>
-                    <div class='flex-shrink-0'>
-                        <Image
-                            src={Icon}
-                            alt="ktym4a's icon"
-                            class='h-20 w-20 rounded-full md:h-28 md:w-28 lg:h-32 lg:w-32'
-                            title='ktym4a'
-                            width={112}
-                            height={112}
-                            densities={[1.5, 2]}
+    <Tag text='Title'>
+        <h1 class='text-2xl font-bold md:text-4xl'>
+            # <span class='text-ctp-pink'>About</span></h1
+        >
+    </Tag>
+    <section id='profile'>
+        <Tag text='Profile' className='gap-2'>
+            <div class='flex flex-col gap-3 md:flex-row md:gap-4'>
+                <div class='flex-shrink-0'>
+                    <Image
+                        src={Icon}
+                        alt="ktym4a's icon"
+                        class='h-20 w-20 rounded-full md:h-28 md:w-28 lg:h-32 lg:w-32'
+                        title='ktym4a'
+                        width={112}
+                        height={112}
+                        densities={[1.5, 2]}
+                    />
+                </div>
+                <div>
+                    <p
+                        class='mb-0 text-pretty font-mono text-lg font-bold md:mb-1 md:text-3xl'
+                        >Hi, I'm <span class='text-ctp-green'>kt</span><span
+                            class='text-ctp-pink'>ym</span
+                        ><span class='text-ctp-blue'>4</span><span
+                            class='text-ctp-peach'>a</span
+                        >.
+                    </p>
+                    <p
+                        class='mb-4 text-pretty font-mono text-base md:mb-6 md:text-lg'
+                    >
+                        full-stack web developer</p
+                    >
+                    <p class='text-pretty font-mono md:text-lg'>
+                        I work every day to <span
+                            class='font-mono-script font-bold italic text-ctp-pink'
+                            >"Make the world better than it was yesterday"</span
+                        >.<br />
+                        <br />
+                        I make a better web that is fast, easy to use, and beautiful.<br
                         />
-                    </div>
-                    <div>
-                        <p
-                            class='mb-0 text-pretty font-mono text-lg font-bold md:mb-1 md:text-3xl'
-                            >Hi, I'm <span class='text-ctp-green'>kt</span><span
-                                class='text-ctp-pink'>ym</span
-                            ><span class='text-ctp-blue'>4</span><span
-                                class='text-ctp-peach'>a</span
-                            >.
-                        </p>
-                        <p
-                            class='mb-4 text-pretty font-mono text-base md:mb-6 md:text-lg'
-                        >
-                            full-stack web developer</p
-                        >
-                        <p class='text-pretty font-mono md:text-lg'>
-                            I work every day to <span
-                                class='font-mono-script font-bold italic text-ctp-pink'
-                                >"Make the world better than it was yesterday"</span
-                            >.<br />
-                            <br />
-                            I make a better web that is fast, easy to use, and beautiful.<br
-                            />
-                            I'm also always thinking and working on simplicity, fast,
-                            and scale.</p
-                        >
-                    </div>
+                        I'm also always thinking and working on simplicity, fast,
+                        and scale.</p
+                    >
                 </div>
-            </Tag>
-        </section>
-        <section id='experience'>
-            <Tag text='Experience' className='gap-2'>
-                <div class='space-y-2'>
-                    <h2 class='text-xl font-bold md:text-2xl'>
-                        ## <span class='text-ctp-pink'>Experience</span></h2
+            </div>
+        </Tag>
+    </section>
+    <section id='experience'>
+        <Tag text='Experience' className='gap-2'>
+            <div class='space-y-2'>
+                <h2 class='text-xl font-bold md:text-2xl'>
+                    <Link
+                        href='#experience'
+                        colors={{
+                            focusOutline: COLORS.PINK.focusOutline as string
+                        }}
+                        class='underline'
+                        title='Experience'
                     >
-                    <ul
-                        class='list-outside list-disc space-y-1 text-pretty pl-6'
+                        ## <span class='text-ctp-pink'>Experience</span>
+                    </Link></h2
+                >
+                <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>
+                    <li>Front-end Web Development</li>
+                    <li>Backend-end Web Development</li>
+                    <li>Software Design and Architecture</li>
+                    <li>Tech Lead</li>
+                    <li>Product Management</li>
+                    <li>Engineering Management</li>
+                    <li>Team Building</li>
+                    <li>HR for Engineers</li>
+                    <li>Director</li>
+                </ul>
+            </div>
+        </Tag>
+    </section>
+    <section id='interests'>
+        <Tag text='Interests' className='gap-2'>
+            <div class='space-y-2'>
+                <h2 class='text-lg font-bold md:text-2xl'>
+                    <Link
+                        href='#interests'
+                        colors={{
+                            focusOutline: COLORS.PINK.focusOutline as string
+                        }}
+                        class='underline'
+                        title='Interests'
                     >
-                        <li>Front-end Web Development</li>
-                        <li>Backend-end Web Development</li>
-                        <li>Software Design and Architecture</li>
-                        <li>Tech Lead</li>
-                        <li>Product Management</li>
-                        <li>Engineering Management</li>
-                        <li>Team Building</li>
-                        <li>HR for Engineers</li>
-                        <li>Director</li>
-                    </ul>
-                </div>
-            </Tag>
-        </section>
-        <section id='interests'>
-            <Tag text='Interests' className='gap-2'>
-                <div class='space-y-2'>
-                    <h2 class='text-lg font-bold md:text-2xl'>
-                        ## <span class='text-ctp-pink'>Interests</span></h2
-                    >
-                    <ul
-                        class='list-outside list-disc space-y-1 text-pretty pl-6'
-                    >
-                        <li>A11y</li>
-                        <li>Architecture</li>
-                        <li>Cloud Computing</li>
-                        <li>DX(Developer Experience)</li>
-                        <li>Edge Workers</li>
-                        <li>Performance</li>
-                        <li>Rust</li>
-                        <li>Wasm</li>
-                        <li>WebRTC</li>
-                    </ul>
-                </div>
-            </Tag>
-        </section>
-    </PageWrapper>
+                        ## <span class='text-ctp-pink'>Interests</span>
+                    </Link></h2
+                >
+                <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>
+                    <li>A11y</li>
+                    <li>Architecture</li>
+                    <li>Cloud Computing</li>
+                    <li>DX(Developer Experience)</li>
+                    <li>Edge Workers</li>
+                    <li>Performance</li>
+                    <li>Rust</li>
+                    <li>Wasm</li>
+                    <li>WebRTC</li>
+                </ul>
+            </div>
+        </Tag>
+    </section>
 </Layout>
