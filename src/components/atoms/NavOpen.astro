@@ -1,5 +1,5 @@
 ---
-import SideLayout from '@/layouts/SideLayout.astro'
+import Menu from '@/components/Menu.astro'
 import type { ColorType } from '@/types/index'
 
 interface Props {
@@ -65,7 +65,7 @@ const { currentPath, baseColor } = Astro.props
     <div
         class={`grid ml-11 max-h-dvh overflow-y-auto bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     >
-        <SideLayout currentPath={currentPath} />
+        <Menu currentPath={currentPath} tagText='Menu' />
     </div>
 </div>
 
