@@ -2,19 +2,22 @@
 import Nav from '@/components/Nav.astro'
 import SNSLinks from '@/components/SNSLinks.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import type { MarkdownHeading } from 'astro'
 
 interface Props {
     currentPath: string
     tagText: string
+    headings?: MarkdownHeading[] | undefined
 }
 
-const { currentPath, tagText } = Astro.props
+const { currentPath, tagText, headings = undefined } = Astro.props
 ---
 
 <Tag text={tagText} className='h-full gap-2'>
     <div class='flex h-full flex-col justify-between gap-4 md:gap-6'>
         <div class='space-y-4'>
             <Nav currentPath={currentPath} />
+            {headings && ''}
         </div>
         <div class='space-y-4'>
             <SNSLinks />

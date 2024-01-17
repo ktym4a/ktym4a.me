@@ -3,14 +3,16 @@ import Head from '@/components/Head.astro'
 import MainLayout from '@/layouts/MainLayout.astro'
 import SideLayout from '@/layouts/SideLayout.astro'
 import { type ColorType } from '@/types/index'
+import type { MarkdownHeading } from 'astro'
 
 interface Props {
-    title: string
-    description: string
     baseColor: ColorType
+    description: string
+    title: string
+    headings?: MarkdownHeading[] | undefined
 }
 
-const { title, description, baseColor } = Astro.props
+const { baseColor, description, title, headings = undefined } = Astro.props
 const routes = Astro.url.pathname.split('/').filter((path) => path)
 const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 ---
@@ -33,6 +35,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                 baseColor={baseColor}
                 currentPath={currentPath}
                 routes={routes}
+                headings={headings}
             />
             <MainLayout
                 baseColor={baseColor}
