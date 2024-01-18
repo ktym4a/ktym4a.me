@@ -35,7 +35,10 @@ const headings: MarkdownHeading[] = [
     title='about - ktym4a'
     description="ktym4a's about page"
     baseColor={COLORS.PINK}
-    headings={headings}
+    toc={{
+        tagName: 'Internal',
+        headings
+    }}
 >
     <section id='About'>
         <Tag text='Title'>

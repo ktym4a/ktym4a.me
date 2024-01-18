@@ -7,17 +7,34 @@ import type { MarkdownHeading } from 'astro'
 interface Props {
     currentPath: string
     tagText: string
-    headings?: MarkdownHeading[] | undefined
+    toc?:
+        | {
+              headings: MarkdownHeading[] | undefined
+              tagName: string
+          }
+        | undefined
 }
 
-const { currentPath, tagText, headings = undefined } = Astro.props
+const { currentPath, tagText, toc = undefined } = Astro.props
 ---
 
 <Tag text={tagText} className='h-full gap-2'>
     <div class='flex h-full flex-col justify-between gap-4 md:gap-6'>
         <div class='space-y-4'>
             <Nav currentPath={currentPath} />
-            {headings && ''}
+            {
+                toc?.headings && (
+                    <Tag text={toc.tagName} className='gap-2'>
+                        <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>
+                            {toc.headings.map((link) => (
+                                <li class='relative'>
+                                    <a href={`#${link.slug}`}>{link.text}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </Tag>
+                )
+            }
         </div>
         <div class='space-y-4'>
             <SNSLinks />

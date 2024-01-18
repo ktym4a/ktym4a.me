@@ -9,10 +9,15 @@ interface Props {
     baseColor: ColorType
     description: string
     title: string
-    headings?: MarkdownHeading[] | undefined
+    toc?:
+        | {
+              headings: MarkdownHeading[] | undefined
+              tagName: string
+          }
+        | undefined
 }
 
-const { baseColor, description, title, headings = undefined } = Astro.props
+const { baseColor, description, title, toc = undefined } = Astro.props
 const routes = Astro.url.pathname.split('/').filter((path) => path)
 const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 ---
@@ -35,7 +40,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                 baseColor={baseColor}
                 currentPath={currentPath}
                 routes={routes}
-                headings={headings}
+                toc={toc}
             />
             <MainLayout
                 baseColor={baseColor}
