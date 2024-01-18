@@ -4,29 +4,59 @@ import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
+import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
+
+const headings: MarkdownHeading[] = [
+    {
+        depth: 1,
+        text: 'About',
+        slug: 'About'
+    },
+    {
+        depth: 2,
+        text: 'Profile',
+        slug: 'Profile'
+    },
+    {
+        depth: 2,
+        text: 'Experience',
+        slug: 'Experience'
+    },
+    {
+        depth: 2,
+        text: 'Interests',
+        slug: 'Interests'
+    }
+]
 ---
 
 <Layout
     title='about - ktym4a'
     description="ktym4a's about page"
     baseColor={COLORS.PINK}
+    toc={{
+        tagName: 'Internal',
+        headings
+    }}
 >
-    <Tag text='Title'>
-        <h1 class='text-2xl font-bold md:text-4xl'>
-            <Link
-                href='#about'
-                colors={{
-                    focusOutline: COLORS.PINK.focusOutline as string
-                }}
-                class="before:content-['#']"
-                title='About'
-            >
-                <span class='text-ctp-pink'>About</span>
-            </Link>
-        </h1>
-    </Tag>
-    <section id='profile'>
+    <section id='About'>
+        <Tag text='Title'>
+            <h1 class='text-2xl font-bold md:text-4xl'>
+                <Link
+                    href='#about'
+                    colors={{
+                        focusOutline: COLORS.PINK.focusOutline as string
+                    }}
+                    class="before:content-['#']"
+                    title='About'
+                >
+                    <span class='text-ctp-pink'>About</span>
+                </Link>
+            </h1>
+        </Tag>
+    </section>
+    <section id='Profile'>
         <Tag text='Profile' className='gap-2'>
             <div class='flex flex-col gap-3 md:flex-row md:gap-4'>
                 <div class='flex-shrink-0'>
@@ -41,14 +71,14 @@ import { Image } from 'astro:assets'
                     />
                 </div>
                 <div>
-                    <p
+                    <h2
                         class='mb-0 text-pretty font-mono text-lg font-bold md:mb-1 md:text-3xl'
                         >Hi, I'm <span class='text-ctp-green'>kt</span><span
                             class='text-ctp-pink'>ym</span
                         ><span class='text-ctp-blue'>4</span><span
                             class='text-ctp-peach'>a</span
                         >.
-                    </p>
+                    </h2>
                     <p
                         class='mb-4 text-pretty font-mono text-base md:mb-6 md:text-lg'
                     >
@@ -69,7 +99,7 @@ import { Image } from 'astro:assets'
             </div>
         </Tag>
     </section>
-    <section id='experience'>
+    <section id='Experience'>
         <Tag text='Experience' className='gap-2'>
             <div class='space-y-2'>
                 <h2 class='text-xl font-bold md:text-2xl'>
@@ -98,7 +128,7 @@ import { Image } from 'astro:assets'
             </div>
         </Tag>
     </section>
-    <section id='interests'>
+    <section id='Interests'>
         <Tag text='Interests' className='gap-2'>
             <div class='space-y-2'>
                 <h2 class='text-lg font-bold md:text-2xl'>
