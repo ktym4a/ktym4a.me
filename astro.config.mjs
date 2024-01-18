@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
-
 import robotsTxt from 'astro-robots-txt'
+
+import metaTags from 'astro-meta-tags'
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,7 +12,8 @@ export default defineConfig({
         sitemap(),
         robotsTxt({
             sitemap: true
-        })
+        }),
+        metaTags()
     ],
     site: 'https://ktym4a.me/',
     base: '/',
