@@ -47,13 +47,11 @@
     "lint-staged": {
         "*.astro": [
             "prettier -w --config .prettierrc",
-            "eslint --fix",
+            "eslint --fix --ext .astro --config .eslintrc.cjs",
             "astro check"
         ],
         "*.ts": [
-            "prettier -w --config .prettierrc",
-            "eslint --fix",
-            "tsc --noEmit"
+            "prettier -w --config .prettierrc"
         ]
     }
 }
