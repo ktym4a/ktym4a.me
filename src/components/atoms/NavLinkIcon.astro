@@ -1,13 +1,13 @@
 ---
 interface Props {
-    type: 'file' | 'folder'
+    type?: 'file' | 'folder' | undefined
 }
 
 const { type } = Astro.props
 ---
 
 {
-    type === 'file' ? (
+    type === 'file' && (
         <svg
             xmlns='http://www.w3.org/2000/svg'
             class='mt-1 h-5 w-5'
@@ -27,7 +27,10 @@ const { type } = Astro.props
                 <path d='M9 17l6 0' />
             </>
         </svg>
-    ) : (
+    )
+}
+{
+    type === 'folder' && (
         <>
             <svg
                 xmlns='http://www.w3.org/2000/svg'

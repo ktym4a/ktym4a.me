@@ -8,15 +8,24 @@ interface Props {
     colors: ColorType
     current: boolean
     href: string
+    id?: string
     title: string
-    type: 'file' | 'folder'
+    type?: 'file' | 'folder' | undefined
     wip?: boolean
 }
 
-const { colors, current, href, title, type, wip = false } = Astro.props
+const {
+    colors,
+    current,
+    href,
+    id,
+    title,
+    type = undefined,
+    wip = false
+} = Astro.props
 ---
 
-<li class={`relative group ${current ? 'current' : ''}`}>
+<li class={`relative group ${current ? 'current' : ''}`} id={id}>
     {
         wip ? (
             <NavLinkWIP title={title}>
@@ -24,12 +33,7 @@ const { colors, current, href, title, type, wip = false } = Astro.props
                 <span class='flex-1'>{title}</span>
             </NavLinkWIP>
         ) : (
-            <NavLink
-                href={href}
-                current={current}
-                colors={colors}
-                title={title}
-            >
+            <NavLink href={href} colors={colors} title={title}>
                 <NavLinkIcon type={type} />
                 <span class='flex-1'>{title}</span>
             </NavLink>
