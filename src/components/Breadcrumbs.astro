@@ -3,12 +3,13 @@ import Breadcrumb from '@/components/atoms/Breadcrumb.astro'
 import { COLORS, type ColorType } from '@/types/index'
 
 interface Props {
+    baseColor: ColorType
     currentPath: string
     position: 'left' | 'main'
     routes: string[]
 }
 
-const { currentPath, position, routes } = Astro.props
+const { baseColor, currentPath, position, routes } = Astro.props
 
 type Path = {
     href: string
@@ -27,28 +28,21 @@ const paths: Path[] = [
     {
         href: rootPath,
         name: 'ktym4a',
-        colors: {
-            ...COLORS.GREEN
-        }
+        colors: COLORS.GREEN
     }
 ]
 if (currentPath === '404') {
     paths.push({
         href: paths.at(-1)?.href + '404/',
         name: '404',
-        colors: {
-            ...COLORS.PINK
-        }
+        colors: baseColor
     })
 } else {
     routes.forEach((path) => {
-        const color = path === 'about' ? COLORS.PINK : COLORS.GREEN
         paths.push({
             href: paths.at(-1)?.href + path + '/',
             name: path,
-            colors: {
-                ...color
-            }
+            colors: path === 'blog' ? COLORS.PEACH : baseColor
         })
     })
 }

@@ -10,13 +10,15 @@ export default {
                 mono: [
                     `'ml', ${defaultTheme.fontFamily.mono}`,
                     {
-                        fontFeatureSettings: '"frac" 1, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
+                        fontFeatureSettings:
+                            '"frac" 1, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
                     }
                 ],
                 'mono-script': [
                     `'ml', ${defaultTheme.fontFamily.mono}`,
                     {
-                        fontFeatureSettings: '"ss02" 1, "frac" 1, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
+                        fontFeatureSettings:
+                            '"ss02" 1, "frac" 1, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
                     }
                 ]
             },

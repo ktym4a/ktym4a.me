@@ -27,6 +27,7 @@ const { baseColor, currentPath, routes, toc = undefined } = Astro.props
     >
         <div class='hidden justify-center lg:flex'>
             <Breadcrumbs
+                baseColor={baseColor}
                 currentPath={currentPath}
                 position='left'
                 routes={routes}

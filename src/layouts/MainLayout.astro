@@ -24,6 +24,7 @@ const { baseColor, currentPath, routes } = Astro.props
         <div class='block lg:hidden'>
             <Tag text='Breadcrumbs' className='gap-1 overflow-x-auto md:gap-0'>
                 <Breadcrumbs
+                    baseColor={baseColor}
                     currentPath={currentPath}
                     position='main'
                     routes={routes}
