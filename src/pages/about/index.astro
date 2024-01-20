@@ -40,11 +40,11 @@ const headings: MarkdownHeading[] = [
         headings
     }}
 >
-    <section id='About'>
+    <section>
         <Tag text='Title'>
-            <h1 class='text-2xl font-bold md:text-4xl'>
+            <h1 class='text-2xl font-bold md:text-4xl' id='About'>
                 <Link
-                    href='#about'
+                    href='#About'
                     colors={{
                         focusOutline: COLORS.PINK.focusOutline as string
                     }}
@@ -56,7 +56,7 @@ const headings: MarkdownHeading[] = [
             </h1>
         </Tag>
     </section>
-    <section id='Profile'>
+    <section>
         <Tag text='Profile' className='gap-2'>
             <div class='flex flex-col gap-3 md:flex-row md:gap-4'>
                 <div class='flex-shrink-0'>
@@ -72,6 +72,7 @@ const headings: MarkdownHeading[] = [
                 </div>
                 <div>
                     <h2
+                        id='Profile'
                         class='mb-0 text-pretty font-mono text-lg font-bold md:mb-1 md:text-3xl'
                         >Hi, I'm <span class='text-ctp-green'>kt</span><span
                             class='text-ctp-pink'>ym</span
@@ -99,12 +100,12 @@ const headings: MarkdownHeading[] = [
             </div>
         </Tag>
     </section>
-    <section id='Experience'>
+    <section>
         <Tag text='Experience' className='gap-2'>
             <div class='space-y-2'>
-                <h2 class='text-xl font-bold md:text-2xl'>
+                <h2 class='text-xl font-bold md:text-2xl' id='Experience'>
                     <Link
-                        href='#experience'
+                        href='#Experience'
                         colors={{
                             focusOutline: COLORS.PINK.focusOutline as string
                         }}
@@ -128,12 +129,12 @@ const headings: MarkdownHeading[] = [
             </div>
         </Tag>
     </section>
-    <section id='Interests'>
+    <section>
         <Tag text='Interests' className='gap-2'>
             <div class='space-y-2'>
-                <h2 class='text-lg font-bold md:text-2xl'>
+                <h2 class='text-lg font-bold md:text-2xl' id='Interests'>
                     <Link
-                        href='#interests'
+                        href='#Interests'
                         colors={{
                             focusOutline: COLORS.PINK.focusOutline as string
                         }}

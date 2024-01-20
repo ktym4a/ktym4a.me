@@ -23,7 +23,7 @@ const { baseColor, currentPath, routes, toc = undefined } = Astro.props
 
 <div class='flex'>
     <div
-        class={`fixed left-0 top-0 z-20 flex max-h-dvh min-h-dvh w-11 flex-col items-center overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-1 pt-6 md:relative md:hidden md:w-16 md:justify-between md:gap-12 md:border-r-0 md:pl-0 md:pr-2 lg:flex [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+        class={`fixed left-0 top-0 z-20 flex max-h-dvh min-h-dvh max-w-11 min-w-11 flex-col items-center overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-1 pt-6 md:relative md:hidden md:min-w-16 md:max-w-16 md:justify-between md:gap-12 md:border-r-0 md:pl-0 md:pr-2 lg:flex [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     >
         <div class='hidden justify-center lg:flex'>
             <Breadcrumbs
@@ -42,6 +42,11 @@ const { baseColor, currentPath, routes, toc = undefined } = Astro.props
     <aside
         class={`hidden max-h-dvh flex-auto overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     >
-        <Menu currentPath={currentPath} tagText='SideMenu' toc={toc} />
+        <Menu
+            currentPath={currentPath}
+            tagText='SideMenu'
+            toc={toc}
+            baseColor={baseColor}
+        />
     </aside>
 </div>

@@ -1,3 +1,5 @@
+import type { MarkdownHeading } from 'astro'
+
 export type PATH = {
     href: string
     name: string
@@ -59,6 +61,7 @@ export type ColorType = {
     hoverOutline?: string
     focusOutline?: string
     scrollColor?: string
+    toCActiveColor?: string
 }
 
 export const COLORS: {
@@ -75,7 +78,8 @@ export const COLORS: {
         outline: 'outline-ctp-blue',
         hoverOutline: 'hover:outline-ctp-blue',
         focusOutline: 'focus-visible:outline-ctp-blue',
-        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-blue/75'
+        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-blue/75',
+        toCActiveColor: 'group-[.current]:text-ctp-blue'
     },
     [COLOR.GREEN]: {
         text: 'text-ctp-green',
@@ -88,7 +92,8 @@ export const COLORS: {
         outline: 'outline-ctp-green',
         hoverOutline: 'hover:outline-ctp-green',
         focusOutline: 'focus-visible:outline-ctp-green',
-        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-green/75'
+        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-green/75',
+        toCActiveColor: 'group-[.current]:text-ctp-green'
     },
     [COLOR.PEACH]: {
         text: 'text-ctp-peach',
@@ -101,7 +106,8 @@ export const COLORS: {
         outline: 'outline-ctp-peach',
         hoverOutline: 'hover:outline-ctp-peach',
         focusOutline: 'focus-visible:outline-ctp-peach',
-        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-peach/75'
+        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-peach/75',
+        toCActiveColor: 'group-[.current]:text-ctp-peach'
     },
     [COLOR.PINK]: {
         text: 'text-ctp-pink',
@@ -114,6 +120,13 @@ export const COLORS: {
         outline: 'outline-ctp-pink',
         hoverOutline: 'hover:outline-ctp-pink',
         focusOutline: 'focus-visible:outline-ctp-pink',
-        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-pink/75'
+        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-pink/75',
+        toCActiveColor: 'group-[.current]:text-ctp-pink'
     }
 }
+
+export type ToCType = Array<
+    MarkdownHeading & {
+        children: ToCType
+    }
+>
