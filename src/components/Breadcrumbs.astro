@@ -5,15 +5,23 @@ import { COLORS, type ColorType } from '@/types/index'
 interface Props {
     baseColor: ColorType
     currentPath: string
+    currentName?: string | undefined
     position: 'left' | 'main'
     routes: string[]
 }
 
-const { baseColor, currentPath, position, routes } = Astro.props
+const {
+    baseColor,
+    currentPath,
+    currentName = undefined,
+    position,
+    routes
+} = Astro.props
 
 type Path = {
     href: string
-    name: string
+    path: string
+    name?: string
     colors: ColorType
 }
 
@@ -25,29 +33,36 @@ const rootPath = Astro.site?.pathname ?? '/'
 const paths: Path[] = [
     {
         href: rootPath,
-        name: 'ktym4a',
+        path: 'ktym4a',
         colors: COLORS.GREEN
     }
 ]
 if (currentPath === '404') {
     paths.push({
         href: paths.at(-1)?.href + '404/',
-        name: '404',
+        path: '404',
         colors: baseColor
     })
 } else {
     routes.forEach((path) => {
         paths.push({
             href: paths.at(-1)?.href + path + '/',
-            name: path,
+            path,
             colors: path === 'blog' ? COLORS.PEACH : baseColor
         })
     })
 }
+
+if (currentName) {
+    const lastPath = paths.at(-1)
+    if (lastPath) {
+        lastPath.name = currentName
+    }
+}
 ---
 
 <div
-    class='flex items-center whitespace-nowrap text-xs italic text-ctp-subtext1 md:text-sm lg:[writing-mode:vertical-rl]'
+    class='flex items-center whitespace-nowrap text-xs italic text-ctp-subtext1 md:text-sm lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]'
 >
     <span aria-hidden='true' class='font-bold'>.</span>
     <div class={wrapClass}>
@@ -57,6 +72,7 @@ if (currentPath === '404') {
                     colors={path.colors}
                     currentPath={currentPath}
                     href={path.href}
+                    path={path.path}
                     name={path.name}
                 />
             ))

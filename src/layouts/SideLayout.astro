@@ -7,8 +7,10 @@ import type { ColorType } from '@/types/index'
 import type { MarkdownHeading } from 'astro'
 
 interface Props {
+    activeName: string
     baseColor: ColorType
     currentPath: string
+    currentName?: string | undefined
     routes: string[]
     toc?:
         | {
@@ -18,7 +20,14 @@ interface Props {
         | undefined
 }
 
-const { baseColor, currentPath, routes, toc = undefined } = Astro.props
+const {
+    activeName,
+    baseColor,
+    currentPath,
+    currentName = undefined,
+    routes,
+    toc = undefined
+} = Astro.props
 ---
 
 <div class='flex'>
@@ -29,13 +38,14 @@ const { baseColor, currentPath, routes, toc = undefined } = Astro.props
             <Breadcrumbs
                 baseColor={baseColor}
                 currentPath={currentPath}
+                currentName={currentName}
                 position='left'
                 routes={routes}
             />
         </div>
         <div class='mt-auto w-full space-y-2 md:w-auto'>
             <div class='md:hidden'>
-                <NavOpen currentPath={currentPath} baseColor={baseColor} />
+                <NavOpen activeName={activeName} baseColor={baseColor} />
             </div>
             <ThemeIcon />
         </div>
@@ -44,7 +54,7 @@ const { baseColor, currentPath, routes, toc = undefined } = Astro.props
         class={`hidden max-h-dvh flex-auto overflow-y-auto scroll-smooth border-r-2 border-dashed border-ctp-overlay2 px-4 py-6 md:grid md:px-6 lg:border-x-2 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     >
         <Menu
-            currentPath={currentPath}
+            activeName={activeName}
             tagText='SideMenu'
             toc={toc}
             baseColor={baseColor}

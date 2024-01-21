@@ -4,10 +4,10 @@ import NavItem from '@/components/NavItem.astro'
 import { COLORS } from '@/types/index'
 
 interface Props {
-    currentPath: string
+    activeName: string
 }
 
-const { currentPath } = Astro.props
+const { activeName } = Astro.props
 ---
 
 <nav class='flex flex-col gap-1'>
@@ -15,7 +15,7 @@ const { currentPath } = Astro.props
         <ul class='flex flex-col gap-1 break-all'>
             <NavItem
                 href='/'
-                current={currentPath === 'ktym4a'}
+                current={activeName === 'ktym4a'}
                 colors={{
                     text: COLORS.GREEN.text as string
                 }}
@@ -24,7 +24,7 @@ const { currentPath } = Astro.props
             />
             <NavItem
                 href='/about/'
-                current={currentPath === 'about'}
+                current={activeName === 'about'}
                 colors={{
                     text: COLORS.PINK.text as string
                 }}
@@ -33,7 +33,7 @@ const { currentPath } = Astro.props
             />
             <NavItem
                 href='/blog/'
-                current={currentPath === 'blog'}
+                current={activeName === 'blog'}
                 colors={{
                     text: COLORS.PEACH.text as string
                 }}
@@ -43,7 +43,7 @@ const { currentPath } = Astro.props
             <li class='text-base text-ctp-subtext0'>{`{/* WIP`}</li>
             <NavItem
                 href='/about/me/'
-                current={currentPath === 'me'}
+                current={activeName === 'me'}
                 colors={{
                     text: COLORS.BLUE.text as string
                 }}

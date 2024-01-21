@@ -6,7 +6,9 @@ import { type ColorType } from '@/types/index'
 import type { MarkdownHeading } from 'astro'
 
 interface Props {
+    activeName: string
     baseColor: ColorType
+    currentName?: string | undefined
     description: string
     mainTagName?: string | undefined
     title: string
@@ -19,7 +21,9 @@ interface Props {
 }
 
 const {
+    activeName,
     baseColor,
+    currentName = undefined,
     description,
     mainTagName = undefined,
     title,
@@ -44,7 +48,9 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
             class='m-auto grid min-h-dvh max-w-7xl grid-cols-[2.75rem_1fr] md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
         >
             <SideLayout
+                activeName={activeName}
                 baseColor={baseColor}
+                currentName={currentName}
                 currentPath={currentPath}
                 routes={routes}
                 toc={toc}
@@ -52,6 +58,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
             <MainLayout
                 baseColor={baseColor}
                 currentPath={currentPath}
+                currentName={currentName}
                 routes={routes}
                 tagName={mainTagName}
             >
