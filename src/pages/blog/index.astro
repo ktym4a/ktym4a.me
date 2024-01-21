@@ -1,5 +1,6 @@
 ---
 import Thumbnail from '@/assets/images/blog/thumbnail.png'
+import Heading1 from '@/components/atoms/Heading1.astro'
 import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
@@ -36,20 +37,7 @@ const baseColor = COLORS.PEACH
     baseColor={baseColor}
 >
     <section>
-        <Tag text='Title'>
-            <h1 class='-mt-8 pt-8 text-2xl font-bold md:text-4xl' id='Blog'>
-                <Link
-                    href='#Blog'
-                    colors={{
-                        focusOutline: baseColor.focusOutline as string
-                    }}
-                    class="before:content-['#']"
-                    title='Blog'
-                >
-                    <span class={baseColor.text}>Blog</span>
-                </Link>
-            </h1>
-        </Tag>
+        <Heading1 baseColor={baseColor} text='Blog' id='Blog' />
     </section>
     <section
         id='Articles'

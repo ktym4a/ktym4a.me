@@ -1,0 +1,18 @@
+---
+import type { ColorType } from '@/types/index'
+
+interface Props {
+    baseColor: ColorType
+    text: string
+    id: string
+}
+
+const { baseColor, text, id } = Astro.props
+---
+
+<h2
+    class="-mt-8 pt-8 text-xl font-bold before:content-['##'] md:text-2xl"
+    id={id}
+>
+    <span class={baseColor.text}>{text}</span>
+</h2>

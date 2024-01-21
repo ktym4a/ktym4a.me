@@ -1,6 +1,7 @@
 ---
 import Icon from '@/assets/images/about/icon.jpg'
-import Link from '@/components/atoms/Link.astro'
+import Heading1 from '@/components/atoms/Heading1.astro'
+import Heading2 from '@/components/atoms/Heading2.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
@@ -44,20 +45,7 @@ const baseColor = COLORS.PINK
     }}
 >
     <section>
-        <Tag text='Title'>
-            <h1 class='-mt-8 pt-8 text-2xl font-bold md:text-4xl' id='About'>
-                <Link
-                    href='#About'
-                    colors={{
-                        focusOutline: baseColor.focusOutline as string
-                    }}
-                    class="before:content-['#']"
-                    title='About'
-                >
-                    <span class={baseColor.text}>About</span>
-                </Link>
-            </h1>
-        </Tag>
+        <Heading1 baseColor={baseColor} text='About' id='About' />
     </section>
     <section>
         <Tag text='Profile' className='gap-2'>
@@ -106,21 +94,11 @@ const baseColor = COLORS.PINK
     <section>
         <Tag text='Experience' className='gap-2'>
             <div class='space-y-2'>
-                <h2
-                    class='-mt-8 pt-8 text-xl font-bold md:text-2xl'
+                <Heading2
+                    baseColor={baseColor}
+                    text='Experience'
                     id='Experience'
-                >
-                    <Link
-                        href='#Experience'
-                        colors={{
-                            focusOutline: baseColor.focusOutline as string
-                        }}
-                        class="before:content-['##']"
-                        title='Experience'
-                    >
-                        <span class={baseColor.text}>Experience</span>
-                    </Link></h2
-                >
+                />
                 <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>
                     <li>Front-end Web Development</li>
                     <li>Backend-end Web Development</li>
@@ -138,21 +116,11 @@ const baseColor = COLORS.PINK
     <section>
         <Tag text='Interests' className='gap-2'>
             <div class='space-y-2'>
-                <h2
-                    class='-mt-8 pt-8 text-lg font-bold md:text-2xl'
+                <Heading2
+                    baseColor={baseColor}
+                    text='Interests'
                     id='Interests'
-                >
-                    <Link
-                        href='#Interests'
-                        colors={{
-                            focusOutline: baseColor.focusOutline as string
-                        }}
-                        class="before:content-['##']"
-                        title='Interests'
-                    >
-                        <span class={baseColor.text}>Interests</span>
-                    </Link></h2
-                >
+                />
                 <ul class='list-outside list-disc space-y-1 text-pretty pl-6'>
                     <li>A11y</li>
                     <li>Architecture</li>
