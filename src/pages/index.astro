@@ -3,9 +3,11 @@ import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
+
+const baseColor = COLORS.GREEN
 ---
 
-<Layout title='ktym4a' description="ktym4a's website" baseColor={COLORS.GREEN}>
+<Layout title='ktym4a' description="ktym4a's website" baseColor={baseColor}>
     <section id='SiteName'>
         <Tag text='SiteName'>
             <h1
@@ -59,10 +61,10 @@ import { COLORS } from '@/types/index'
         Designed and Coded by yours truly. Color palette used <Link
             href='https://github.com/catppuccin/catppuccin'
             colors={{
-                hoverText: COLORS.GREEN.hoverText as string,
-                focusText: COLORS.GREEN.focusText as string,
-                focusOutline: COLORS.GREEN.focusOutline as string,
-                text: COLORS.GREEN.text as string
+                hoverText: baseColor.hoverText as string,
+                focusText: baseColor.focusText as string,
+                focusOutline: baseColor.focusOutline as string,
+                text: baseColor.text as string
             }}
             class='underline'
             target='_blank'
@@ -72,10 +74,10 @@ import { COLORS } from '@/types/index'
         </Link>. Built with <Link
             href='https://astro.build/'
             colors={{
-                hoverText: COLORS.GREEN.hoverText as string,
-                focusText: COLORS.GREEN.focusText as string,
-                focusOutline: COLORS.GREEN.focusOutline as string,
-                text: COLORS.GREEN.text as string
+                hoverText: baseColor.hoverText as string,
+                focusText: baseColor.focusText as string,
+                focusOutline: baseColor.focusOutline as string,
+                text: baseColor.text as string
             }}
             class='underline'
             target='_blank'
@@ -85,10 +87,10 @@ import { COLORS } from '@/types/index'
         </Link> and <Link
             href='https://tailwindcss.com/'
             colors={{
-                hoverText: COLORS.GREEN.hoverText as string,
-                focusText: COLORS.GREEN.focusText as string,
-                focusOutline: COLORS.GREEN.focusOutline as string,
-                text: COLORS.GREEN.text as string
+                hoverText: baseColor.hoverText as string,
+                focusText: baseColor.focusText as string,
+                focusOutline: baseColor.focusOutline as string,
+                text: baseColor.text as string
             }}
             class='underline'
             target='_blank'
@@ -98,10 +100,10 @@ import { COLORS } from '@/types/index'
         </Link>, Deployed with <Link
             href='https://pages.cloudflare.com/'
             colors={{
-                hoverText: COLORS.GREEN.hoverText as string,
-                focusText: COLORS.GREEN.focusText as string,
-                focusOutline: COLORS.GREEN.focusOutline as string,
-                text: COLORS.GREEN.text as string
+                hoverText: baseColor.hoverText as string,
+                focusText: baseColor.focusText as string,
+                focusOutline: baseColor.focusOutline as string,
+                text: baseColor.text as string
             }}
             class='underline'
             target='_blank'
@@ -111,10 +113,10 @@ import { COLORS } from '@/types/index'
         </Link>, and Use <Link
             href='https://www.monolisa.dev/'
             colors={{
-                hoverText: COLORS.GREEN.hoverText as string,
-                focusText: COLORS.GREEN.focusText as string,
-                focusOutline: COLORS.GREEN.focusOutline as string,
-                text: COLORS.GREEN.text as string
+                hoverText: baseColor.hoverText as string,
+                focusText: baseColor.focusText as string,
+                focusOutline: baseColor.focusOutline as string,
+                text: baseColor.text as string
             }}
             class='underline'
             target='_blank'

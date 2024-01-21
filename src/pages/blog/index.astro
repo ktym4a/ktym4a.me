@@ -1,0 +1,110 @@
+---
+import Thumbnail from '@/assets/images/blog/thumbnail.png'
+import Link from '@/components/atoms/Link.astro'
+import Tag from '@/components/atoms/Tag.astro'
+import Layout from '@/layouts/Layout.astro'
+import { COLORS } from '@/types/index'
+import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+const colors = [COLORS.GREEN, COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const
+
+const allPosts = await getCollection('blog').then((res) =>
+    res
+        .sort((a, b) => {
+            const aDate = new Date(a.data.publishedDate)
+            const bDate = new Date(b.data.publishedDate)
+            return aDate > bDate ? -1 : 1
+        })
+        .reverse()
+        .map((post, i) => {
+            return {
+                ...post,
+                color: colors[i % colors.length] as (typeof colors)[number]
+            }
+        })
+        .reverse()
+)
+
+const baseColor = COLORS.PEACH
+---
+
+<Layout
+    title='blog - ktym4a'
+    description="ktym4a's blog page"
+    baseColor={baseColor}
+>
+    <section>
+        <Tag text='Title'>
+            <h1 class='text-2xl font-bold md:text-4xl' id='Blog'>
+                <Link
+                    href='#Blog'
+                    colors={{
+                        focusOutline: baseColor.focusOutline as string
+                    }}
+                    class="before:content-['#']"
+                    title='Blog'
+                >
+                    <span class={baseColor.text}>Blog</span>
+                </Link>
+            </h1>
+        </Tag>
+    </section>
+    <section
+        id='Articles'
+        class='grid grid-cols-[repeat(auto-fill,minmax(200px,_1fr))] gap-4'
+    >
+        {
+            allPosts.map((post) => {
+                return (
+                    <article class='relative'>
+                        <Link
+                            href={`/blog/${post.slug}/`}
+                            colors={{
+                                text: post.color.text as string
+                            }}
+                            class={`${post.color.childHoverOutline} ${post.color.childFocusOutline}`}
+                            title={post.data.title}
+                        >
+                            <Tag text='Article' className='gap-2'>
+                                <div class='space-y-2'>
+                                    <div>
+                                        {post.data.image ? (
+                                            <img
+                                                src={post.data.image}
+                                                alt={post.data.title}
+                                                class='h-40 w-full object-cover'
+                                            />
+                                        ) : (
+                                            <Image
+                                                src={Thumbnail}
+                                                alt={post.data.title}
+                                                class='h-40 w-full object-cover'
+                                                title={post.data.title}
+                                                width={337}
+                                                height={160}
+                                                quality={100}
+                                                densities={[1.5, 2]}
+                                            />
+                                        )}
+                                    </div>
+                                    <div class='space-y-1'>
+                                        <p class='text-xs text-ctp-text md:text-sm'>
+                                            {new Intl.DateTimeFormat('ja-JP', {
+                                                dateStyle: 'medium',
+                                                timeZone: 'Asia/Tokyo'
+                                            }).format(post.data.publishedDate)}
+                                        </p>
+                                        <h2 class='text-base font-bold md:text-xl'>
+                                            {post.data.title}
+                                        </h2>
+                                    </div>
+                                </div>
+                            </Tag>
+                        </Link>
+                    </article>
+                )
+            })
+        }
+    </section>
+</Layout>

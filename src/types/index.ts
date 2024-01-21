@@ -60,6 +60,8 @@ export type ColorType = {
     outline?: string
     hoverOutline?: string
     focusOutline?: string
+    childHoverOutline?: string
+    childFocusOutline?: string
     scrollColor?: string
     toCActiveColor?: string
 }
@@ -78,6 +80,8 @@ export const COLORS: {
         outline: 'outline-ctp-blue',
         hoverOutline: 'hover:outline-ctp-blue',
         focusOutline: 'focus-visible:outline-ctp-blue',
+        childHoverOutline: '[&>*]:hover:outline-ctp-blue',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-blue',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-blue/75',
         toCActiveColor: 'group-[.current]:text-ctp-blue'
     },
@@ -92,6 +96,8 @@ export const COLORS: {
         outline: 'outline-ctp-green',
         hoverOutline: 'hover:outline-ctp-green',
         focusOutline: 'focus-visible:outline-ctp-green',
+        childHoverOutline: '[&>*]:hover:outline-ctp-green',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-green',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-green/75',
         toCActiveColor: 'group-[.current]:text-ctp-green'
     },
@@ -106,6 +112,8 @@ export const COLORS: {
         outline: 'outline-ctp-peach',
         hoverOutline: 'hover:outline-ctp-peach',
         focusOutline: 'focus-visible:outline-ctp-peach',
+        childHoverOutline: '[&>*]:hover:outline-ctp-peach',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-peach',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-peach/75',
         toCActiveColor: 'group-[.current]:text-ctp-peach'
     },
@@ -120,6 +128,8 @@ export const COLORS: {
         outline: 'outline-ctp-pink',
         hoverOutline: 'hover:outline-ctp-pink',
         focusOutline: 'focus-visible:outline-ctp-pink',
+        childHoverOutline: '[&>*]:hover:outline-ctp-pink',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-pink',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-pink/75',
         toCActiveColor: 'group-[.current]:text-ctp-pink'
     }
