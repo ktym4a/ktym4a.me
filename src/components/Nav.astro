@@ -31,6 +31,15 @@ const { currentPath } = Astro.props
                 title='about'
                 type='file'
             />
+            <NavItem
+                href='/blog/'
+                current={currentPath === 'blog'}
+                colors={{
+                    text: COLORS.PEACH.text as string
+                }}
+                title='blog'
+                type='folder'
+            />
             <li class='text-base text-ctp-subtext0'>{`{/* WIP`}</li>
             <NavItem
                 href='/about/me/'
@@ -43,15 +52,6 @@ const { currentPath } = Astro.props
                 type='folder'
             />
             <li class='text-base text-ctp-subtext0'>{`*/}`}</li>
-            <NavItem
-                href='/blog/'
-                current={currentPath === 'blog'}
-                colors={{
-                    text: COLORS.PEACH.text as string
-                }}
-                title='blog'
-                type='folder'
-            />
         </ul>
     </Tag>
 </nav>
