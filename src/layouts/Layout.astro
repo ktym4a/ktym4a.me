@@ -8,6 +8,7 @@ import type { MarkdownHeading } from 'astro'
 interface Props {
     baseColor: ColorType
     description: string
+    mainTagName?: string | undefined
     title: string
     toc?:
         | {
@@ -17,7 +18,13 @@ interface Props {
         | undefined
 }
 
-const { baseColor, description, title, toc = undefined } = Astro.props
+const {
+    baseColor,
+    description,
+    mainTagName = undefined,
+    title,
+    toc = undefined
+} = Astro.props
 const routes = Astro.url.pathname.split('/').filter((path) => path)
 const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 ---
@@ -46,6 +53,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
                 baseColor={baseColor}
                 currentPath={currentPath}
                 routes={routes}
+                tagName={mainTagName}
             >
                 <slot />
             </MainLayout>

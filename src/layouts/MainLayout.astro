@@ -7,9 +7,10 @@ interface Props {
     baseColor: ColorType
     currentPath: string
     routes: string[]
+    tagName?: string | undefined
 }
 
-const { baseColor, currentPath, routes } = Astro.props
+const { baseColor, currentPath, routes, tagName = 'Main' } = Astro.props
 ---
 
 <div
@@ -32,7 +33,7 @@ const { baseColor, currentPath, routes } = Astro.props
             </Tag>
         </div>
         <main class='grid w-full'>
-            <Tag text='Main' className='gap-2'>
+            <Tag text={tagName} className='gap-2'>
                 <div class='space-y-4 md:space-y-6'>
                     <slot />
                 </div>
