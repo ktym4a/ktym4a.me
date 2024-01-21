@@ -13,9 +13,7 @@ const { baseColor, text, id } = Astro.props
 
 <Tag text='Title'>
     <h1
-        class="-mt-8 pt-8 text-2xl font-bold before:content-['#'] md:text-4xl"
-        id={id}
+        class={`-mt-8 pt-8 text-2xl font-bold before:content-['#'] before:text-ctp-text before:pr-4 md:text-4xl ${baseColor.text}`}
+        id={id}>{text}</h1
     >
-        <span class={baseColor.text}>{text}</span>
-    </h1>
 </Tag>
