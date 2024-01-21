@@ -37,7 +37,7 @@ const baseColor = COLORS.PEACH
 >
     <section>
         <Tag text='Title'>
-            <h1 class='text-2xl font-bold md:text-4xl' id='Blog'>
+            <h1 class='-mt-8 pt-8 text-2xl font-bold md:text-4xl' id='Blog'>
                 <Link
                     href='#Blog'
                     colors={{
@@ -62,7 +62,11 @@ const baseColor = COLORS.PEACH
                         <Link
                             href={`/blog/${post.slug}/`}
                             colors={{
-                                text: post.color.text as string
+                                text: post.color.text as string,
+                                childHoverBackground: post.color
+                                    .childHoverBackground as string,
+                                childFocusBackground: post.color
+                                    .childFocusBackground as string
                             }}
                             class={`${post.color.childHoverOutline} ${post.color.childFocusOutline}`}
                             title={post.data.title}

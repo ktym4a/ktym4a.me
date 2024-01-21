@@ -56,6 +56,8 @@ export type ColorType = {
     background?: string
     backgroundGradient?: string
     hoverBackground?: string
+    childHoverBackground?: string
+    childFocusBackground?: string
     focusBackground?: string
     outline?: string
     hoverOutline?: string
@@ -77,6 +79,8 @@ export const COLORS: {
         backgroundGradient: 'to-ctp-blue/30',
         hoverBackground: 'hover:bg-ctp-blue',
         focusBackground: 'focus-visible:bg-ctp-blue',
+        childHoverBackground: '[&>*]:hover:bg-ctp-blue/10',
+        childFocusBackground: '[&>*]:focus-visible:bg-ctp-blue/10',
         outline: 'outline-ctp-blue',
         hoverOutline: 'hover:outline-ctp-blue',
         focusOutline: 'focus-visible:outline-ctp-blue',
@@ -93,6 +97,8 @@ export const COLORS: {
         backgroundGradient: 'to-ctp-green/30',
         hoverBackground: 'hover:bg-ctp-green',
         focusBackground: 'focus-visible:bg-ctp-green',
+        childHoverBackground: '[&>*]:hover:bg-ctp-green/10',
+        childFocusBackground: '[&>*]:focus-visible:bg-ctp-green/10',
         outline: 'outline-ctp-green',
         hoverOutline: 'hover:outline-ctp-green',
         focusOutline: 'focus-visible:outline-ctp-green',
@@ -109,6 +115,8 @@ export const COLORS: {
         backgroundGradient: 'to-ctp-peach/30',
         hoverBackground: 'hover:bg-ctp-peach',
         focusBackground: 'focus-visible:bg-ctp-peach',
+        childHoverBackground: '[&>*]:hover:bg-ctp-peach/10',
+        childFocusBackground: '[&>*]:focus-visible:bg-ctp-peach/10',
         outline: 'outline-ctp-peach',
         hoverOutline: 'hover:outline-ctp-peach',
         focusOutline: 'focus-visible:outline-ctp-peach',
@@ -125,6 +133,8 @@ export const COLORS: {
         backgroundGradient: 'to-ctp-pink/30',
         hoverBackground: 'hover:bg-ctp-pink',
         focusBackground: 'focus-visible:bg-ctp-pink',
+        childHoverBackground: '[&>*]:hover:bg-ctp-pink/10',
+        childFocusBackground: '[&>*]:focus-visible:bg-ctp-pink/10',
         outline: 'outline-ctp-pink',
         hoverOutline: 'hover:outline-ctp-pink',
         focusOutline: 'focus-visible:outline-ctp-pink',
