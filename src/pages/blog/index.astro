@@ -54,9 +54,13 @@ const baseColor = COLORS.PEACH
                                 childHoverBackground: post.color
                                     .childHoverBackground as string,
                                 childFocusBackground: post.color
-                                    .childFocusBackground as string
+                                    .childFocusBackground as string,
+                                childHoverOutline: post.color
+                                    .childHoverOutline as string,
+                                childFocusOutline: post.color
+                                    .childFocusOutline as string
                             }}
-                            class={`${post.color.childHoverOutline} ${post.color.childFocusOutline}`}
+                            class={''}
                             title={post.data.title}
                         >
                             <Tag text='Article' className='gap-2'>

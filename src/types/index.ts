@@ -66,6 +66,7 @@ export type ColorType = {
     childFocusOutline?: string
     scrollColor?: string
     toCActiveColor?: string
+    blogPostColor?: string
 }
 
 export const COLORS: {
@@ -84,10 +85,12 @@ export const COLORS: {
         outline: 'outline-ctp-blue',
         hoverOutline: 'hover:outline-ctp-blue',
         focusOutline: 'focus-visible:outline-ctp-blue',
-        childHoverOutline: '[&>*]:hover:outline-ctp-blue',
-        childFocusOutline: '[&>*]:focus-visible:outline-ctp-blue',
+        childHoverOutline: '[&>*]:hover:outline-ctp-blue/60',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-blue/60',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-blue/75',
-        toCActiveColor: 'group-[.current]:text-ctp-blue'
+        toCActiveColor: 'group-[.current]:text-ctp-blue',
+        blogPostColor:
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-blue/50 dark:[&>hr]:border-ctp-blue/75 [&_em]:text-ctp-blue [&_strong]:text-ctp-blue [&_del]:text-ctp-blue [&_a]:text-ctp-blue focus-visible:[&_a]:outline-ctp-blue [&_blockquote]:border-l-ctp-blue [&_dt]:text-ctp-blue [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-blue/75 [&_section]:border-ctp-blue/50 dark:[&_section]:border-ctp-blue/75 [&_th]:text-ctp-blue'
     },
     [COLOR.GREEN]: {
         text: 'text-ctp-green',
@@ -102,10 +105,12 @@ export const COLORS: {
         outline: 'outline-ctp-green',
         hoverOutline: 'hover:outline-ctp-green',
         focusOutline: 'focus-visible:outline-ctp-green',
-        childHoverOutline: '[&>*]:hover:outline-ctp-green',
-        childFocusOutline: '[&>*]:focus-visible:outline-ctp-green',
+        childHoverOutline: '[&>*]:hover:outline-ctp-green/60',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-green/60',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-green/75',
-        toCActiveColor: 'group-[.current]:text-ctp-green'
+        toCActiveColor: 'group-[.current]:text-ctp-green',
+        blogPostColor:
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-green/50 dark:[&>hr]:border-ctp-green/75 [&_em]:text-ctp-green [&_strong]:text-ctp-green [&_del]:text-ctp-green [&_a]:text-ctp-green focus-visible:[&_a]:outline-ctp-green [&_blockquote]:border-l-ctp-green [&_dt]:text-ctp-green [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-green/75 [&_section]:border-ctp-green/50 dark:[&_section]:border-ctp-green/75 [&_th]:text-ctp-green'
     },
     [COLOR.PEACH]: {
         text: 'text-ctp-peach',
@@ -120,10 +125,12 @@ export const COLORS: {
         outline: 'outline-ctp-peach',
         hoverOutline: 'hover:outline-ctp-peach',
         focusOutline: 'focus-visible:outline-ctp-peach',
-        childHoverOutline: '[&>*]:hover:outline-ctp-peach',
-        childFocusOutline: '[&>*]:focus-visible:outline-ctp-peach',
+        childHoverOutline: '[&>*]:hover:outline-ctp-peach/60',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-peach/60',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-peach/75',
-        toCActiveColor: 'group-[.current]:text-ctp-peach'
+        toCActiveColor: 'group-[.current]:text-ctp-peach',
+        blogPostColor:
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-peach/50 dark:[&>hr]:border-ctp-peach/75 [&_em]:text-ctp-peach [&_strong]:text-ctp-peach [&_del]:text-ctp-peach [&_a]:text-ctp-peach focus-visible:[&_a]:outline-ctp-peach [&_blockquote]:border-l-ctp-peach [&_dt]:text-ctp-peach [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-peach/75 [&_section]:border-ctp-peach/50 dark:[&_section]:border-ctp-peach/75 [&_th]:text-ctp-peach'
     },
     [COLOR.PINK]: {
         text: 'text-ctp-pink',
@@ -138,10 +145,12 @@ export const COLORS: {
         outline: 'outline-ctp-pink',
         hoverOutline: 'hover:outline-ctp-pink',
         focusOutline: 'focus-visible:outline-ctp-pink',
-        childHoverOutline: '[&>*]:hover:outline-ctp-pink',
-        childFocusOutline: '[&>*]:focus-visible:outline-ctp-pink',
+        childHoverOutline: '[&>*]:hover:outline-ctp-pink/60',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-pink/60',
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-pink/75',
-        toCActiveColor: 'group-[.current]:text-ctp-pink'
+        toCActiveColor: 'group-[.current]:text-ctp-pink',
+        blogPostColor:
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-pink/50 dark:[&>hr]:border-ctp-pink/75 [&_em]:text-ctp-pink [&_strong]:text-ctp-pink [&_del]:text-ctp-pink [&_a]:text-ctp-pink focus-visible:[&_a]:outline-ctp-pink [&_blockquote]:border-l-ctp-pink [&_dt]:text-ctp-pink [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-pink/75 [&_section]:border-ctp-pink/50 dark:[&_section]:border-ctp-pink/75 [&_th]:text-ctp-pink'
     }
 }
 

@@ -1,0 +1,230 @@
+---
+import Heading1 from '@/components/atoms/Heading1.astro'
+import Tag from '@/components/atoms/Tag.astro'
+import Layout from '@/layouts/Layout.astro'
+import { COLORS } from '@/types/index'
+import { getCollection } from 'astro:content'
+
+export async function getStaticPaths() {
+    const colors = [
+        COLORS.GREEN,
+        COLORS.PINK,
+        COLORS.BLUE,
+        COLORS.PEACH
+    ] as const
+
+    return await getCollection('blog').then((res) =>
+        res
+            .sort((a, b) => {
+                const aDate = new Date(a.data.publishedDate)
+                const bDate = new Date(b.data.publishedDate)
+                return aDate > bDate ? -1 : 1
+            })
+            .reverse()
+            .map((entry, i) => {
+                return {
+                    params: { slug: entry.slug },
+                    props: {
+                        entry,
+                        baseColor: colors[
+                            i % colors.length
+                        ] as (typeof colors)[number]
+                    }
+                }
+            })
+    )
+}
+
+const { entry, baseColor } = Astro.props
+const { Content, headings } = await entry.render()
+---
+
+<Layout
+    activeName='blog'
+    title={`${entry.data.title} - blog - ktym4a`}
+    description={entry.data.description ?? ''}
+    baseColor={baseColor}
+    toc={{
+        tagName: 'ToC',
+        headings: [
+            {
+                depth: 1,
+                slug: 'Title',
+                text: entry.data.title
+            },
+            ...headings
+        ]
+    }}
+>
+    <article class='space-y-4 md:space-y-6'>
+        <Heading1 baseColor={baseColor} text={entry.data.title} id='Title' />
+        <Tag text='Content' className='gap-2'>
+            <div
+                class={`blog leading-relaxed text-md md:text-lg text-pretty tracking-wide break-all md:break-normal ${baseColor.text} ${baseColor.blogPostColor}`}
+            >
+                <Content />
+            </div>
+        </Tag>
+    </article>
+</Layout>
+
+<style is:global>
+    .blog > *:first-child {
+        @apply !mt-0;
+    }
+
+    .blog > *:last-child {
+        @apply !mb-0;
+    }
+
+    .blog h1 {
+        @apply mt-6 text-2xl font-bold before:pr-3 before:text-ctp-text before:content-['#'] md:mt-8 md:text-4xl;
+    }
+
+    .blog h2 {
+        @apply mt-6 text-xl font-bold before:pr-3 before:text-ctp-text before:content-['##'] md:mt-8 md:text-2xl;
+    }
+
+    .blog h3 {
+        @apply mt-6 text-lg font-bold before:pr-3 before:text-ctp-text before:content-['###'] md:mt-8 md:text-xl;
+    }
+
+    .blog h4 {
+        @apply mt-6 text-base font-bold before:pr-3 before:text-ctp-text before:content-['####'] md:mt-8 md:text-lg;
+    }
+
+    .blog h5 {
+        @apply mt-6 text-sm font-bold before:pr-3 before:text-ctp-text before:content-['#####'] md:mt-8 md:text-base;
+    }
+
+    .blog h6 {
+        @apply mt-6 text-xs font-bold before:pr-3 before:text-ctp-text before:content-['######'] md:mt-8 md:text-sm;
+    }
+
+    .blog p {
+        @apply my-2 text-ctp-text md:my-4;
+    }
+
+    .blog ul,
+    .blog ol {
+        @apply list-inside text-ctp-text;
+    }
+
+    .blog ul {
+        @apply list-disc pl-4 md:pl-6;
+    }
+
+    .blog ol {
+        @apply list-decimal pl-6 md:pl-8;
+    }
+
+    .blog > ul,
+    .blog > ol {
+        @apply my-3 pl-2 md:my-6 md:pl-4;
+    }
+
+    .blog li {
+        @apply my-1;
+    }
+
+    .blog > ul > li,
+    .blog > ol > li {
+        @apply my-3 md:my-4;
+    }
+
+    .blog blockquote {
+        @apply my-4 border-l-4 pl-4 font-mono-script italic md:my-8;
+    }
+
+    .blog blockquote p {
+        @apply py-1 md:py-2;
+    }
+
+    .blog blockquote p::before {
+        @apply content-['"'];
+    }
+
+    .blog blockquote p::after {
+        @apply content-['"'];
+    }
+
+    .blog hr {
+        @apply my-6 md:my-10;
+    }
+
+    .blog pre {
+        @apply my-4 w-full overflow-x-auto rounded-md p-3 pb-4 text-sm md:my-8 md:text-base;
+    }
+
+    .blog .contains-task-list {
+        @apply my-4 md:my-8;
+    }
+
+    .blog ul.contains-task-list {
+        @apply list-none;
+    }
+
+    .blog .contains-task-list input[type='checkbox'] {
+        @apply accent-slate-200;
+    }
+
+    .blog a {
+        @apply inline-block underline decoration-dashed underline-offset-2 ease-in-out hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:saturate-200 motion-safe:transition-filter motion-safe:duration-1000 dark:hover:saturate-350 dark:focus-visible:saturate-350;
+    }
+
+    .blog a img {
+        @apply my-0;
+    }
+
+    .blog img {
+        @apply my-4 md:my-8;
+    }
+
+    .blog table {
+        @apply my-4 text-ctp-text md:my-8;
+    }
+
+    .blog table th {
+        @apply border border-ctp-text px-2 py-1;
+    }
+
+    .blog table td {
+        @apply border border-ctp-text px-2 py-1;
+    }
+
+    .blog dl {
+        @apply my-4 text-ctp-text md:my-8;
+    }
+
+    .blog dt {
+        @apply font-bold;
+    }
+
+    .blog dd {
+        @apply ml-4;
+    }
+
+    .blog iframe {
+        @apply my-4 md:my-8;
+    }
+
+    .blog section {
+        @apply my-4 mt-2 border-t pt-2 md:my-8 md:mt-4 md:pt-4;
+    }
+
+    .blog .footnotes ol {
+        @apply list-outside pl-12 text-xs;
+    }
+
+    .blog .footnotes li {
+        @apply my-2;
+    }
+
+    .blog .footnotes p {
+        @apply my-1 block text-xs;
+    }
+
+    .blog p code {
+        @apply rounded-md bg-[#24292e] px-2 py-1;
+    }
+</style>
