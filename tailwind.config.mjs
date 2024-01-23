@@ -8,15 +8,17 @@ export default {
         extend: {
             fontFamily: {
                 mono: [
-                    `'ml', ${defaultTheme.fontFamily.mono}`,
+                    `'ml', ${defaultTheme.fontFamily.mono}, Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo, sans-serif`,
                     {
-                        fontFeatureSettings: '"frac" 1, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
+                        fontFeatureSettings:
+                            '"frac" 0, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
                     }
                 ],
                 'mono-script': [
-                    `'ml', ${defaultTheme.fontFamily.mono}`,
+                    `'ml', ${defaultTheme.fontFamily.mono}, Arial,Hiragino Kaku Gothic ProN,Hiragino Sans,Meiryo, sans-serif`,
                     {
-                        fontFeatureSettings: '"ss02" 1, "frac" 1, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
+                        fontFeatureSettings:
+                            '"ss02" 1, "frac" 0, "liga" 1, "calt" 1, "ss01" 1, "ss07" 1, "ss11" 1, "ss17" 1'
                     }
                 ]
             },

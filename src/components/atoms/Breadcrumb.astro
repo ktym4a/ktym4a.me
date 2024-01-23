@@ -6,16 +6,17 @@ interface Props {
     colors: ColorType
     currentPath: string
     href: string
-    name: string
+    name?: string | undefined
+    path: string
 }
 
-const { colors, currentPath, href, name } = Astro.props
+const { colors, currentPath, href, path, name = path } = Astro.props
 ---
 
 <p class='flex gap-1 md:gap-2'>
     <span aria-hidden='true'>/</span>
     {
-        name === currentPath ? (
+        path === currentPath ? (
             <span class={`font-bold ${colors.text}`}>{name}</span>
         ) : (
             <Link

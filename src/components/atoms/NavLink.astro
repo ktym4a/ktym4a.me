@@ -16,7 +16,7 @@ const colorClass = Object.values(colors).reduce((acc, value) => {
 
 <a
     href={href}
-    class={`flex items-start px-1 pb-1 gap-2 before:absolute before:inset-y-0 before:-translate-x-3.25 text-base outline-none group-focus-within:before:content-['>'] before:top-0 group-focus-within:bg-ctp-surface0 dark:group-focus-within:saturate-350 group-focus-within:saturate-50 group-hover:before:content-['>'] group-hover:bg-ctp-surface0 underline underline-offset-2 decoration-dashed motion-safe:transition-filter ease-in-out motion-safe:duration-700 group-focus-within:no-underline dark:group-hover:saturate-350 group-hover:saturate-50 ${colorClass} group-[.current]:bg-ctp-surface0  group-[.current]:before:content-[">"]`}
+    class={`flex items-start px-1 pb-1 gap-2 before:absolute before:inset-y-0 before:-translate-x-3.25 text-base outline-none group-focus-within:before:content-['>'] before:top-0 group-focus-within:bg-ctp-surface0/30 dark:group-focus-within:bg-ctp-surface0 dark:group-focus-within:saturate-350 group-focus-within:saturate-200 group-hover:before:content-['>'] group-hover:bg-ctp-surface0/30 dark:group-hover:bg-ctp-surface0 underline underline-offset-2 decoration-dashed motion-safe:transition-filter ease-in-out motion-safe:duration-700 group-focus-within:no-underline dark:group-hover:saturate-350 group-hover:saturate-200 group-[.current]:bg-ctp-surface0/30 dark:group-[.current]:bg-ctp-surface0 group-[.current]:before:content-[">"] ${colorClass}`}
     target={target}
     title={title}><slot /></a
 >

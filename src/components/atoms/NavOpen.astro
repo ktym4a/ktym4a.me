@@ -3,11 +3,11 @@ import Menu from '@/components/Menu.astro'
 import type { ColorType } from '@/types/index'
 
 interface Props {
-    currentPath: string
+    activeName: string
     baseColor: ColorType
 }
 
-const { currentPath, baseColor } = Astro.props
+const { activeName, baseColor } = Astro.props
 ---
 
 <div
@@ -16,7 +16,7 @@ const { currentPath, baseColor } = Astro.props
     <button
         id='navOpen'
         aria-label='Toggle navigation menu'
-        class='group flex aspect-[1] w-full flex-col items-center justify-center rounded-md bg-ctp-crust bg-opacity-40 p-[2px] outline-dashed outline-0 outline-ctp-overlay2 hover:saturate-50 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-50 dark:hover:saturate-350 dark:focus-visible:saturate-350 md:aspect-auto md:p-1 md:outline-2'
+        class={`motion-safe:transition-filter ease-in-out motion-safe:duration-1000 group flex aspect-[1] w-full flex-col items-center justify-center rounded-md bg-ctp-surface0/30 p-[2px] outline-dashed outline-0 outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:saturate-200 dark:bg-ctp-crust/40 dark:hover:saturate-350 dark:focus-visible:saturate-350 md:aspect-auto md:p-1 md:outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
     >
         <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -54,18 +54,20 @@ const { currentPath, baseColor } = Astro.props
 </div>
 <div
     id='nav'
-    class={`fixed grid left-0 right-0 min-h-dvh top-0 translate-x-full md:hidden ease-in-out motion-safe:transition-transform motion-safe:duration-200`}
+    class='invisible fixed left-0 right-0 top-0 grid min-h-dvh translate-x-full ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden'
     transition:animate='none'
 >
     <button
         type='button'
         id='closeNav'
         aria-label='Close navigation menu'
-        class='absolute bottom-0 left-0 top-0 w-11'></button>
+        class='absolute bottom-0 left-0 top-0 w-11 outline-dashed outline-0 outline-ctp-overlay2 focus-visible:outline-none focus-visible:outline-dashed'
+        tabindex='-1'></button>
     <div
-        class={`grid ml-11 max-h-dvh overflow-y-auto bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+        class={`grid ml-11 max-h-dvh overflow-y-auto bg-ctp-crust dark:bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+        tabindex='-1'
     >
-        <Menu currentPath={currentPath} tagText='Menu' baseColor={baseColor} />
+        <Menu activeName={activeName} tagText='Menu' baseColor={baseColor} />
     </div>
 </div>
 
@@ -74,10 +76,14 @@ const { currentPath, baseColor } = Astro.props
         document.getElementById('navOpen').addEventListener('click', () => {
             document.querySelector('#navOpen').classList.toggle('current')
             document.querySelector('#nav').classList.toggle('translate-x-full')
+            document.querySelector('#nav').classList.toggle('invisible')
         })
         document.getElementById('closeNav').addEventListener('click', () => {
-            document.querySelector('#navOpen').classList.toggle('current')
-            document.querySelector('#nav').classList.toggle('translate-x-full')
+            document.querySelector('#navOpen').classList.remove('current')
+            document.querySelector('#nav').classList.add('translate-x-full')
+            setTimeout(() => {
+                document.querySelector('#nav').classList.add('invisible')
+            }, 200)
         })
     })
 </script>

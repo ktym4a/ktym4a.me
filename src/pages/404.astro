@@ -2,12 +2,15 @@
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '../types'
+
+const baseColor = COLORS.GREEN
 ---
 
 <Layout
+    activeName='404'
     title='404 - ktym4a'
     description='Page not found'
-    baseColor={COLORS.GREEN}
+    baseColor={baseColor}
 >
     <section id='StatusCode'>
         <Tag text='StatusCode'>
@@ -27,7 +30,7 @@ import { COLORS } from '../types'
     <section id='Message'>
         <Tag text='Message' className='gap-2'>
             <p
-                class='mb-1 text-pretty text-2xl font-bold text-ctp-green md:mb-3 md:text-4xl'
+                class={`mb-1 text-pretty text-2xl font-bold md:mb-3 md:text-4xl ${baseColor.text}`}
                 >( ._.)</p
             >
             <p class='text-pretty font-mono md:text-lg'

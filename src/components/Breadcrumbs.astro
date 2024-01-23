@@ -3,59 +3,66 @@ import Breadcrumb from '@/components/atoms/Breadcrumb.astro'
 import { COLORS, type ColorType } from '@/types/index'
 
 interface Props {
+    baseColor: ColorType
     currentPath: string
+    currentName?: string | undefined
     position: 'left' | 'main'
     routes: string[]
 }
 
-const { currentPath, position, routes } = Astro.props
+const {
+    baseColor,
+    currentPath,
+    currentName = undefined,
+    position,
+    routes
+} = Astro.props
 
 type Path = {
     href: string
-    name: string
+    path: string
+    name?: string
     colors: ColorType
 }
 
 const wrapClass =
-    position === 'left'
-        ? 'mt-2 flex gap-4'
-        : 'ml-1 md:ml-2 flex gap-2 md:gap-4 pr-4'
+    position === 'left' ? 'mt-2 flex gap-4' : 'ml-1 md:ml-2 flex gap-2 pr-4'
 
 const rootPath = Astro.site?.pathname ?? '/'
 
 const paths: Path[] = [
     {
         href: rootPath,
-        name: 'ktym4a',
-        colors: {
-            ...COLORS.GREEN
-        }
+        path: 'ktym4a',
+        colors: COLORS.GREEN
     }
 ]
 if (currentPath === '404') {
     paths.push({
         href: paths.at(-1)?.href + '404/',
-        name: '404',
-        colors: {
-            ...COLORS.PINK
-        }
+        path: '404',
+        colors: baseColor
     })
 } else {
     routes.forEach((path) => {
-        const color = path === 'about' ? COLORS.PINK : COLORS.GREEN
         paths.push({
             href: paths.at(-1)?.href + path + '/',
-            name: path,
-            colors: {
-                ...color
-            }
+            path,
+            colors: path === 'blog' ? COLORS.PEACH : baseColor
         })
     })
+}
+
+if (currentName) {
+    const lastPath = paths.at(-1)
+    if (lastPath) {
+        lastPath.name = currentName
+    }
 }
 ---
 
 <div
-    class='flex items-center whitespace-nowrap text-xs italic text-ctp-subtext1 md:text-sm lg:[writing-mode:vertical-rl]'
+    class='flex items-center whitespace-nowrap text-xs italic text-ctp-subtext1 md:text-sm lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]'
 >
     <span aria-hidden='true' class='font-bold'>.</span>
     <div class={wrapClass}>
@@ -65,6 +72,7 @@ if (currentPath === '404') {
                     colors={path.colors}
                     currentPath={currentPath}
                     href={path.href}
+                    path={path.path}
                     name={path.name}
                 />
             ))

@@ -6,8 +6,11 @@ import { type ColorType } from '@/types/index'
 import type { MarkdownHeading } from 'astro'
 
 interface Props {
+    activeName: string
     baseColor: ColorType
+    currentName?: string | undefined
     description: string
+    mainTagName?: string | undefined
     title: string
     toc?:
         | {
@@ -17,7 +20,15 @@ interface Props {
         | undefined
 }
 
-const { baseColor, description, title, toc = undefined } = Astro.props
+const {
+    activeName,
+    baseColor,
+    currentName = undefined,
+    description,
+    mainTagName = undefined,
+    title,
+    toc = undefined
+} = Astro.props
 const routes = Astro.url.pathname.split('/').filter((path) => path)
 const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 ---
@@ -25,19 +36,21 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 <!doctype html>
 <html
     lang='en'
-    class='ctp-mocha min-h-dvh overflow-hidden scroll-smooth bg-ctp-surface0 font-mono'
+    class='ctp-mocha min-h-dvh overflow-hidden scroll-smooth bg-ctp-crust font-mono dark:bg-ctp-surface0'
 >
     <head>
         <Head title={title} description={description} />
     </head>
     <body
-        class={`relative min-h-dvh from-ctp-surface0 text-ctp-text from-40% to-100% bg-gradient-to-br text-sm md:text-base ${baseColor.backgroundGradient}`}
+        class={`relative min-h-dvh from-ctp-crust dark:from-ctp-surface0 text-ctp-text from-40% to-100% bg-gradient-to-br text-sm md:text-base ${baseColor.backgroundGradient}`}
     >
         <div
             class='m-auto grid min-h-dvh max-w-7xl grid-cols-[2.75rem_1fr] md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
         >
             <SideLayout
+                activeName={activeName}
                 baseColor={baseColor}
+                currentName={currentName}
                 currentPath={currentPath}
                 routes={routes}
                 toc={toc}
@@ -45,7 +58,9 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
             <MainLayout
                 baseColor={baseColor}
                 currentPath={currentPath}
+                currentName={currentName}
                 routes={routes}
+                tagName={mainTagName}
             >
                 <slot />
             </MainLayout>
