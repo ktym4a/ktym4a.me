@@ -7,6 +7,7 @@ import type { ColorType } from '@/types/index'
 interface Props {
     colors: ColorType
     current: boolean
+    history?: 'auto' | 'push' | 'replace'
     href: string
     id?: string
     title: string
@@ -17,6 +18,7 @@ interface Props {
 const {
     colors,
     current,
+    history = 'auto',
     href,
     id,
     title,
@@ -33,7 +35,12 @@ const {
                 <span class='flex-1'>{title}</span>
             </NavLinkWIP>
         ) : (
-            <NavLink href={href} colors={colors} title={title}>
+            <NavLink
+                history={history}
+                href={href}
+                colors={colors}
+                title={title}
+            >
                 <NavLinkIcon type={type} />
                 <span class='flex-1'>{title}</span>
             </NavLink>
