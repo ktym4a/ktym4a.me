@@ -10,6 +10,10 @@ interface Props {
     baseColor: ColorType
     currentName?: string | undefined
     description: string
+    og?: {
+        type?: string
+        image?: string
+    }
     mainTagName?: string | undefined
     title: string
     toc?:
@@ -26,6 +30,7 @@ const {
     baseColor,
     currentName = undefined,
     description,
+    og = undefined,
     mainTagName = undefined,
     title,
     toc = undefined,
@@ -41,7 +46,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
     class='ctp-mocha min-h-dvh overflow-hidden scroll-smooth bg-ctp-crust font-mono dark:bg-ctp-surface0'
 >
     <head>
-        <Head title={title} description={description} />
+        <Head title={title} description={description} og={og} />
     </head>
     <body
         class={`relative min-h-dvh from-ctp-crust dark:from-ctp-surface0 text-ctp-text from-40% to-100% bg-gradient-to-br text-sm md:text-base ${baseColor.backgroundGradient}`}

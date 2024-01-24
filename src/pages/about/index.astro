@@ -3,6 +3,7 @@ import Icon from '@/assets/images/about/icon.jpg'
 import Heading1 from '@/components/atoms/Heading1.astro'
 import Heading2 from '@/components/atoms/Heading2.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
 import type { MarkdownHeading } from 'astro'
@@ -36,7 +37,7 @@ const baseColor = COLORS.PINK
 
 <Layout
     activeName='about'
-    title='about - ktym4a'
+    title={`About - ${SITE_NAME}`}
     description="ktym4a's about page"
     baseColor={baseColor}
     toc={{

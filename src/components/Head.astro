@@ -1,4 +1,5 @@
 ---
+import { SITE_NAME } from '@/constants/index'
 import { Head as HeadCapo } from 'astro-capo'
 import { SEO } from 'astro-seo'
 import { ViewTransitions } from 'astro:transitions'
@@ -6,10 +7,12 @@ import { ViewTransitions } from 'astro:transitions'
 interface Props {
     title: string
     description: string
-    og?: {
-        type?: string
-        image?: string
-    }
+    og?:
+        | {
+              type?: string
+              image?: string
+          }
+        | undefined
 }
 
 const { title, description, og } = Astro.props
@@ -28,13 +31,13 @@ const { title, description, og } = Astro.props
             },
             optional: {
                 description,
-                siteName: 'ktym4a'
+                siteName: SITE_NAME
             },
             image: {
                 type: 'image/png',
                 width: 700,
                 height: 700,
-                alt: 'ktym4a'
+                alt: SITE_NAME
             }
         }}
         twitter={{
