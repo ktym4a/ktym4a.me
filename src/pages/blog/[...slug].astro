@@ -1,9 +1,9 @@
 ---
-import Heading1 from '@/components/atoms/Heading1.astro'
+import BlogHeading from '@/components/atoms/BlogHeading.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
-import { getCollection } from 'astro:content'
+import { formatPostDate, getPosts } from '@/utils/blog'
 
 export async function getStaticPaths() {
     const colors = [
@@ -13,25 +13,14 @@ export async function getStaticPaths() {
         COLORS.PEACH
     ] as const
 
-    return await getCollection('blog').then((res) =>
-        res
-            .sort((a, b) => {
-                const aDate = new Date(a.data.publishedDate)
-                const bDate = new Date(b.data.publishedDate)
-                return aDate > bDate ? -1 : 1
-            })
-            .reverse()
-            .map((entry, i) => {
-                return {
-                    params: { slug: entry.slug },
-                    props: {
-                        entry,
-                        baseColor: colors[
-                            i % colors.length
-                        ] as (typeof colors)[number]
-                    }
-                }
-            })
+    return await getPosts().then((post) =>
+        post.map((entry, i) => ({
+            params: { slug: entry.slug },
+            props: {
+                entry,
+                baseColor: colors[i % colors.length] as (typeof colors)[number]
+            }
+        }))
     )
 }
 
@@ -44,6 +33,7 @@ const { Content, headings } = await entry.render()
     title={`${entry.data.title} - blog - ktym4a`}
     description={entry.data.description ?? ''}
     baseColor={baseColor}
+    mainTagName='Article'
     toc={{
         tagName: 'ToC',
         headings: [
@@ -58,7 +48,13 @@ const { Content, headings } = await entry.render()
     lang={entry.data.lang ?? 'en'}
 >
     <article class='space-y-4 md:space-y-6'>
-        <Heading1 baseColor={baseColor} text={entry.data.title} id='Title' />
+        <BlogHeading
+            baseColor={baseColor}
+            text={entry.data.title}
+            id='Title'
+            publishedDate={formatPostDate(entry.data.publishedDate)}
+            updatedDate={formatPostDate(entry.data?.updatedDate)}
+        />
         <Tag text='Content' className='gap-2'>
             <div
                 class={`blog leading-relaxed text-md md:text-lg text-pretty tracking-wide break-all md:break-normal ${baseColor.text} ${baseColor.blogPostColor}`}
@@ -150,7 +146,7 @@ const { Content, headings } = await entry.render()
     }
 
     .blog hr {
-        @apply my-6 md:my-10;
+        @apply my-4 md:my-8;
     }
 
     .blog pre {
