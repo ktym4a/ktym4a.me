@@ -3,6 +3,7 @@ import Thumbnail from '@/assets/images/blog/thumbnail.png'
 import Heading1 from '@/components/atoms/Heading1.astro'
 import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { BLOG_DESCRIPTION, SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
 import { formatPostDate, getPosts } from '@/utils/blog'
@@ -26,8 +27,8 @@ const baseColor = COLORS.PEACH
 
 <Layout
     activeName='blog'
-    title='blog - ktym4a'
-    description="ktym4a's blog page"
+    title={`Blog - ${SITE_NAME}`}
+    description={BLOG_DESCRIPTION}
     baseColor={baseColor}
 >
     <section>

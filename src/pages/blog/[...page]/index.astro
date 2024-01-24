@@ -1,6 +1,7 @@
 ---
 import BlogHeading from '@/components/atoms/BlogHeading.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
 import { formatPostDate, getPosts } from '@/utils/blog'
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 
     return await getPosts().then((post) =>
         post.map((entry, i) => ({
-            params: { slug: entry.slug },
+            params: { page: entry.slug },
             props: {
                 entry,
                 baseColor: colors[i % colors.length] as (typeof colors)[number]
@@ -30,9 +31,12 @@ const { Content, headings } = await entry.render()
 
 <Layout
     activeName='blog'
-    title={`${entry.data.title} - blog - ktym4a`}
+    title={`${entry.data.title} - Blog - ${SITE_NAME}`}
     description={entry.data.description ?? ''}
     baseColor={baseColor}
+    og={{
+        type: 'article'
+    }}
     mainTagName='Article'
     toc={{
         tagName: 'ToC',

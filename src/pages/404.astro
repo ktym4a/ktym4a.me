@@ -1,14 +1,15 @@
 ---
 import Tag from '@/components/atoms/Tag.astro'
+import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '../types'
+import { COLORS } from '@/types/index'
 
 const baseColor = COLORS.GREEN
 ---
 
 <Layout
     activeName='404'
-    title='404 - ktym4a'
+    title={`404 - ${SITE_NAME}`}
     description='Page not found'
     baseColor={baseColor}
 >
