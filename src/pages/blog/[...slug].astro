@@ -55,6 +55,7 @@ const { Content, headings } = await entry.render()
             ...headings
         ]
     }}
+    lang={entry.data.lang ?? 'en'}
 >
     <article class='space-y-4 md:space-y-6'>
         <Heading1 baseColor={baseColor} text={entry.data.title} id='Title' />

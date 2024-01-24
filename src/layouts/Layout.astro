@@ -18,6 +18,7 @@ interface Props {
               tagName: string
           }
         | undefined
+    lang?: string | undefined
 }
 
 const {
@@ -27,7 +28,8 @@ const {
     description,
     mainTagName = undefined,
     title,
-    toc = undefined
+    toc = undefined,
+    lang = 'en'
 } = Astro.props
 const routes = Astro.url.pathname.split('/').filter((path) => path)
 const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
@@ -35,7 +37,7 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 
 <!doctype html>
 <html
-    lang='en'
+    lang={lang}
     class='ctp-mocha min-h-dvh overflow-hidden scroll-smooth bg-ctp-crust font-mono dark:bg-ctp-surface0'
 >
     <head>

@@ -2,6 +2,7 @@
 title: 'Markdown Sample With Monolisa Font'
 tags: []
 publishedDate: 2024-01-23
+lang: en
 ---
 
 Check out the [Monolisa](https://monolisa.dev) font.
