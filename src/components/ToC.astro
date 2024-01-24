@@ -53,6 +53,7 @@ if (toc?.headings) {
             tableOfContents.map((heading) => (
                 <>
                     <NavItem
+                        history='replace'
                         href={`#${heading.slug}`}
                         id={`toc_${heading.slug}`}
                         current={false}
@@ -67,6 +68,7 @@ if (toc?.headings) {
                         <ul class='flex flex-col gap-1 break-all pl-4'>
                             {heading.children.map((child) => (
                                 <NavItem
+                                    history='replace'
                                     href={`#${child.slug}`}
                                     id={`toc_${child.slug}`}
                                     current={false}
