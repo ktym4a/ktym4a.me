@@ -5,23 +5,17 @@ import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
+import { formatPostDate, getPosts } from '@/utils/blog'
 import { Image } from 'astro:assets'
-import { getCollection } from 'astro:content'
 
 const colors = [COLORS.GREEN, COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const
 
-const allPosts = await getCollection('blog').then((res) =>
-    res
-        .sort((a, b) => {
-            const aDate = new Date(a.data.publishedDate)
-            const bDate = new Date(b.data.publishedDate)
-            return aDate > bDate ? -1 : 1
-        })
-        .reverse()
+const allPosts = await getPosts().then((post) =>
+    post
         .map((post, i) => {
             return {
                 ...post,
-                color: colors[i % colors.length] as (typeof colors)[number]
+                baseColor: colors[i % colors.length] as (typeof colors)[number]
             }
         })
         .reverse()
@@ -50,14 +44,14 @@ const baseColor = COLORS.PEACH
                         <Link
                             href={`/blog/${post.slug}/`}
                             colors={{
-                                text: post.color.text as string,
-                                childHoverBackground: post.color
+                                text: post.baseColor.text as string,
+                                childHoverBackground: post.baseColor
                                     .childHoverBackground as string,
-                                childFocusBackground: post.color
+                                childFocusBackground: post.baseColor
                                     .childFocusBackground as string,
-                                childHoverOutline: post.color
+                                childHoverOutline: post.baseColor
                                     .childHoverOutline as string,
-                                childFocusOutline: post.color
+                                childFocusOutline: post.baseColor
                                     .childFocusOutline as string
                             }}
                             class={''}
@@ -87,12 +81,11 @@ const baseColor = COLORS.PEACH
                                     </div>
                                     <div class='space-y-1'>
                                         <p class='text-xs text-ctp-text md:text-sm'>
-                                            {new Intl.DateTimeFormat('ja-JP', {
-                                                dateStyle: 'medium',
-                                                timeZone: 'Asia/Tokyo'
-                                            }).format(post.data.publishedDate)}
+                                            {formatPostDate(
+                                                post.data.publishedDate
+                                            )}
                                         </p>
-                                        <h2 class='text-base font-bold md:text-xl'>
+                                        <h2 class='text-base font-bold md:text-lg'>
                                             {post.data.title}
                                         </h2>
                                     </div>
