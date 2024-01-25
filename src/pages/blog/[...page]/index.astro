@@ -29,6 +29,8 @@ export async function getStaticPaths() {
 const { entry, baseColor } = Astro.props
 const { Content, headings } = await entry.render()
 const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
+
+const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
 ---
 
 <Layout
@@ -64,7 +66,7 @@ const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
         />
         <Tag text='Content' className='gap-2'>
             <div
-                class={`blog leading-relaxed text-md md:text-lg text-pretty tracking-wide break-all md:break-normal ${baseColor.text} ${baseColor.blogPostColor}`}
+                class={`blog text-pretty tracking-wide break-all md:break-normal ${baseColor.text} ${baseColor.blogPostColor} ${lineHight}`}
             >
                 <Content />
             </div>
@@ -126,28 +128,28 @@ const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
     }
 
     .blog h3 {
-        @apply mt-6 text-lg font-bold before:pr-3 before:text-ctp-text before:content-['###'] md:mt-8 md:text-xl;
+        @apply mt-3 text-lg font-bold before:pr-3 before:text-ctp-text before:content-['###'] md:mt-4 md:text-xl;
     }
 
     .blog h4 {
-        @apply mt-6 text-base font-bold before:pr-3 before:text-ctp-text before:content-['####'] md:mt-8 md:text-lg;
+        @apply mt-3 text-base font-bold before:pr-3 before:text-ctp-text before:content-['####'] md:mt-4 md:text-lg;
     }
 
     .blog h5 {
-        @apply mt-6 text-sm font-bold before:pr-3 before:text-ctp-text before:content-['#####'] md:mt-8 md:text-base;
+        @apply mt-3 text-sm font-bold before:pr-3 before:text-ctp-text before:content-['#####'] md:mt-4 md:text-base;
     }
 
     .blog h6 {
-        @apply mt-6 text-xs font-bold before:pr-3 before:text-ctp-text before:content-['######'] md:mt-8 md:text-sm;
+        @apply mt-3 text-xs font-bold before:pr-3 before:text-ctp-text before:content-['######'] md:mt-4 md:text-sm;
     }
 
     .blog p {
-        @apply my-2 text-ctp-text md:my-4;
+        @apply my-4 text-ctp-text md:my-6;
     }
 
     .blog ul,
     .blog ol {
-        @apply list-inside text-ctp-text;
+        @apply list-outside text-ctp-text;
     }
 
     .blog ul {
@@ -155,12 +157,15 @@ const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
     }
 
     .blog ol {
-        @apply list-decimal pl-6 md:pl-8;
+        @apply list-decimal pl-6 md:pl-10;
     }
 
-    .blog > ul,
+    .blog > ul {
+        @apply my-3 pl-4 md:my-6 md:pl-6;
+    }
+
     .blog > ol {
-        @apply my-3 pl-2 md:my-6 md:pl-4;
+        @apply my-3 pl-8 md:my-6 md:pl-10;
     }
 
     .blog li {
@@ -197,7 +202,7 @@ const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
     }
 
     .blog .contains-task-list {
-        @apply my-4 md:my-8;
+        @apply my-4 !pl-0 md:my-8;
     }
 
     .blog ul.contains-task-list {
