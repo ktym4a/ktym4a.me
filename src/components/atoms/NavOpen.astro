@@ -54,7 +54,7 @@ const { activeName, baseColor } = Astro.props
 </div>
 <div
     id='nav'
-    class='invisible fixed left-0 right-0 top-0 grid min-h-dvh translate-x-full ease-in-out motion-safe:transition-transform motion-safe:duration-200 md:hidden'
+    class='fixed left-0 right-0 top-0 grid min-h-dvh translate-x-full ease-in-out motion-safe:transition-all motion-safe:duration-200 md:hidden'
     transition:animate='none'
 >
     <button
@@ -76,14 +76,10 @@ const { activeName, baseColor } = Astro.props
         document.getElementById('navOpen').addEventListener('click', () => {
             document.querySelector('#navOpen').classList.toggle('current')
             document.querySelector('#nav').classList.toggle('translate-x-full')
-            document.querySelector('#nav').classList.toggle('invisible')
         })
         document.getElementById('closeNav').addEventListener('click', () => {
             document.querySelector('#navOpen').classList.remove('current')
             document.querySelector('#nav').classList.add('translate-x-full')
-            setTimeout(() => {
-                document.querySelector('#nav').classList.add('invisible')
-            }, 200)
         })
     })
 </script>
