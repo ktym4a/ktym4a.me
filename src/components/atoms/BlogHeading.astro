@@ -14,9 +14,10 @@ const { baseColor, publishedDate, updatedDate, text, id } = Astro.props
 ---
 
 <Tag text='Metadata'>
-    <div class='-mt-8 space-y-3 pt-8' id={id}>
+    <div class='space-y-3'>
         <h1
-            class={`text-2xl font-bold before:content-['#'] before:text-ctp-text before:pr-3 md:text-4xl ${baseColor.text}`}
+            id={id}
+            class={`-mt-8 pt-8 text-2xl font-bold before:content-['#'] before:text-ctp-text before:pr-3 md:text-4xl ${baseColor.text}`}
             >{text}</h1
         >
         <dir
