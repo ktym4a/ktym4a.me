@@ -1,11 +1,13 @@
 ---
 import Tag from '@/components/atoms/Tag.astro'
 import type { ColorType } from '@/types/index'
+import PublicDate from './PublishedDate.astro'
+import UpdatedDate from './UpdatedDate.astro'
 
 interface Props {
     baseColor: ColorType
-    publishedDate: string
-    updatedDate?: string | undefined
+    publishedDate: Date
+    updatedDate?: Date | undefined
     text: string
     id: string
 }
@@ -20,52 +22,11 @@ const { baseColor, publishedDate, updatedDate, text, id } = Astro.props
             class={`-mt-8 pt-8 text-2xl font-bold before:content-['#'] before:text-ctp-text before:pr-3 md:text-4xl ${baseColor.text}`}
             >{text}</h1
         >
-        <dir
+        <div
             class='flex flex-wrap items-end justify-end gap-1 gap-x-4 text-sm md:flex-row md:gap-4 md:text-base'
         >
-            <p class='inline-flex items-center gap-1'>
-                <svg
-                    xmlns='http://www.w3.org/2000/svg'
-                    class='h-4 w-4 md:h-5 md:w-5'
-                    viewBox='0 0 24 24'
-                    stroke-width='2'
-                    stroke='currentColor'
-                    fill='none'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                >
-                    <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
-                    <path
-                        d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'
-                    ></path>
-                    <path d='M16 3v4'></path>
-                    <path d='M8 3v4'></path>
-                    <path d='M4 11h16'></path>
-                    <path d='M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0'></path>
-                </svg>
-                <time datetime={publishedDate}>{publishedDate}</time></p
-            >
-            {
-                updatedDate && (
-                    <p class='inline-flex items-center gap-1'>
-                        <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            class='h-4 w-4 md:h-5 md:w-5'
-                            viewBox='0 0 24 24'
-                            stroke-width='2'
-                            stroke='currentColor'
-                            fill='none'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                        >
-                            <path stroke='none' d='M0 0h24v24H0z' fill='none' />
-                            <path d='M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4' />
-                            <path d='M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4' />
-                        </svg>
-                        <time datetime={updatedDate}>{updatedDate}</time>
-                    </p>
-                )
-            }
-        </dir>
+            <PublicDate date={publishedDate} type='detail' />
+            {updatedDate && <UpdatedDate date={updatedDate} type='detail' />}
+        </div>
     </div>
 </Tag>
