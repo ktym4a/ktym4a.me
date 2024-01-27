@@ -4,13 +4,16 @@ import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
 
+const pageName = '404'
+const title = `${pageName} - ${SITE_NAME}`
+const description = 'Page not found'
 const baseColor = COLORS.GREEN
 ---
 
 <Layout
     activeName='404'
-    title={`404 - ${SITE_NAME}`}
-    description='Page not found'
+    title={title}
+    description={description}
     baseColor={baseColor}
 >
     <section id='StatusCode'>
