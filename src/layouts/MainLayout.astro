@@ -31,7 +31,10 @@ const {
                     px-4 py-6 md:px-6 lg:grid-rows-[1fr] [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
     >
         <div class='block lg:hidden'>
-            <Tag text='Breadcrumbs' className='gap-1 overflow-x-auto md:gap-0'>
+            <Tag
+                text='Breadcrumbs'
+                className={`gap-1 overflow-x-auto md:gap-0 [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar]:w-[6px] ${baseColor.scrollColor}`}
+            >
                 <Breadcrumbs
                     baseColor={baseColor}
                     currentPath={currentPath}
