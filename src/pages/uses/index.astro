@@ -1,0 +1,579 @@
+---
+import Heading1 from '@/components/atoms/Heading1.astro'
+import Heading2 from '@/components/atoms/Heading2.astro'
+import Heading3 from '@/components/atoms/Heading3.astro'
+import Link from '@/components/atoms/Link.astro'
+import Tag from '@/components/atoms/Tag.astro'
+import { COLORS } from '@/constants/color'
+import { SITE_NAME } from '@/constants/index'
+import Layout from '@/layouts/Layout.astro'
+import type { MarkdownHeading } from 'astro'
+
+const pageName = 'uses'
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
+const title = `${capitalizePageName} - ${SITE_NAME}`
+const description = "List of ktym4a's uses."
+const baseColor = COLORS.BLUE
+
+const headings: MarkdownHeading[] = [
+    {
+        depth: 1,
+        text: capitalizePageName,
+        slug: capitalizePageName
+    },
+    {
+        depth: 2,
+        text: 'Workstation',
+        slug: 'Workstation'
+    },
+    {
+        depth: 2,
+        text: 'Development Tools',
+        slug: 'Development Tools'
+    },
+    {
+        depth: 2,
+        text: 'Productivity',
+        slug: 'Productivity'
+    },
+    {
+        depth: 2,
+        text: 'Other',
+        slug: 'Other'
+    }
+]
+---
+
+<Layout
+    activeName={pageName}
+    title={title}
+    description={description}
+    baseColor={baseColor}
+    toc={{
+        tagName: 'Internal',
+        headings
+    }}
+>
+    <section>
+        <Heading1
+            baseColor={baseColor}
+            text={capitalizePageName}
+            id={capitalizePageName}
+        />
+    </section>
+    <section>
+        <Tag text='Workstation' className='gap-2'>
+            <div class='space-y-4'>
+                <Heading2
+                    baseColor={baseColor}
+                    text='Workstation'
+                    id='Workstation'
+                />
+                <ul
+                    class=`space-y-6 md:space-y-8 text-pretty border-l-2 pl-4 md:ml-4 pt-1 pb-2 md:pt-2 md:pb-4 md:pl-6 ${baseColor.borderColor}`
+                >
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='HHKB Pro 2'>
+                            <Link
+                                href='https://www.hhkeyboard.com/uk/products/pro2'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='HHKB Pro 2'
+                            >
+                                HHKB Pro 2
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I love the stylish look, typing feel/sound, size,
+                            and everything else about this keyboard. it
+                            motivates me and contributes to my high performance.<br
+                            />
+                            <span class='text-xs text-ctp-subtext0 md:text-sm'
+                                >※ I have two of these, one in my office and one
+                                at home or on the go.</span
+                            >
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3
+                            baseColor={baseColor}
+                            id='Apple Magic Trackpad'
+                        >
+                            <Link
+                                href='https://www.apple.com/shop/product/MK2D3AM/A/magic-trackpad-white-multi-touch-surface'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Apple Magic Trackpad'
+                            >
+                                Apple Magic Trackpad
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I really like the ease of use of the MacBook
+                            trackpad. Cuz it's like all the gestures makes me
+                            feel like special powers. And I believe the Apple
+                            Magic Trackpad is a further extension of that.<br />
+                            <span class='text-xs text-ctp-subtext0 md:text-sm'
+                                >※ I have two of these, one in my office and one
+                                at home or on the go.</span
+                            >
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='WH-1000XM4'>
+                            <Link
+                                href='https://electronics.sony.com/audio/headphones/headband/p/wh1000xm4-b'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='WH-1000XM4'
+                            >
+                                WH-1000XM4
+                            </Link>
+                        </Heading3>
+                        <p>
+                            The noise canceling of this headphone is very nice
+                            and makes my concentration even deeper. Also, the
+                            sound is very high quality.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </Tag>
+    </section>
+    <section>
+        <Tag text='Tools' className='gap-2'>
+            <div class='space-y-4'>
+                <Heading2
+                    baseColor={baseColor}
+                    text='Development Tools'
+                    id='Development Tools'
+                />
+                <ul
+                    class=`space-y-6 md:space-y-8 text-pretty border-l-2 pl-4 md:ml-4 pt-1 pb-2 md:pt-2 md:pb-4 md:pl-6 ${baseColor.borderColor}`
+                >
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='VSCode'>
+                            <Link
+                                href='https://code.visualstudio.com/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='VSCode'
+                            >
+                                VSCode
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I like the extensibility and many extensions are
+                            provided by the community.
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='Insomnia'>
+                            <Link
+                                href='https://insomnia.rest/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Insomnia'
+                            >
+                                Insomnia
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I like that it supports multiple protocols and
+                            provides the concept of workspaces and directories.
+                            I feel these features allow me to efficiently test
+                            and debug APIs. Also, the workspace and directory
+                            concepts help me organize and manage my APIs.
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='OrbStack'>
+                            <Link
+                                href='https://orbstack.dev/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='OrbStack'
+                            >
+                                OrbStack
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I like about OrbStack is fast, light and easy to run
+                            docker containers and Linux.
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='WezTerm'>
+                            <Link
+                                href='https://wezfurlong.org/wezterm/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='WezTerm'
+                            >
+                                WezTerm
+                            </Link>
+                        </Heading3>
+                        <p>
+                            The reason I use it is that it is highly
+                            customizable. I am a bit picky, so this is very
+                            important to me. It is also GPU-accelerated, which
+                            allows for fast rendering.<br />
+                            <span class='text-xs text-ctp-subtext0 md:text-sm'
+                                >※ <Link
+                                    href='https://github.com/ktym4a/wezterm-config'
+                                    colors={{
+                                        hoverText:
+                                            baseColor.hoverText as string,
+                                        focusText:
+                                            baseColor.focusText as string,
+                                        focusOutline:
+                                            baseColor.focusOutline as string,
+                                        text: baseColor.text as string
+                                    }}
+                                    rel='noopener'
+                                    class='underline'
+                                    target='_blank'
+                                    title='WezTerm Config'
+                                >
+                                    {'This'}
+                                </Link> is my WezTerm config.</span
+                            >
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='Obsidian'>
+                            <Link
+                                href='https://obsidian.md/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Obsidian'
+                            >
+                                Obsidian
+                            </Link>
+                        </Heading3>
+                        <p>
+                            What I like about Obsidian is that it supports
+                            markdown and is customizable and extensible. I use
+                            it for daily notes.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </Tag>
+    </section>
+    <section>
+        <Tag text='Productivity' className='gap-2'>
+            <div class='space-y-4'>
+                <Heading2
+                    baseColor={baseColor}
+                    text='Productivity'
+                    id='Productivity'
+                />
+                <ul
+                    class=`space-y-6 md:space-y-8 text-pretty border-l-2 pl-4 md:ml-4 pt-1 pb-2 md:pt-2 md:pb-4 md:pl-6 ${baseColor.borderColor}`
+                >
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='Raycast'>
+                            <Link
+                                href='https://www.raycast.com/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Raycast'
+                            >
+                                Raycast
+                            </Link>
+                        </Heading3>
+                        <p>
+                            Raycast has supported all of my initial moves. It
+                            has become like a part of my body that I
+                            unconsciously call Raycast. I love how intuitive it
+                            is and how extensible it is, including the ability
+                            to add my own extensions.<br />
+                            <span class='text-xs text-ctp-subtext0 md:text-sm'
+                                >※ <Link
+                                    href='https://github.com/ktym4a/raycast-yabai'
+                                    colors={{
+                                        hoverText:
+                                            baseColor.hoverText as string,
+                                        focusText:
+                                            baseColor.focusText as string,
+                                        focusOutline:
+                                            baseColor.focusOutline as string,
+                                        text: baseColor.text as string
+                                    }}
+                                    rel='noopener'
+                                    class='underline'
+                                    target='_blank'
+                                    title='Raycast yabai'
+                                >
+                                    {'This'}
+                                </Link> is extension for control yabai.</span
+                            >
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='yabai'>
+                            <Link
+                                href='https://github.com/koekeishiya/yabai'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='yabai'
+                            >
+                                yabai
+                            </Link>
+                        </Heading3>
+                        <p>
+                            yabai is a tiling window manager for macOS based on
+                            binary space partitioning. I like to work in the
+                            same environment with the same windows and spaces in
+                            any location, and yabai helps me do that.<br />
+                            I use yabaictl, <Link
+                                href='https://github.com/aiguofer/dotfiles/blob/master/user/.local/bin/yabaictl'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='yabaictl'
+                            >
+                                {'This'}
+                            </Link> creates "static" workspace with label.<br />
+                            <span class='text-xs text-ctp-subtext0 md:text-sm'
+                                >※ <Link
+                                    href='https://github.com/ktym4a/yabai-config'
+                                    colors={{
+                                        hoverText:
+                                            baseColor.hoverText as string,
+                                        focusText:
+                                            baseColor.focusText as string,
+                                        focusOutline:
+                                            baseColor.focusOutline as string,
+                                        text: baseColor.text as string
+                                    }}
+                                    rel='noopener'
+                                    class='underline'
+                                    target='_blank'
+                                    title='yabai config'
+                                >
+                                    {'This'}
+                                </Link> is my yabai config and shell for update.</span
+                            >
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='skhd'>
+                            <Link
+                                href='https://github.com/koekeishiya/skhd'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='skhd'
+                            >
+                                skhd
+                            </Link>
+                        </Heading3>
+                        <p>
+                            skhd is a simple hotkey daemon for macOS. I use it
+                            with yabai.<br />
+                            <span class='text-xs text-ctp-subtext0 md:text-sm'
+                                >※ <Link
+                                    href='https://github.com/ktym4a/skhd-config'
+                                    colors={{
+                                        hoverText:
+                                            baseColor.hoverText as string,
+                                        focusText:
+                                            baseColor.focusText as string,
+                                        focusOutline:
+                                            baseColor.focusOutline as string,
+                                        text: baseColor.text as string
+                                    }}
+                                    rel='noopener'
+                                    class='underline'
+                                    target='_blank'
+                                    title='yabai config'
+                                >
+                                    {'This'}
+                                </Link> is my skhd config.</span
+                            >
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </Tag>
+    </section>
+    <section>
+        <Tag text='Other' className='gap-2'>
+            <div class='space-y-4'>
+                <Heading2 baseColor={baseColor} text='Other' id='Other' />
+                <ul
+                    class=`space-y-6 md:space-y-8 text-pretty border-l-2 pl-4 md:ml-4 pt-1 pb-2 md:pt-2 md:pb-4 md:pl-6 ${baseColor.borderColor}`
+                >
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='Arc'>
+                            <Link
+                                href='https://arc.net/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Arc'
+                            >
+                                Arc
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I love the concept and ease of use of this browser.
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='Catppuccin'>
+                            <Link
+                                href='https://github.com/catppuccin'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Catppuccin'
+                            >
+                                Catppuccin
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I really love this color schema, and use on this
+                            site. I set this color in all my applications as
+                            much as possible.
+                        </p>
+                    </li>
+                    <li class='space-y-2 md:space-y-3'>
+                        <Heading3 baseColor={baseColor} id='Monolisa'>
+                            <Link
+                                href='https://www.monolisa.dev/'
+                                colors={{
+                                    hoverText: baseColor.hoverText as string,
+                                    focusText: baseColor.focusText as string,
+                                    focusOutline:
+                                        baseColor.focusOutline as string,
+                                    text: baseColor.text as string
+                                }}
+                                rel='noopener'
+                                class='underline'
+                                target='_blank'
+                                title='Monolisa'
+                            >
+                                Monolisa
+                            </Link>
+                        </Heading3>
+                        <p>
+                            I love this font, I use it in Editor, Terminal, and
+                            on this site.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </Tag>
+    </section>
+</Layout>

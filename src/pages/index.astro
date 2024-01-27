@@ -1,9 +1,9 @@
 ---
 import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { COLORS } from '@/constants/color'
 import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '@/types/index'
 
 const baseColor = COLORS.GREEN
 ---
@@ -17,7 +17,7 @@ const baseColor = COLORS.GREEN
     <section id='SiteName'>
         <Tag text='SiteName'>
             <h1
-                class='mb-2 break-all text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+                class='mb-2 break-words text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
             >
                 <span class='text-ctp-green'>kt</span><span
                     class='text-ctp-pink'>ym</span

@@ -3,17 +3,23 @@ import Icon from '@/assets/images/about/icon.jpg'
 import Heading1 from '@/components/atoms/Heading1.astro'
 import Heading2 from '@/components/atoms/Heading2.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { COLORS } from '@/constants/color'
 import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '@/types/index'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
+
+const pageName = 'about'
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
+const title = `${capitalizePageName} - ${SITE_NAME}`
+const description = "ktym4a's about page"
+const baseColor = COLORS.PINK
 
 const headings: MarkdownHeading[] = [
     {
         depth: 1,
-        text: 'About',
-        slug: 'About'
+        text: capitalizePageName,
+        slug: capitalizePageName
     },
     {
         depth: 2,
@@ -31,14 +37,12 @@ const headings: MarkdownHeading[] = [
         slug: 'Interests'
     }
 ]
-
-const baseColor = COLORS.PINK
 ---
 
 <Layout
-    activeName='about'
-    title={`About - ${SITE_NAME}`}
-    description="ktym4a's about page"
+    activeName={pageName}
+    title={title}
+    description={description}
     baseColor={baseColor}
     toc={{
         tagName: 'Internal',
@@ -46,7 +50,11 @@ const baseColor = COLORS.PINK
     }}
 >
     <section>
-        <Heading1 baseColor={baseColor} text='About' id='About' />
+        <Heading1
+            baseColor={baseColor}
+            text={capitalizePageName}
+            id={capitalizePageName}
+        />
     </section>
     <section>
         <Tag text='Profile' className='gap-2'>
@@ -94,7 +102,7 @@ const baseColor = COLORS.PINK
     </section>
     <section>
         <Tag text='Experience' className='gap-2'>
-            <div class='space-y-2'>
+            <div class='space-y-4 md:space-y-6'>
                 <Heading2
                     baseColor={baseColor}
                     text='Experience'
@@ -116,7 +124,7 @@ const baseColor = COLORS.PINK
     </section>
     <section>
         <Tag text='Interests' className='gap-2'>
-            <div class='space-y-2'>
+            <div class='space-y-4 md:space-y-6'>
                 <Heading2
                     baseColor={baseColor}
                     text='Interests'

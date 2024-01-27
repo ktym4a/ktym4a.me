@@ -2,9 +2,9 @@
 import BlogHeading from '@/components/atoms/BlogHeading.astro'
 import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { COLORS } from '@/constants/color'
 import { GITHUB_CONTENT_URL, SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '@/types/index'
 import { getPosts } from '@/utils/blog'
 
 export async function getStaticPaths() {
@@ -30,14 +30,19 @@ const { entry, baseColor } = Astro.props
 const { Content, headings } = await entry.render()
 const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
 
+const pageName = 'blog'
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
+const title = `${entry.data.title} - ${capitalizePageName} - ${SITE_NAME}`
+const description = entry.data.description ?? ''
+
 const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
 ---
 
 <Layout
-    activeName='blog'
+    activeName={pageName}
     currentName={entry.data.title}
-    title={`${entry.data.title} - Blog - ${SITE_NAME}`}
-    description={entry.data.description ?? ''}
+    title={title}
+    description={description}
     baseColor={baseColor}
     og={{
         type: 'article'
@@ -66,7 +71,7 @@ const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
         />
         <Tag text='Content' className='gap-2'>
             <div
-                class={`blog text-pretty tracking-wide break-all md:break-normal ${baseColor.text} ${baseColor.blogPostColor} ${lineHight}`}
+                class={`blog text-pretty tracking-wide break-words ${baseColor.text} ${baseColor.blogPostColor} ${lineHight}`}
             >
                 <Content />
             </div>

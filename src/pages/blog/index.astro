@@ -1,10 +1,16 @@
 ---
 import BlogCard from '@/components/BlogCard.astro'
 import Heading1 from '@/components/atoms/Heading1.astro'
+import { COLORS } from '@/constants/color'
 import { BLOG_DESCRIPTION, SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '@/types/index'
 import { getPosts } from '@/utils/blog'
+
+const pageName = 'blog'
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
+const title = `${capitalizePageName} - ${SITE_NAME}`
+const description = BLOG_DESCRIPTION
+const baseColor = COLORS.PEACH
 
 const colors = [COLORS.GREEN, COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const
 
@@ -18,14 +24,12 @@ const allPosts = await getPosts().then((post) =>
         })
         .reverse()
 )
-
-const baseColor = COLORS.PEACH
 ---
 
 <Layout
     activeName='blog'
-    title={`Blog - ${SITE_NAME}`}
-    description={BLOG_DESCRIPTION}
+    title={title}
+    description={description}
     baseColor={baseColor}
 >
     <section>
