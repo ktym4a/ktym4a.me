@@ -5,7 +5,7 @@ import Tag from '@/components/atoms/Tag.astro'
 import { GITHUB_CONTENT_URL, SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
 import { COLORS } from '@/types/index'
-import { formatPostDate, getPosts } from '@/utils/blog'
+import { getPosts } from '@/utils/blog'
 
 export async function getStaticPaths() {
     const colors = [
@@ -61,8 +61,8 @@ const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
             baseColor={baseColor}
             text={entry.data.title}
             id='Title'
-            publishedDate={formatPostDate(entry.data.publishedDate)}
-            updatedDate={formatPostDate(entry.data?.updatedDate)}
+            publishedDate={entry.data.publishedDate}
+            updatedDate={entry.data?.updatedDate}
         />
         <Tag text='Content' className='gap-2'>
             <div
