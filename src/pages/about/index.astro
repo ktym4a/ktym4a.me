@@ -3,9 +3,9 @@ import Icon from '@/assets/images/about/icon.jpg'
 import Heading1 from '@/components/atoms/Heading1.astro'
 import Heading2 from '@/components/atoms/Heading2.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { COLORS } from '@/constants/color'
 import { SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '@/types/index'
 import type { MarkdownHeading } from 'astro'
 import { Image } from 'astro:assets'
 
@@ -102,7 +102,7 @@ const headings: MarkdownHeading[] = [
     </section>
     <section>
         <Tag text='Experience' className='gap-2'>
-            <div class='space-y-2'>
+            <div class='space-y-4 md:space-y-6'>
                 <Heading2
                     baseColor={baseColor}
                     text='Experience'
@@ -124,7 +124,7 @@ const headings: MarkdownHeading[] = [
     </section>
     <section>
         <Tag text='Interests' className='gap-2'>
-            <div class='space-y-2'>
+            <div class='space-y-4 md:space-y-6'>
                 <Heading2
                     baseColor={baseColor}
                     text='Interests'

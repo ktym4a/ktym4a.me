@@ -2,9 +2,9 @@
 import BlogHeading from '@/components/atoms/BlogHeading.astro'
 import Link from '@/components/atoms/Link.astro'
 import Tag from '@/components/atoms/Tag.astro'
+import { COLORS } from '@/constants/color'
 import { GITHUB_CONTENT_URL, SITE_NAME } from '@/constants/index'
 import Layout from '@/layouts/Layout.astro'
-import { COLORS } from '@/types/index'
 import { getPosts } from '@/utils/blog'
 
 export async function getStaticPaths() {
