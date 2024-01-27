@@ -32,6 +32,15 @@ const { activeName } = Astro.props
                 type='file'
             />
             <NavItem
+                href='/uses/'
+                current={activeName === 'uses'}
+                colors={{
+                    text: COLORS.BLUE.text as string
+                }}
+                title='uses'
+                type='file'
+            />
+            <NavItem
                 href='/blog/'
                 current={activeName === 'blog'}
                 colors={{

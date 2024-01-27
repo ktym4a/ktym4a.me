@@ -25,6 +25,7 @@ export type ColorType = {
     scrollColor?: string
     toCActiveColor?: string
     blogPostColor?: string
+    borderColor?: string
 }
 
 export type ToCType = Array<
