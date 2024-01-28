@@ -43,16 +43,17 @@ const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
 <!doctype html>
 <html
     lang={lang}
-    class='ctp-mocha min-h-dvh overflow-hidden scroll-smooth bg-ctp-crust font-mono dark:bg-ctp-surface0'
+    class='ctp-mocha min-h-screen scroll-smooth bg-ctp-crust font-mono dark:bg-ctp-surface0 md:overflow-hidden'
 >
     <head>
         <Head title={title} description={description} og={og} />
     </head>
-    <body
-        class={`relative min-h-dvh from-ctp-crust dark:from-ctp-surface0 text-ctp-text from-40% to-100% bg-gradient-to-br text-sm md:text-base ${baseColor.backgroundGradient}`}
-    >
+    <body class={`relative md:min-h-screen text-ctp-text text-sm md:text-base`}>
         <div
-            class='m-auto grid min-h-dvh max-w-7xl grid-cols-[2.75rem_1fr] md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
+            class={`fixed top-0 left-0 right-0 bottom-0 from-ctp-crust dark:from-ctp-surface0 from-40% to-100% bg-gradient-to-br ${baseColor.backgroundGradient}`}
+        ></div>
+        <div
+            class='relative z-10 m-auto grid min-h-full max-w-7xl md:grid-cols-[16rem_1fr] lg:grid-cols-[24rem_1fr] lg:px-2'
         >
             <SideLayout
                 activeName={activeName}

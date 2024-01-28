@@ -9,12 +9,12 @@ const { baseColor } = Astro.props
 ---
 
 <div
-    class='mt-auto flex w-full flex-col items-center justify-center gap-2 pb-6 md:w-auto'
+    class='mt-auto flex w-full flex-col items-center justify-center gap-2 pb-4 md:w-auto md:pb-6'
 >
     <button
         id='themeToggle'
         aria-label='Toggle theme'
-        class={`motion-safe:transition-filter ease-in-out motion-safe:duration-1000 flex aspect-[1] w-full flex-col items-center justify-center rounded-md bg-ctp-surface0/30 dark:bg-ctp-crust/40 p-[2px] outline-dashed outline-0 outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-200 dark:hover:saturate-350 dark:focus-visible:saturate-350 md:aspect-auto md:p-1 md:outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
+        class={`relative z-10 motion-safe:transition-filter ease-in-out motion-safe:duration-1000 flex aspect-[1] w-full flex-col items-center justify-center rounded-md bg-ctp-surface0 dark:bg-ctp-crust md:bg-ctp-surface0/30 md:dark:bg-ctp-crust/40 p-[2px] outline-dashed outline-0 outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-200 dark:hover:saturate-350 dark:focus-visible:saturate-350 md:aspect-auto md:p-1 md:outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
     >
         <svg
             xmlns='http://www.w3.org/2000/svg'
