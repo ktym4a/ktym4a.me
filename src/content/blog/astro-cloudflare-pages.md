@@ -30,7 +30,7 @@ Rocket Loader は、Cloudflare が提供している JavaScript の最適化ツ�
 
 Rocket Loader を On にするとレンダリング後まですべてのJavaScriptの読み込みを延期することで、ウェブサイトのコンテンツ（テキスト、画像、フォントなど）を優先します。 とのことです。
 
-憶測ですが、JavaScript の読み込みが遅延されることによって、`astro:page-load`` がトリガーされないのではないかと思います。
+憶測ですが、JavaScript の読み込みが遅延されることによって、`astro:page-load` がトリガーされないのではないかと思います。
 
 同じような[Issue](https://github.com/withastro/astro/issues/9684) もありました。
 
