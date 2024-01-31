@@ -13,7 +13,7 @@ export function GET(context: APIContext) {
         description: BLOG_DESCRIPTION,
         site,
         items: posts.map((post) => ({
-            link: `${site}/${post.slug}`,
+            link: `${site}/${post.slug}/`,
             title: post.data.title,
             description: post.data.description,
             pubDate: new Date(post.data.publishedDate)
