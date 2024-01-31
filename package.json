@@ -24,7 +24,7 @@
         "@astrojs/rss": "^4.0.4",
         "@astrojs/sitemap": "^3.0.5",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.2.7",
+        "astro": "^4.2.8",
         "astro-capo": "^0.0.1",
         "astro-meta-tags": "^0.2.1",
         "astro-robots-txt": "^1.0.0",
