@@ -17,5 +17,10 @@ export default defineConfig({
     ],
     site: 'https://ktym4a.me/',
     base: '/',
-    trailingSlash: 'always'
+    trailingSlash: 'always',
+    markdown: {
+        shikiConfig: {
+            theme: 'catppuccin-mocha'
+        }
+    }
 })
