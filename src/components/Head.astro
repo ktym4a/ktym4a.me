@@ -351,5 +351,26 @@ const { title, description, og } = Astro.props
         document.addEventListener('astro:before-swap', (ev) => {
             setTtheme(ev.newDocument)
         })
+
+        document.addEventListener(
+            'astro:page-load',
+            () => {
+                window.addEventListener('hashchange', () => {
+                    const target = document.getElementById(
+                        decodeURI(location.hash.slice(1))
+                    )
+                    if (target) {
+                        const main = document.getElementById('main')
+                        main.scrollTo({
+                            top: target.offsetTop,
+                            behavior: 'instant'
+                        })
+                    }
+                })
+            },
+            {
+                once: true
+            }
+        )
     </script>
 </HeadCapo>

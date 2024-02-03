@@ -25,7 +25,7 @@ const { baseColor, activeName, tagText, toc = undefined } = Astro.props
     <div class='flex h-full flex-col justify-between gap-4 md:gap-6'>
         <div class='space-y-4'>
             <Nav activeName={activeName} />
-            {toc?.headings && <ToC baseColor={baseColor} toc={toc} />}
+            <ToC baseColor={baseColor} toc={toc} />
         </div>
         <div class='space-y-4'>
             <SNSLinks />
