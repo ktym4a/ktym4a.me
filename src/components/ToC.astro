@@ -93,38 +93,3 @@ if (toc?.headings) {
         </Tag>
     )
 }
-
-<script is:inline>
-    document.addEventListener(
-        'astro:page-load',
-        () => {
-            const headings = document.querySelectorAll(
-                'main h1, main h2, main h3'
-            )
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        const id = entry.target.id
-                        const tocItem = document.getElementById(`toc_${id}`)
-                        if (tocItem) {
-                            if (entry.isIntersecting) {
-                                tocItem.classList.add('current')
-                            } else {
-                                tocItem.classList.remove('current')
-                            }
-                        }
-                    })
-                },
-                {
-                    root: document.getElementById('main')
-                }
-            )
-            headings.forEach((heading) => {
-                observer.observe(heading)
-            })
-        },
-        {
-            once: true
-        }
-    )
-</script>

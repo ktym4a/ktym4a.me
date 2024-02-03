@@ -37,24 +37,3 @@ const { baseColor } = Astro.props
         </svg>
     </button>
 </div>
-
-<script is:inline>
-    const handleToggleClick = () => {
-        const element = document.documentElement
-        if (element.classList.contains('ctp-latte')) {
-            element.classList.remove('ctp-latte')
-            element.classList.add('ctp-mocha')
-            localStorage.setItem('theme', 'ctp-mocha')
-        } else {
-            element.classList.remove('ctp-mocha')
-            element.classList.add('ctp-latte')
-            localStorage.setItem('theme', 'ctp-latte')
-        }
-    }
-
-    document.addEventListener('astro:page-load', () => {
-        document
-            .getElementById('themeToggle')
-            .addEventListener('click', handleToggleClick)
-    })
-</script>

@@ -64,12 +64,3 @@ const { activeName, baseColor } = Astro.props
         <Menu activeName={activeName} tagText='Menu' baseColor={baseColor} />
     </div>
 </div>
-
-<script is:inline>
-    document.addEventListener('astro:page-load', () => {
-        document.getElementById('navOpen').addEventListener('click', () => {
-            document.querySelector('#navOpen').classList.toggle('current')
-            document.querySelector('#nav').classList.toggle('translate-x-full')
-        })
-    })
-</script>

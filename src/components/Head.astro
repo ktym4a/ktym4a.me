@@ -374,5 +374,60 @@ const { title, description, og } = Astro.props
                 once: true
             }
         )
+
+        document.addEventListener('astro:page-load', () => {
+            const headings = document.querySelectorAll(
+                'main h1, main h2, main h3'
+            )
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        const id = entry.target.id
+                        const tocItem = document.getElementById(`toc_${id}`)
+                        if (tocItem) {
+                            if (entry.isIntersecting) {
+                                tocItem.classList.add('current')
+                            } else {
+                                tocItem.classList.remove('current')
+                            }
+                        }
+                    })
+                },
+                {
+                    root: document.getElementById('main')
+                }
+            )
+            headings.forEach((heading) => {
+                observer.observe(heading)
+            })
+        })
+
+        document.addEventListener('astro:page-load', () => {
+            document.getElementById('navOpen').addEventListener('click', () => {
+                document.querySelector('#navOpen').classList.toggle('current')
+                document
+                    .querySelector('#nav')
+                    .classList.toggle('translate-x-full')
+            })
+        })
+
+        const handleToggleClick = () => {
+            const element = document.documentElement
+            if (element.classList.contains('ctp-latte')) {
+                element.classList.remove('ctp-latte')
+                element.classList.add('ctp-mocha')
+                localStorage.setItem('theme', 'ctp-mocha')
+            } else {
+                element.classList.remove('ctp-mocha')
+                element.classList.add('ctp-latte')
+                localStorage.setItem('theme', 'ctp-latte')
+            }
+        }
+
+        document.addEventListener('astro:page-load', () => {
+            document
+                .getElementById('themeToggle')
+                .addEventListener('click', handleToggleClick)
+        })
     </script>
 </HeadCapo>
