@@ -2,8 +2,8 @@ import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 import tailwind from '@astrojs/tailwind'
 import robotsTxt from 'astro-robots-txt'
-
 import metaTags from 'astro-meta-tags'
+import remarkCodeTitles from 'remark-code-titles'
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,7 +20,12 @@ export default defineConfig({
     trailingSlash: 'always',
     markdown: {
         shikiConfig: {
-            theme: 'catppuccin-mocha'
-        }
+            theme: 'catppuccin-latte',
+            experimentalThemes: {
+                light: 'catppuccin-latte',
+                dark: 'catppuccin-mocha'
+            }
+        },
+        remarkPlugins: [remarkCodeTitles]
     }
 })
