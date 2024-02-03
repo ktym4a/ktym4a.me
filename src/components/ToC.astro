@@ -6,13 +6,15 @@ import type { MarkdownHeading } from 'astro'
 
 interface Props {
     baseColor: ColorType
-    toc: {
-        headings: MarkdownHeading[] | undefined
-        tagName: string
-    }
+    toc?:
+        | {
+              headings: MarkdownHeading[] | undefined
+              tagName: string
+          }
+        | undefined
 }
 
-const { baseColor, toc } = Astro.props
+const { baseColor, toc = undefined } = Astro.props
 
 let tableOfContents: ToCType = []
 if (toc?.headings) {
@@ -47,71 +49,82 @@ if (toc?.headings) {
 }
 ---
 
-<Tag text={toc.tagName} className='gap-1'>
-    <ul class='flex flex-col gap-1 break-all' id='toc'>
-        {
-            tableOfContents.map((heading) => (
-                <>
-                    <NavItem
-                        href={`#${heading.slug}`}
-                        id={`toc_${heading.slug}`}
-                        current={false}
-                        colors={{
-                            hoverText: baseColor.hoverText as string,
-                            focusText: baseColor.focusText as string,
-                            toCActiveColor: baseColor.toCActiveColor as string
-                        }}
-                        title={`${heading.text}`}
-                    />
-                    {heading.children && heading.children.length > 0 && (
-                        <ul class='flex flex-col gap-1 break-all pl-4'>
-                            {heading.children.map((child) => (
-                                <NavItem
-                                    href={`#${child.slug}`}
-                                    id={`toc_${child.slug}`}
-                                    current={false}
-                                    colors={{
-                                        hoverText:
-                                            baseColor.hoverText as string,
-                                        focusText:
-                                            baseColor.focusText as string,
-                                        toCActiveColor:
-                                            baseColor.toCActiveColor as string
-                                    }}
-                                    title={`${child.text}`}
-                                />
-                            ))}
-                        </ul>
-                    )}
-                </>
-            ))
-        }
-    </ul>
-</Tag>
+{
+    toc?.headings && (
+        <Tag text={toc.tagName} className='gap-1'>
+            <ul class='flex flex-col gap-1 break-all' id='toc'>
+                {tableOfContents.map((heading) => (
+                    <>
+                        <NavItem
+                            href={`#${heading.slug}`}
+                            id={`toc_${heading.slug}`}
+                            current={false}
+                            colors={{
+                                hoverText: baseColor.hoverText as string,
+                                focusText: baseColor.focusText as string,
+                                toCActiveColor:
+                                    baseColor.toCActiveColor as string
+                            }}
+                            title={`${heading.text}`}
+                        />
+                        {heading.children && heading.children.length > 0 && (
+                            <ul class='flex flex-col gap-1 break-all pl-4'>
+                                {heading.children.map((child) => (
+                                    <NavItem
+                                        href={`#${child.slug}`}
+                                        id={`toc_${child.slug}`}
+                                        current={false}
+                                        colors={{
+                                            hoverText:
+                                                baseColor.hoverText as string,
+                                            focusText:
+                                                baseColor.focusText as string,
+                                            toCActiveColor:
+                                                baseColor.toCActiveColor as string
+                                        }}
+                                        title={`${child.text}`}
+                                    />
+                                ))}
+                            </ul>
+                        )}
+                    </>
+                ))}
+            </ul>
+        </Tag>
+    )
+}
 
 <script is:inline>
-    document.addEventListener('astro:page-load', () => {
-        const headings = document.querySelectorAll('main h1, main h2, main h3')
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    const id = entry.target.id
-                    const tocItem = document.getElementById(`toc_${id}`)
-                    if (tocItem) {
-                        if (entry.isIntersecting) {
-                            tocItem.classList.add('current')
-                        } else {
-                            tocItem.classList.remove('current')
+    document.addEventListener(
+        'astro:page-load',
+        () => {
+            const headings = document.querySelectorAll(
+                'main h1, main h2, main h3'
+            )
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        const id = entry.target.id
+                        const tocItem = document.getElementById(`toc_${id}`)
+                        if (tocItem) {
+                            if (entry.isIntersecting) {
+                                tocItem.classList.add('current')
+                            } else {
+                                tocItem.classList.remove('current')
+                            }
                         }
-                    }
-                })
-            },
-            {
-                root: document.getElementById('main')
-            }
-        )
-        headings.forEach((heading) => {
-            observer.observe(heading)
-        })
-    })
+                    })
+                },
+                {
+                    root: document.getElementById('main')
+                }
+            )
+            headings.forEach((heading) => {
+                observer.observe(heading)
+            })
+        },
+        {
+            once: true
+        }
+    )
 </script>
