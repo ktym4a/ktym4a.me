@@ -116,6 +116,11 @@ const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
 </Layout>
 
 <style is:global>
+    html.ctp-mocha .astro-code,
+    html.ctp-mocha .astro-code span {
+        color: var(--shiki-dark) !important;
+    }
+
     .blog > *:first-child {
         @apply !mt-0;
     }
@@ -203,7 +208,15 @@ const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
     }
 
     .blog pre {
-        @apply my-4 w-full overflow-x-auto rounded-md p-3 pb-4 text-sm md:my-8 md:text-base;
+        @apply my-4 w-full overflow-x-auto rounded-md rounded-tl-none !bg-ctp-crust px-4 pb-5 pt-3 text-sm md:my-8;
+    }
+
+    .blog .remark-code-title + pre {
+        @apply -mt-[1px];
+    }
+
+    .blog .remark-code-title {
+        @apply relative my-0 inline-block bg-ctp-surface0 px-3 py-1 text-sm italic text-ctp-text;
     }
 
     .blog .contains-task-list {
@@ -275,6 +288,6 @@ const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
     }
 
     .blog p code {
-        @apply rounded-md bg-[#24292e] px-2 py-1;
+        @apply rounded-md bg-ctp-surface1 px-2 py-1;
     }
 </style>

@@ -20,21 +20,19 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
+        "astro": "^4.3.2"
+    },
+    "devDependencies": {
         "@astrojs/check": "^0.4.1",
         "@astrojs/rss": "^4.0.4",
         "@astrojs/sitemap": "^3.0.5",
         "@astrojs/tailwind": "^5.1.0",
-        "astro": "^4.3.1",
+        "@catppuccin/tailwindcss": "^0.1.6",
+        "@typescript-eslint/parser": "^6.18.1",
         "astro-capo": "^0.0.1",
         "astro-meta-tags": "^0.2.1",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.0",
-        "tailwindcss": "^3.4.0",
-        "typescript": "^5.3.3"
-    },
-    "devDependencies": {
-        "@catppuccin/tailwindcss": "^0.1.6",
-        "@typescript-eslint/parser": "^6.18.1",
         "eslint": "^8.56.0",
         "eslint-plugin-astro": "^0.31.0",
         "eslint-plugin-jsx-a11y": "^6.8.0",
@@ -43,7 +41,10 @@
         "prettier": "^3.1.1",
         "prettier-plugin-astro": "^0.12.3",
         "prettier-plugin-astro-organize-imports": "^0.3.3",
-        "prettier-plugin-tailwindcss": "^0.5.11"
+        "prettier-plugin-tailwindcss": "^0.5.11",
+        "remark-code-titles": "^0.1.2",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^5.3.3"
     },
     "lint-staged": {
         "*.astro": [

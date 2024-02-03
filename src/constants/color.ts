@@ -21,7 +21,7 @@ export const COLORS: {
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-blue/75',
         toCActiveColor: 'group-[.current]:text-ctp-blue',
         blogPostColor:
-            '[&>hr]:border-[1px] [&>hr]:border-ctp-blue/50 dark:[&>hr]:border-ctp-blue/75 [&_em]:text-ctp-blue [&_strong]:text-ctp-blue [&_del]:text-ctp-blue [&_a]:text-ctp-blue focus-visible:[&_a]:outline-ctp-blue [&_blockquote]:border-l-ctp-blue [&_dt]:text-ctp-blue [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-blue/75 [&_section]:border-ctp-blue/50 dark:[&_section]:border-ctp-blue/75 [&_th]:text-ctp-blue',
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-blue/50 dark:[&>hr]:border-ctp-blue/75 [&_em]:text-ctp-blue [&_strong]:text-ctp-blue [&_del]:text-ctp-blue [&_a]:text-ctp-blue focus-visible:[&_a]:outline-ctp-blue [&_blockquote]:border-l-ctp-blue [&_dt]:text-ctp-blue [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-blue/75 [&_section]:border-ctp-blue/50 dark:[&_section]:border-ctp-blue/75 [&_th]:text-ctp-blue [&_.remark-code-title]:border-t-ctp-blue [&_.remark-code-title]:border-t-2',
         borderColor: 'border-ctp-blue/50'
     },
     [COLOR.GREEN]: {
@@ -42,7 +42,7 @@ export const COLORS: {
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-green/75',
         toCActiveColor: 'group-[.current]:text-ctp-green',
         blogPostColor:
-            '[&>hr]:border-[1px] [&>hr]:border-ctp-green/50 dark:[&>hr]:border-ctp-green/75 [&_em]:text-ctp-green [&_strong]:text-ctp-green [&_del]:text-ctp-green [&_a]:text-ctp-green focus-visible:[&_a]:outline-ctp-green [&_blockquote]:border-l-ctp-green [&_dt]:text-ctp-green [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-green/75 [&_section]:border-ctp-green/50 dark:[&_section]:border-ctp-green/75 [&_th]:text-ctp-green',
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-green/50 dark:[&>hr]:border-ctp-green/75 [&_em]:text-ctp-green [&_strong]:text-ctp-green [&_del]:text-ctp-green [&_a]:text-ctp-green focus-visible:[&_a]:outline-ctp-green [&_blockquote]:border-l-ctp-green [&_dt]:text-ctp-green [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-green/75 [&_section]:border-ctp-green/50 dark:[&_section]:border-ctp-green/75 [&_th]:text-ctp-green [&_.remark-code-title]:border-t-ctp-green [&_.remark-code-title]:border-t-2',
         borderColor: 'border-ctp-green/50'
     },
     [COLOR.PEACH]: {
@@ -63,7 +63,7 @@ export const COLORS: {
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-peach/75',
         toCActiveColor: 'group-[.current]:text-ctp-peach',
         blogPostColor:
-            '[&>hr]:border-[1px] [&>hr]:border-ctp-peach/50 dark:[&>hr]:border-ctp-peach/75 [&_em]:text-ctp-peach [&_strong]:text-ctp-peach [&_del]:text-ctp-peach [&_a]:text-ctp-peach focus-visible:[&_a]:outline-ctp-peach [&_blockquote]:border-l-ctp-peach [&_dt]:text-ctp-peach [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-peach/75 [&_section]:border-ctp-peach/50 dark:[&_section]:border-ctp-peach/75 [&_th]:text-ctp-peach',
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-peach/50 dark:[&>hr]:border-ctp-peach/75 [&_em]:text-ctp-peach [&_strong]:text-ctp-peach [&_del]:text-ctp-peach [&_a]:text-ctp-peach focus-visible:[&_a]:outline-ctp-peach [&_blockquote]:border-l-ctp-peach [&_dt]:text-ctp-peach [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-peach/75 [&_section]:border-ctp-peach/50 dark:[&_section]:border-ctp-peach/75 [&_th]:text-ctp-peach [&_.remark-code-title]:border-t-ctp-peach [&_.remark-code-title]:border-t-2',
         borderColor: 'border-ctp-peach/50'
     },
     [COLOR.PINK]: {
@@ -84,7 +84,7 @@ export const COLORS: {
         scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-pink/75',
         toCActiveColor: 'group-[.current]:text-ctp-pink',
         blogPostColor:
-            '[&>hr]:border-[1px] [&>hr]:border-ctp-pink/50 dark:[&>hr]:border-ctp-pink/75 [&_em]:text-ctp-pink [&_strong]:text-ctp-pink [&_del]:text-ctp-pink [&_a]:text-ctp-pink focus-visible:[&_a]:outline-ctp-pink [&_blockquote]:border-l-ctp-pink [&_dt]:text-ctp-pink [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-pink/75 [&_section]:border-ctp-pink/50 dark:[&_section]:border-ctp-pink/75 [&_th]:text-ctp-pink',
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-pink/50 dark:[&>hr]:border-ctp-pink/75 [&_em]:text-ctp-pink [&_strong]:text-ctp-pink [&_del]:text-ctp-pink [&_a]:text-ctp-pink focus-visible:[&_a]:outline-ctp-pink [&_blockquote]:border-l-ctp-pink [&_dt]:text-ctp-pink [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-pink/75 [&_section]:border-ctp-pink/50 dark:[&_section]:border-ctp-pink/75 [&_th]:text-ctp-pink [&_.remark-code-title]:border-t-ctp-pink [&_.remark-code-title]:border-t-2',
         borderColor: 'border-ctp-pink/50'
     }
 }
