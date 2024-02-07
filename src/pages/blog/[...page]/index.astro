@@ -208,7 +208,7 @@ const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
     }
 
     .blog pre {
-        @apply my-4 w-full overflow-x-auto rounded-md rounded-tl-none !bg-ctp-crust px-4 pb-5 pt-3 text-sm md:my-8;
+        @apply my-4 w-full overflow-x-auto rounded-md rounded-tl-none !bg-ctp-crust px-4 pb-5 pt-3 text-xs ease-in-out focus-visible:outline-dashed focus-visible:outline-2 focus-visible:saturate-200 motion-safe:transition-filter motion-safe:duration-1000 dark:focus-visible:saturate-350 md:my-8 md:text-sm;
     }
 
     .blog .remark-code-title + pre {

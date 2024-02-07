@@ -71,8 +71,10 @@ interface Props {
 const { baseColor } = Astro.props
 ---
 
-<div class={`${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}>
-   テスト
+<div
+    class={`${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
+>
+    テスト
 </div>
 ```
 
