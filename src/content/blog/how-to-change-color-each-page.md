@@ -11,7 +11,7 @@ Tailwind を使って記事毎にテーマカラーを変えるのに少しは�
 
 自分のサイトでは、下記のようなカラーテーマを持っています。
 
-```ts:/constants/color.ts
+```ts:constants/color.ts
 export const COLORS: {
     [key in COLOR]: ColorType
 } = {
@@ -44,7 +44,7 @@ export const COLORS: {
 
 例えば top ページで `GREEN` を使いたい場合は、下記のようにします。
 
-```astro:./pages/index.astro
+```astro:pages/index.astro
 ---
 import Layout from '@/layouts/Layout.astro'
 
@@ -84,7 +84,7 @@ const { baseColor } = Astro.props
 
 ブログポストページでは Content Collections を使ってマークダウンからデータを取得しています。
 
-```astro:./pages/blog/[...page]/index.astro
+```astro:/pages/[...page].astro
 ---
 import { COLORS } from '@/constants/color'
 import Layout from '@/layouts/Layout.astro'
@@ -152,7 +152,7 @@ const { Content } = await entry.render()
 
 もっといい方法があるかもしれないんですが、自分は下記のようにしました。(いい解決策あったらぜひPull Requestを送ってください)
 
-```astro:/constants/color.ts
+```ts:/constants/color.ts
 import { COLOR, type ColorType } from '@/types/index'
 
 export const COLORS: {
@@ -181,7 +181,7 @@ export const COLORS: {
 }
 ```
 
-```astro:./pages/blog/[...page]/index.astro
+```astro:/pages/[...page].astro
 <article class={`space-y-4 md:space-y-6 ${baseColor.blogPostColor}`}>
    <Content />
 </article>
