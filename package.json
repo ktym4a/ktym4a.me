@@ -20,10 +20,10 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
-        "astro": "^4.3.3"
+        "astro": "^4.3.5"
     },
     "devDependencies": {
-        "@astrojs/check": "^0.4.1",
+        "@astrojs/check": "^0.5.1",
         "@astrojs/rss": "^4.0.5",
         "@astrojs/sitemap": "^3.0.5",
         "@astrojs/tailwind": "^5.1.0",
