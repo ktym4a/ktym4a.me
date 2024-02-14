@@ -41,26 +41,23 @@ const { activeName } = Astro.props
                 type='file'
             />
             <NavItem
+                href='/projects/'
+                current={activeName === 'projects'}
+                colors={{
+                    text: COLORS.PEACH.text as string
+                }}
+                title='projects'
+                type='folder'
+            />
+            <NavItem
                 href='/blog/'
                 current={activeName === 'blog'}
                 colors={{
-                    text: COLORS.PEACH.text as string
+                    text: COLORS.MAUVE.text as string
                 }}
                 title='blog'
                 type='folder'
             />
-            <li class='text-base text-ctp-subtext0'>{`{/* WIP`}</li>
-            <NavItem
-                href='/about/me/'
-                current={activeName === 'me'}
-                colors={{
-                    text: COLORS.BLUE.text as string
-                }}
-                title='projects'
-                wip={true}
-                type='folder'
-            />
-            <li class='text-base text-ctp-subtext0'>{`*/}`}</li>
         </ul>
     </Tag>
 </nav>

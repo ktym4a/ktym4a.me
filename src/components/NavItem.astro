@@ -1,7 +1,6 @@
 ---
 import NavLink from '@/components/atoms/NavLink.astro'
 import NavLinkIcon from '@/components/atoms/NavLinkIcon.astro'
-import NavLinkWIP from '@/components/atoms/NavLinkWIP.astro'
 import type { ColorType } from '@/types/index'
 
 interface Props {
@@ -12,7 +11,6 @@ interface Props {
     id?: string
     title: string
     type?: 'file' | 'folder' | undefined
-    wip?: boolean
 }
 
 const {
@@ -22,28 +20,13 @@ const {
     href,
     id,
     title,
-    type = undefined,
-    wip = false
+    type = undefined
 } = Astro.props
 ---
 
 <li class={`relative group ${current ? 'current' : ''}`} id={id}>
-    {
-        wip ? (
-            <NavLinkWIP title={title}>
-                <NavLinkIcon type={type} />
-                <span class='flex-1'>{title}</span>
-            </NavLinkWIP>
-        ) : (
-            <NavLink
-                history={history}
-                href={href}
-                colors={colors}
-                title={title}
-            >
-                <NavLinkIcon type={type} />
-                <span class='flex-1'>{title}</span>
-            </NavLink>
-        )
-    }
+    <NavLink history={history} href={href} colors={colors} title={title}>
+        <NavLinkIcon type={type} />
+        <span class='flex-1'>{title}</span>
+    </NavLink>
 </li>
