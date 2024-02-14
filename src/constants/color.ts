@@ -86,5 +86,26 @@ export const COLORS: {
         blogPostColor:
             '[&>hr]:border-[1px] [&>hr]:border-ctp-pink/50 dark:[&>hr]:border-ctp-pink/75 [&_em]:text-ctp-pink [&_strong]:text-ctp-pink [&_del]:text-ctp-pink [&_a]:text-ctp-pink focus-visible:[&_a]:outline-ctp-pink [&_blockquote]:border-l-ctp-pink [&_dt]:text-ctp-pink [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-pink/75 [&_section]:border-ctp-pink/50 dark:[&_section]:border-ctp-pink/75 [&_th]:text-ctp-pink [&_.remark-code-title]:border-t-ctp-pink [&_.remark-code-title]:border-t-2',
         borderColor: 'border-ctp-pink/50'
+    },
+    [COLOR.MAUVE]: {
+        text: 'text-ctp-mauve',
+        hoverText: 'hover:text-ctp-mauve',
+        focusText: 'focus-visible:text-ctp-mauve',
+        background: 'bg-ctp-mauve',
+        backgroundGradient: 'to-ctp-mauve/30 dark:to-ctp-mauve/40',
+        hoverBackground: 'hover:bg-ctp-mauve',
+        focusBackground: 'focus-visible:bg-ctp-mauve',
+        childHoverBackground: '[&>*]:hover:bg-ctp-mauve/10',
+        childFocusBackground: '[&>*]:focus-visible:bg-ctp-mauve/10',
+        outline: 'outline-ctp-mauve',
+        hoverOutline: 'hover:outline-ctp-mauve',
+        focusOutline: 'focus-visible:outline-ctp-mauve',
+        childHoverOutline: '[&>*]:hover:outline-ctp-mauve/60',
+        childFocusOutline: '[&>*]:focus-visible:outline-ctp-mauve/60',
+        scrollColor: '[&::-webkit-scrollbar-thumb]:bg-ctp-mauve/75',
+        toCActiveColor: 'group-[.current]:text-ctp-mauve',
+        blogPostColor:
+            '[&>hr]:border-[1px] [&>hr]:border-ctp-mauve/50 dark:[&>hr]:border-ctp-mauve/75 [&_em]:text-ctp-mauve [&_strong]:text-ctp-mauve [&_del]:text-ctp-mauve [&_a]:text-ctp-mauve focus-visible:[&_a]:outline-ctp-mauve [&_blockquote]:border-l-ctp-mauve [&_dt]:text-ctp-mauve [&_pre::-webkit-scrollbar]:w-[6px] [&_pre::-webkit-scrollbar]:h-[4px] [&_pre::-webkit-scrollbar-thumb]:rounded-md [&_pre::-webkit-scrollbar-thumb]:bg-ctp-mauve/75 [&_section]:border-ctp-mauve/50 dark:[&_section]:border-ctp-mauve/75 [&_th]:text-ctp-mauve [&_.remark-code-title]:border-t-ctp-mauve [&_.remark-code-title]:border-t-2',
+        borderColor: 'border-ctp-mauve/50'
     }
 }

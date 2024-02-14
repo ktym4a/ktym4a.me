@@ -4,7 +4,8 @@ export enum COLOR {
     BLUE = 'BLUE',
     GREEN = 'GREEN',
     PEACH = 'PEACH',
-    PINK = 'PINK'
+    PINK = 'PINK',
+    MAUVE = 'MAUVE'
 }
 
 export type ColorType = {

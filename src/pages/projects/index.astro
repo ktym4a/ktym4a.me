@@ -1,0 +1,44 @@
+---
+import ProjectCard from '@/components/ProjectCard.astro'
+import Heading1 from '@/components/atoms/Heading1.astro'
+import { COLORS } from '@/constants/color'
+import { SITE_NAME } from '@/constants/index'
+import Layout from '@/layouts/Layout.astro'
+import { getProjects } from '@/utils/projects'
+
+const pageName = 'projects'
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
+const title = `${capitalizePageName} - ${SITE_NAME}`
+const description = "ktym4a's projects"
+const baseColor = COLORS.PEACH
+
+const colors = [COLORS.GREEN, COLORS.PINK, COLORS.BLUE, COLORS.MAUVE] as const
+
+const allProjects = await getProjects().then((project) =>
+    project
+        .map((project, i) => {
+            return {
+                ...project,
+                baseColor: colors[i % colors.length] as (typeof colors)[number]
+            }
+        })
+        .reverse()
+)
+---
+
+<Layout
+    activeName='projects'
+    title={title}
+    description={description}
+    baseColor={baseColor}
+>
+    <section>
+        <Heading1 baseColor={baseColor} text='Projects' id='Projects' />
+    </section>
+    <section
+        id='Project'
+        class='grid grid-cols-[repeat(auto-fill,minmax(300px,_1fr))] gap-4'
+    >
+        {allProjects.map((project) => <ProjectCard project={project} />)}
+    </section>
+</Layout>
