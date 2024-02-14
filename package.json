@@ -20,10 +20,10 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
-        "astro": "^4.3.6"
+        "astro": "^4.3.7"
     },
     "devDependencies": {
-        "@astrojs/check": "^0.5.3",
+        "@astrojs/check": "^0.5.4",
         "@astrojs/rss": "^4.0.5",
         "@astrojs/sitemap": "^3.0.5",
         "@astrojs/tailwind": "^5.1.0",
@@ -36,7 +36,7 @@
         "eslint": "^8.56.0",
         "eslint-plugin-astro": "^0.31.4",
         "eslint-plugin-jsx-a11y": "^6.8.0",
-        "husky": "^9.0.10",
+        "husky": "^9.0.11",
         "lint-staged": "^15.2.2",
         "prettier": "^3.2.5",
         "prettier-plugin-astro": "^0.13.0",
