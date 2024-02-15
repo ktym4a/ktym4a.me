@@ -20,7 +20,7 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
-        "astro": "^4.3.7"
+        "astro": "^4.4.0"
     },
     "devDependencies": {
         "@astrojs/check": "^0.5.4",
@@ -28,7 +28,7 @@
         "@astrojs/sitemap": "^3.0.5",
         "@astrojs/tailwind": "^5.1.0",
         "@catppuccin/tailwindcss": "^0.1.6",
-        "@typescript-eslint/parser": "^6.21.0",
+        "@typescript-eslint/parser": "^7.0.1",
         "astro-capo": "^0.0.1",
         "astro-meta-tags": "^0.2.1",
         "astro-robots-txt": "^1.0.0",
