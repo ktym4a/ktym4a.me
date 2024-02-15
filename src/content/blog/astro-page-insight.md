@@ -24,13 +24,13 @@ I've always been a little uncomfortable with opening `Page Speed Insight` or che
 
 I want to make it an integrated dev tool for web development.
 
-- Show lighthouse Score.
-- Addition of filters for Lighthouse results.
-- Analysis and display in meta tag information. (e.g. Open Graph, Twitter Card)
-- Optimize UI/UX.
-- Add caching for Lighthouse results. (for improving DX)
-- Add CI integration.
-- Add feature for PWAs.
+-   Show lighthouse Score.
+-   Addition of filters for Lighthouse results.
+-   Analysis and display in meta tag information. (e.g. Open Graph, Twitter Card)
+-   Optimize UI/UX.
+-   Add caching for Lighthouse results. (for improving DX)
+-   Add CI integration.
+-   Add feature for PWAs.
 
 ## Summary
 
