@@ -21,7 +21,7 @@
     "license": "MIT",
     "dependencies": {
         "astro": "^4.4.0",
-        "astro-page-insight": "^0.0.17"
+        "astro-page-insight": "^0.0.18"
     },
     "devDependencies": {
         "@astrojs/check": "^0.5.4",
