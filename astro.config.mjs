@@ -9,8 +9,11 @@ import pageInsight from "astro-page-insight";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap(), robotsTxt({
-    sitemap: true
+  integrations: [tailwind(), sitemap({
+    prefix: 'sitemap_'
+  }), robotsTxt({
+    sitemap: true,
+    sitemapBaseFileName: 'sitemap_index'
   }), metaTags(), pageInsight()],
   site: 'https://ktym4a.me/',
   base: '/',
