@@ -20,14 +20,14 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
-        "astro": "^4.4.1",
+        "astro": "^4.4.2",
         "astro-page-insight": "^0.0.18",
         "sharp": "^0.33.2"
     },
     "devDependencies": {
         "@astrojs/check": "^0.5.5",
         "@astrojs/rss": "^4.0.5",
-        "@astrojs/sitemap": "^3.1.0",
+        "@astrojs/sitemap": "^3.1.1",
         "@astrojs/tailwind": "^5.1.0",
         "@catppuccin/tailwindcss": "^0.1.6",
         "@typescript-eslint/parser": "^7.0.2",
