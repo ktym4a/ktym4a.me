@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   astro:
-    specifier: ^4.4.3
-    version: 4.4.3(typescript@5.3.3)
+    specifier: ^4.4.4
+    version: 4.4.4(typescript@5.3.3)
   astro-page-insight:
     specifier: ^0.0.18
-    version: 0.0.18(astro@4.4.3)
+    version: 0.0.18(astro@4.4.4)
   sharp:
     specifier: ^0.33.2
     version: 0.33.2
@@ -27,7 +27,7 @@ devDependencies:
     version: 3.1.1
   '@astrojs/tailwind':
     specifier: ^5.1.0
-    version: 5.1.0(astro@4.4.3)(tailwindcss@3.4.1)
+    version: 5.1.0(astro@4.4.4)(tailwindcss@3.4.1)
   '@catppuccin/tailwindcss':
     specifier: ^0.1.6
     version: 0.1.6(tailwindcss@3.4.1)
@@ -36,10 +36,10 @@ devDependencies:
     version: 7.0.2(eslint@8.56.0)(typescript@5.3.3)
   astro-capo:
     specifier: ^0.0.1
-    version: 0.0.1(astro@4.4.3)
+    version: 0.0.1(astro@4.4.4)
   astro-meta-tags:
     specifier: ^0.2.1
-    version: 0.2.1(astro@4.4.3)
+    version: 0.2.1(astro@4.4.4)
   astro-robots-txt:
     specifier: ^1.0.0
     version: 1.0.0
@@ -203,13 +203,13 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /@astrojs/tailwind@5.1.0(astro@4.4.3)(tailwindcss@3.4.1):
+  /@astrojs/tailwind@5.1.0(astro@4.4.4)(tailwindcss@3.4.1):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.4.3(typescript@5.3.3)
+      astro: 4.4.4(typescript@5.3.3)
       autoprefixer: 10.4.17(postcss@8.4.35)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
@@ -1612,12 +1612,12 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /astro-capo@0.0.1(astro@4.4.3):
+  /astro-capo@0.0.1(astro@4.4.4):
     resolution: {integrity: sha512-KyQD1mzgEQnbqrKpYdoIZMAYejkOcIJocdGuQBH9Yzr4KqGzIR8P2DDNbV/FQXaSyq900lCZwWJH45tBIQCG8w==}
     peerDependencies:
       astro: '>= 2.8'
     dependencies:
-      astro: 4.4.3(typescript@5.3.3)
+      astro: 4.4.4(typescript@5.3.3)
       ultrahtml: 1.5.3
     dev: true
 
@@ -1638,30 +1638,30 @@ packages:
       - supports-color
     dev: true
 
-  /astro-integration-kit@0.2.1(astro@4.4.3):
+  /astro-integration-kit@0.2.1(astro@4.4.4):
     resolution: {integrity: sha512-AWgFRvo3YSpFxVfDdhHRAkOR7KmNYrS7h4JCpOBgMtea6SrpARsmfZXXgFHF+nNFJxmIA//PYetkbB/HQGzutw==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
-      astro: 4.4.3(typescript@5.3.3)
+      astro: 4.4.4(typescript@5.3.3)
       pathe: 1.1.2
     dev: false
 
-  /astro-meta-tags@0.2.1(astro@4.4.3):
+  /astro-meta-tags@0.2.1(astro@4.4.4):
     resolution: {integrity: sha512-IFAQG6Ymwke+53H5hcBFtdYyCpF2KEVpp5wA7Qrx8O2+4hUx3N9wE6Vy6QgRHH2Lkgv48PUN7t5fUDBpCMEbAA==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
-      astro: 4.4.3(typescript@5.3.3)
+      astro: 4.4.4(typescript@5.3.3)
     dev: true
 
-  /astro-page-insight@0.0.18(astro@4.4.3):
+  /astro-page-insight@0.0.18(astro@4.4.4):
     resolution: {integrity: sha512-YKi14JgCAUct1PDm/Q2qo7g4i3wYv9PM/MAIxAsSMrLz5Gs7p4XxYbfH0TRZHPVkWwoqPQXVEevci/mnH4kNrQ==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
-      astro: 4.4.3(typescript@5.3.3)
-      astro-integration-kit: 0.2.1(astro@4.4.3)
+      astro: 4.4.4(typescript@5.3.3)
+      astro-integration-kit: 0.2.1(astro@4.4.4)
       chrome-launcher: 1.1.0
       lighthouse: 11.6.0
     transitivePeerDependencies:
@@ -1688,8 +1688,8 @@ packages:
       - typescript
     dev: true
 
-  /astro@4.4.3(typescript@5.3.3):
-    resolution: {integrity: sha512-9Ih+2mJv+i3XgGfU8m9evkNU7NEQWvOhqGsskrCwKmltuTtLol2hPw+eIfE49Yfktzfj5qLC6ZGkPxCJu5gkhA==}
+  /astro@4.4.4(typescript@5.3.3):
+    resolution: {integrity: sha512-EZrDTN888w4sFKqavGsHu8jSaymyxNwnoqIq5NKlMG9WNU/Xn4Yn41pUdBuAOrgNzRp1NyXXhhV6GV1pN71V2Q==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
@@ -1846,8 +1846,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /bare-fs@2.1.5:
-    resolution: {integrity: sha512-5t0nlecX+N2uJqdxe9d18A98cp2u9BETelbjKpiVgQqzzmVNFYWEAjQHqS+2Khgto1vcwhik9cXucaj5ve2WWA==}
+  /bare-fs@2.2.0:
+    resolution: {integrity: sha512-+VhW202E9eTVGkX7p+TNXtZC4RTzj9JfJW7PtfIbZ7mIQ/QT9uOafQTx7lx2n9ERmWsXvLHF4hStAFn4gl2mQw==}
     requiresBuild: true
     dependencies:
       bare-events: 2.2.0
@@ -5711,7 +5711,7 @@ packages:
       pump: 3.0.0
       tar-stream: 3.1.7
     optionalDependencies:
-      bare-fs: 2.1.5
+      bare-fs: 2.2.0
       bare-path: 2.1.0
 
   /tar-stream@2.2.0:
