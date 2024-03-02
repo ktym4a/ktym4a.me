@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.4.8
     version: 4.4.8(typescript@5.3.3)
   astro-page-insight:
-    specifier: ^0.0.18
-    version: 0.0.18(astro@4.4.8)
+    specifier: ^0.1.0
+    version: 0.1.0(astro@4.4.8)
   sharp:
     specifier: ^0.33.2
     version: 0.33.2
@@ -100,7 +100,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
-      '@jridgewell/trace-mapping': 0.3.24
+      '@jridgewell/trace-mapping': 0.3.25
 
   /@astrojs/check@0.5.6(prettier-plugin-astro@0.13.0)(prettier@3.2.5)(typescript@5.3.3):
     resolution: {integrity: sha512-i7j5ogoSg/Bu2NV5zVvwCo9R4kGWXWsJDejxpCu9F7iNNlR333u8EwpP4bpeKASDtjOA1rXKo9ogUTEVlIAHqA==}
@@ -210,7 +210,7 @@ packages:
       tailwindcss: ^3.0.24
     dependencies:
       astro: 4.4.8(typescript@5.3.3)
-      autoprefixer: 10.4.17(postcss@8.4.35)
+      autoprefixer: 10.4.18(postcss@8.4.35)
       postcss: 8.4.35
       postcss-load-config: 4.0.2(postcss@8.4.35)
       tailwindcss: 3.4.1
@@ -271,7 +271,7 @@ packages:
     dependencies:
       '@babel/types': 7.24.0
       '@jridgewell/gen-mapping': 0.3.5
-      '@jridgewell/trace-mapping': 0.3.24
+      '@jridgewell/trace-mapping': 0.3.25
       jsesc: 2.5.2
 
   /@babel/helper-annotate-as-pure@7.22.5:
@@ -954,7 +954,7 @@ packages:
     dependencies:
       '@jridgewell/set-array': 1.2.1
       '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.24
+      '@jridgewell/trace-mapping': 0.3.25
 
   /@jridgewell/resolve-uri@3.1.2:
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
@@ -967,8 +967,8 @@ packages:
   /@jridgewell/sourcemap-codec@1.4.15:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
-  /@jridgewell/trace-mapping@0.3.24:
-    resolution: {integrity: sha512-+VaWXDa6+l6MhflBvVXjIEAzb59nQ2JUK3bwRp2zRpPtU+8TFRy9Gg/5oIcNlkEL5PGlBFGfemUVvIgLnTzq7Q==}
+  /@jridgewell/trace-mapping@0.3.25:
+    resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -1638,10 +1638,29 @@ packages:
       - supports-color
     dev: true
 
-  /astro-integration-kit@0.2.1(astro@4.4.8):
-    resolution: {integrity: sha512-AWgFRvo3YSpFxVfDdhHRAkOR7KmNYrS7h4JCpOBgMtea6SrpARsmfZXXgFHF+nNFJxmIA//PYetkbB/HQGzutw==}
+  /astro-integration-kit@0.5.0(astro@4.4.8):
+    resolution: {integrity: sha512-RbviqerotzLoVBGF8L1aFw5jIP40oWKScRXuzJNp399uDnPMPq7/cIh2x3MIS62U17h7o3d0S3kGt/Ael+tj1g==}
     peerDependencies:
-      astro: ^4.0.0
+      '@vitejs/plugin-react': ^4.2.1
+      astro: ^4.4.1
+      preact: ^10.19.4
+      react: ^18.2.0
+      solid-js: ^1.8.15
+      svelte: ^4.2.11
+      vue: ^3.4.19
+    peerDependenciesMeta:
+      '@vitejs/plugin-react':
+        optional: true
+      preact:
+        optional: true
+      react:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
     dependencies:
       astro: 4.4.8(typescript@5.3.3)
       pathe: 1.1.2
@@ -1655,20 +1674,26 @@ packages:
       astro: 4.4.8(typescript@5.3.3)
     dev: true
 
-  /astro-page-insight@0.0.18(astro@4.4.8):
-    resolution: {integrity: sha512-YKi14JgCAUct1PDm/Q2qo7g4i3wYv9PM/MAIxAsSMrLz5Gs7p4XxYbfH0TRZHPVkWwoqPQXVEevci/mnH4kNrQ==}
+  /astro-page-insight@0.1.0(astro@4.4.8):
+    resolution: {integrity: sha512-mE3sUrs0wqu9N4IyNWesvzEoOez15EBrUlQYCW1apifiVV4V2tMKm239DcETUcxkMWEP7385oHyI7S0JXhbo3w==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
       astro: 4.4.8(typescript@5.3.3)
-      astro-integration-kit: 0.2.1(astro@4.4.8)
+      astro-integration-kit: 0.5.0(astro@4.4.8)
       chrome-launcher: 1.1.0
       lighthouse: 11.6.0
     transitivePeerDependencies:
+      - '@vitejs/plugin-react'
       - bufferutil
       - encoding
+      - preact
+      - react
+      - solid-js
       - supports-color
+      - svelte
       - utf-8-validate
+      - vue
     dev: false
 
   /astro-robots-txt@1.0.0:
@@ -1786,8 +1811,8 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
-  /autoprefixer@10.4.17(postcss@8.4.35):
-    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
+  /autoprefixer@10.4.18(postcss@8.4.35):
+    resolution: {integrity: sha512-1DKbDfsr6KUElM6wg+0zRNkB/Q7WcKYAaK+pzXn+Xqmszm/5Xa9coeNdtP88Vi+dPzZnMjhge8GIV49ZQkDa+g==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -1937,7 +1962,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001591
-      electron-to-chromium: 1.4.689
+      electron-to-chromium: 1.4.690
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
 
@@ -2368,8 +2393,8 @@ packages:
   /eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  /electron-to-chromium@1.4.689:
-    resolution: {integrity: sha512-GatzRKnGPS1go29ep25reM94xxd1Wj8ritU0yRhCJ/tr1Bg8gKnm6R9O/yPOhGQBoLMZ9ezfrpghNaTw97C/PQ==}
+  /electron-to-chromium@1.4.690:
+    resolution: {integrity: sha512-+2OAGjUx68xElQhydpcbqH50hE8Vs2K6TkAeLhICYfndb67CVH0UsZaijmRUE3rHlIxU1u0jxwhgVe6fK3YANA==}
 
   /emmet@2.4.6:
     resolution: {integrity: sha512-dJfbdY/hfeTyf/Ef7Y7ubLYzkBvPQ912wPaeVYpAxvFxkEBf/+hJu4H6vhAvFN6HlxqedlfVn2x1S44FfQ97pg==}
