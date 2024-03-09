@@ -16,7 +16,9 @@ export default defineConfig({
             sitemap: true
         }),
         metaTags(),
-        pageInsight()
+        pageInsight({
+            experimentalCache: true
+        })
     ],
     site: 'https://ktym4a.me/',
     base: '/',
