@@ -21,7 +21,7 @@
     "license": "MIT",
     "dependencies": {
         "astro": "^4.4.15",
-        "astro-page-insight": "^0.2.0",
+        "astro-page-insight": "^0.3.0",
         "sharp": "^0.33.2"
     },
     "devDependencies": {
