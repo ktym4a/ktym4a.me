@@ -58,7 +58,7 @@ const { activeName, baseColor } = Astro.props
     transition:animate='none'
 >
     <div
-        class={`grid overflow-y-auto bg-ctp-crust dark:bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar]:h-[4px] [&::-webkit-scrollbar-thumb]:rounded-md ${baseColor.scrollColor}`}
+        class={`grid overflow-y-auto bg-ctp-crust dark:bg-ctp-surface0 px-4 py-6 [&::-webkit-scrollbar]:w-[10px] [&::-webkit-scrollbar]:h-[6px] [&::-webkit-scrollbar-thumb]:rounded-md [&::-webkit-scrollbar-track]:bg-ctp-overlay0/70 ${baseColor.scrollColor}`}
         tabindex='-1'
     >
         <Menu activeName={activeName} tagText='Menu' baseColor={baseColor} />
