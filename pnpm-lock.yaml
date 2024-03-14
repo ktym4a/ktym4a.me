@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.5.3
     version: 4.5.3(typescript@5.4.2)
   astro-page-insight:
-    specifier: ^0.4.0
-    version: 0.4.0(astro@4.5.3)
+    specifier: ^0.4.1
+    version: 0.4.1(astro@4.5.3)
   sharp:
     specifier: ^0.33.2
     version: 0.33.2
@@ -1686,8 +1686,8 @@ packages:
       astro: 4.5.3(typescript@5.4.2)
     dev: true
 
-  /astro-page-insight@0.4.0(astro@4.5.3):
-    resolution: {integrity: sha512-E/IyDeUuKfXQpp+alordTAxenHJbNVSZV+csxY8yflEhLVA4zsbD4oTX6++YV9h9zKFbUAR6vxzmY7+8/frNyw==}
+  /astro-page-insight@0.4.1(astro@4.5.3):
+    resolution: {integrity: sha512-5mxwIVY5ig4bU4CQdbGOYq8CwcoqSJzQBNzDeuigEhdclJOCo8uZOMd+yUAe8rUVN8aKkbDiSXzYK6ColJ46PA==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
