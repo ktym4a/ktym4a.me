@@ -20,19 +20,19 @@
     "author": "ktym4a",
     "license": "MIT",
     "dependencies": {
-        "astro": "^4.5.2",
+        "astro": "^4.5.3",
         "astro-page-insight": "^0.4.0",
         "sharp": "^0.33.2"
     },
     "devDependencies": {
-        "@astrojs/check": "^0.5.8",
+        "@astrojs/check": "^0.5.9",
         "@astrojs/rss": "^4.0.5",
         "@astrojs/sitemap": "^3.1.1",
         "@astrojs/tailwind": "^5.1.0",
         "@catppuccin/tailwindcss": "^0.1.6",
         "@typescript-eslint/parser": "^7.2.0",
         "astro-capo": "^0.0.1",
-        "astro-meta-tags": "^0.2.1",
+        "astro-meta-tags": "^0.2.2",
         "astro-robots-txt": "^1.0.0",
         "astro-seo": "^0.8.3",
         "eslint": "^8.57.0",
