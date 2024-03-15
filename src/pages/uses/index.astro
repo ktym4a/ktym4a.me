@@ -1,47 +1,47 @@
 ---
-import Heading1 from '@/components/atoms/Heading1.astro'
-import Heading2 from '@/components/atoms/Heading2.astro'
-import Heading3 from '@/components/atoms/Heading3.astro'
-import Link from '@/components/atoms/Link.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import { COLORS } from '@/constants/color'
-import { SITE_NAME } from '@/constants/index'
-import Layout from '@/layouts/Layout.astro'
-import type { MarkdownHeading } from 'astro'
+import Heading1 from "@/components/atoms/Heading1.astro";
+import Heading2 from "@/components/atoms/Heading2.astro";
+import Heading3 from "@/components/atoms/Heading3.astro";
+import Link from "@/components/atoms/Link.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import { COLORS } from "@/constants/color";
+import { SITE_NAME } from "@/constants/index";
+import Layout from "@/layouts/Layout.astro";
+import type { MarkdownHeading } from "astro";
 
-const pageName = 'uses'
-const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
-const title = `${capitalizePageName} - ${SITE_NAME}`
-const description = "List of ktym4a's uses."
-const baseColor = COLORS.BLUE
+const pageName = "uses";
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+const title = `${capitalizePageName} - ${SITE_NAME}`;
+const description = "List of ktym4a's uses.";
+const baseColor = COLORS.BLUE;
 
 const headings: MarkdownHeading[] = [
-    {
-        depth: 1,
-        text: capitalizePageName,
-        slug: capitalizePageName
-    },
-    {
-        depth: 2,
-        text: 'Workstation',
-        slug: 'Workstation'
-    },
-    {
-        depth: 2,
-        text: 'Development Tools',
-        slug: 'Development Tools'
-    },
-    {
-        depth: 2,
-        text: 'Productivity',
-        slug: 'Productivity'
-    },
-    {
-        depth: 2,
-        text: 'Other',
-        slug: 'Other'
-    }
-]
+	{
+		depth: 1,
+		text: capitalizePageName,
+		slug: capitalizePageName,
+	},
+	{
+		depth: 2,
+		text: "Workstation",
+		slug: "Workstation",
+	},
+	{
+		depth: 2,
+		text: "Development Tools",
+		slug: "Development Tools",
+	},
+	{
+		depth: 2,
+		text: "Productivity",
+		slug: "Productivity",
+	},
+	{
+		depth: 2,
+		text: "Other",
+		slug: "Other",
+	},
+];
 ---
 
 <Layout

@@ -1,21 +1,21 @@
 ---
-import { SITE_NAME } from '@/constants/index'
-import { Head as HeadCapo } from 'astro-capo'
-import { SEO } from 'astro-seo'
-import { ViewTransitions } from 'astro:transitions'
+import { ViewTransitions } from "astro:transitions";
+import { SITE_NAME } from "@/constants/index";
+import { Head as HeadCapo } from "astro-capo";
+import { SEO } from "astro-seo";
 
 interface Props {
-    title: string
-    description: string
-    og?:
-        | {
-              type?: string
-              image?: string
-          }
-        | undefined
+	title: string;
+	description: string;
+	og?:
+		| {
+				type?: string;
+				image?: string;
+		  }
+		| undefined;
 }
 
-const { title, description, og } = Astro.props
+const { title, description, og } = Astro.props;
 ---
 
 <HeadCapo>

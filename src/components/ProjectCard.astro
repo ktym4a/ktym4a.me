@@ -1,16 +1,16 @@
 ---
-import Link from '@/components/atoms/Link.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import { type ColorType } from '@/types/index'
-import { type ProjectsCollection } from '@/utils/projects'
+import Link from "@/components/atoms/Link.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import type { ColorType } from "@/types/index";
+import type { ProjectsCollection } from "@/utils/projects";
 
 interface Props {
-    project: ProjectsCollection & {
-        baseColor: ColorType
-    }
+	project: ProjectsCollection & {
+		baseColor: ColorType;
+	};
 }
 
-const { project } = Astro.props
+const { project } = Astro.props;
 ---
 
 <article class='relative'>

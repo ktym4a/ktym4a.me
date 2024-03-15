@@ -1,13 +1,13 @@
 ---
-import Tag from '@/components/atoms/Tag.astro'
-import NavItem from '@/components/NavItem.astro'
-import { COLORS } from '@/constants/color'
+import NavItem from "@/components/NavItem.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import { COLORS } from "@/constants/color";
 
 interface Props {
-    activeName: string
+	activeName: string;
 }
 
-const { activeName } = Astro.props
+const { activeName } = Astro.props;
 ---
 
 <nav class='flex flex-col gap-1'>

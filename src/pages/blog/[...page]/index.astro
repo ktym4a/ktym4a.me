@@ -1,41 +1,42 @@
 ---
-import BlogHeading from '@/components/atoms/BlogHeading.astro'
-import Link from '@/components/atoms/Link.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import { COLORS } from '@/constants/color'
-import { GITHUB_CONTENT_URL, SITE_NAME } from '@/constants/index'
-import Layout from '@/layouts/Layout.astro'
-import { getPosts } from '@/utils/blog'
+import BlogHeading from "@/components/atoms/BlogHeading.astro";
+import Link from "@/components/atoms/Link.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import { COLORS } from "@/constants/color";
+import { GITHUB_CONTENT_URL, SITE_NAME } from "@/constants/index";
+import Layout from "@/layouts/Layout.astro";
+import { getPosts } from "@/utils/blog";
 
 export async function getStaticPaths() {
-    const colors = [
-        COLORS.GREEN,
-        COLORS.PINK,
-        COLORS.BLUE,
-        COLORS.PEACH
-    ] as const
+	const colors = [
+		COLORS.GREEN,
+		COLORS.PINK,
+		COLORS.BLUE,
+		COLORS.PEACH,
+	] as const;
 
-    return await getPosts().then((post) =>
-        post.map((entry, i) => ({
-            params: { page: entry.slug },
-            props: {
-                entry,
-                baseColor: colors[i % colors.length] as (typeof colors)[number]
-            }
-        }))
-    )
+	return await getPosts().then((post) =>
+		post.map((entry, i) => ({
+			params: { page: entry.slug },
+			props: {
+				entry,
+				baseColor: colors[i % colors.length] as (typeof colors)[number],
+			},
+		})),
+	);
 }
 
-const { entry, baseColor } = Astro.props
-const { Content, headings } = await entry.render()
-const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href
+const { entry, baseColor } = Astro.props;
+const { Content, headings } = await entry.render();
+const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href;
 
-const pageName = 'blog'
-const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
-const title = `${entry.data.title} - ${capitalizePageName} - ${SITE_NAME}`
-const description = entry.data.description ?? ''
+const pageName = "blog";
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+const title = `${entry.data.title} - ${capitalizePageName} - ${SITE_NAME}`;
+const description = entry.data.description ?? "";
 
-const lineHight = entry.data.lang === 'ja' ? 'leading-loose' : 'leading-relaxed'
+const lineHight =
+	entry.data.lang === "ja" ? "leading-loose" : "leading-relaxed";
 ---
 
 <Layout

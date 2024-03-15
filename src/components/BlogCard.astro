@@ -1,17 +1,17 @@
 ---
-import Link from '@/components/atoms/Link.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import { type ColorType } from '@/types/index'
-import { type BlogCollection } from '@/utils/blog'
-import PublishedDate from './atoms/PublishedDate.astro'
+import Link from "@/components/atoms/Link.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import type { ColorType } from "@/types/index";
+import type { BlogCollection } from "@/utils/blog";
+import PublishedDate from "./atoms/PublishedDate.astro";
 
 interface Props {
-    post: BlogCollection & {
-        baseColor: ColorType
-    }
+	post: BlogCollection & {
+		baseColor: ColorType;
+	};
 }
 
-const { post } = Astro.props
+const { post } = Astro.props;
 ---
 
 <article class='relative'>

@@ -1,24 +1,24 @@
 ---
-import Nav from '@/components/Nav.astro'
-import SNSLinks from '@/components/SNSLinks.astro'
-import ToC from '@/components/ToC.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import type { ColorType } from '@/types/index'
-import type { MarkdownHeading } from 'astro'
+import Nav from "@/components/Nav.astro";
+import SNSLinks from "@/components/SNSLinks.astro";
+import ToC from "@/components/ToC.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import type { ColorType } from "@/types/index";
+import type { MarkdownHeading } from "astro";
 
 interface Props {
-    baseColor: ColorType
-    activeName: string
-    tagText: string
-    toc?:
-        | {
-              headings: MarkdownHeading[] | undefined
-              tagName: string
-          }
-        | undefined
+	baseColor: ColorType;
+	activeName: string;
+	tagText: string;
+	toc?:
+		| {
+				headings: MarkdownHeading[] | undefined;
+				tagName: string;
+		  }
+		| undefined;
 }
 
-const { baseColor, activeName, tagText, toc = undefined } = Astro.props
+const { baseColor, activeName, tagText, toc = undefined } = Astro.props;
 ---
 
 <Tag text={tagText} className='h-full gap-2'>

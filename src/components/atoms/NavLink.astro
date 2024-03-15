@@ -1,26 +1,26 @@
 ---
-import type { ColorType } from '@/types/index'
+import type { ColorType } from "@/types/index";
 interface Props {
-    colors: ColorType
-    history?: 'auto' | 'push' | 'replace'
-    href: string
-    rel?: string
-    target?: '_self' | '_blank' | '_parent' | '_top'
-    title?: string
+	colors: ColorType;
+	history?: "auto" | "push" | "replace";
+	href: string;
+	rel?: string;
+	target?: "_self" | "_blank" | "_parent" | "_top";
+	title?: string;
 }
 
 const {
-    colors,
-    history = 'auto',
-    href,
-    rel,
-    target = '_self',
-    title
-} = Astro.props
+	colors,
+	history = "auto",
+	href,
+	rel,
+	target = "_self",
+	title,
+} = Astro.props;
 
 const colorClass = Object.values(colors).reduce((acc, value) => {
-    return `${acc} ${value}`
-}, '')
+	return `${acc} ${value}`;
+}, "");
 ---
 
 <a
