@@ -1,43 +1,44 @@
 ---
-import Head from '@/components/Head.astro'
-import MainLayout from '@/layouts/MainLayout.astro'
-import SideLayout from '@/layouts/SideLayout.astro'
-import { type ColorType } from '@/types/index'
-import type { MarkdownHeading } from 'astro'
+import Head from "@/components/Head.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import SideLayout from "@/layouts/SideLayout.astro";
+import type { ColorType } from "@/types/index";
+import type { MarkdownHeading } from "astro";
 
 interface Props {
-    activeName: string
-    baseColor: ColorType
-    currentName?: string | undefined
-    description: string
-    og?: {
-        type?: string
-        image?: string
-    }
-    mainTagName?: string | undefined
-    title: string
-    toc?:
-        | {
-              headings: MarkdownHeading[] | undefined
-              tagName: string
-          }
-        | undefined
-    lang?: string | undefined
+	activeName: string;
+	baseColor: ColorType;
+	currentName?: string | undefined;
+	description: string;
+	og?: {
+		type?: string;
+		image?: string;
+	};
+	mainTagName?: string | undefined;
+	title: string;
+	toc?:
+		| {
+				headings: MarkdownHeading[] | undefined;
+				tagName: string;
+		  }
+		| undefined;
+	lang?: string | undefined;
 }
 
 const {
-    activeName,
-    baseColor,
-    currentName = undefined,
-    description,
-    og = undefined,
-    mainTagName = undefined,
-    title,
-    toc = undefined,
-    lang = 'en'
-} = Astro.props
-const routes = Astro.url.pathname.split('/').filter((path) => path)
-const currentPath = title === '404 - ktym4a' ? '404' : routes.at(-1) ?? 'ktym4a'
+	activeName,
+	baseColor,
+	currentName = undefined,
+	description,
+	og = undefined,
+	mainTagName = undefined,
+	title,
+	toc = undefined,
+	lang = "en",
+} = Astro.props;
+const routes = Astro.url.pathname.split("/").filter((path) => path);
+const currentPath =
+	title === "404 - ktym4a" ? "404" : routes.at(-1) ?? "ktym4a";
 ---
 
 <!doctype html>

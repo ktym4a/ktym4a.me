@@ -1,15 +1,15 @@
 {
-    "extends": "astro/tsconfigs/strictest",
-    "importsNotUsedAsValues": "error",
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@/assets/*": ["src/assets/*"],
-            "@/components/*": ["src/components/*"],
-            "@/layouts/*": ["src/layouts/*"],
-            "@/types/*": ["src/types/*"],
-            "@/utils/*": ["src/utils/*"],
-            "@/constants/*": ["src/constants/*"]
-        }
-    }
+	"extends": "astro/tsconfigs/strictest",
+	"importsNotUsedAsValues": "error",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/assets/*": ["src/assets/*"],
+			"@/components/*": ["src/components/*"],
+			"@/layouts/*": ["src/layouts/*"],
+			"@/types/*": ["src/types/*"],
+			"@/utils/*": ["src/utils/*"],
+			"@/constants/*": ["src/constants/*"]
+		}
+	}
 }

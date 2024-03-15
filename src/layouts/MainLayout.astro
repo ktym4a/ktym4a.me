@@ -1,24 +1,24 @@
 ---
-import Tag from '@/components/atoms/Tag.astro'
-import Breadcrumbs from '@/components/Breadcrumbs.astro'
-import { MAIN_SLIDE_ANIMATION } from '@/constants/animation'
-import { type ColorType } from '@/types/index'
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import { MAIN_SLIDE_ANIMATION } from "@/constants/animation";
+import type { ColorType } from "@/types/index";
 
 interface Props {
-    baseColor: ColorType
-    currentPath: string
-    currentName?: string | undefined
-    routes: string[]
-    tagName?: string | undefined
+	baseColor: ColorType;
+	currentPath: string;
+	currentName?: string | undefined;
+	routes: string[];
+	tagName?: string | undefined;
 }
 
 const {
-    baseColor,
-    currentPath,
-    currentName = undefined,
-    routes,
-    tagName = 'Main'
-} = Astro.props
+	baseColor,
+	currentPath,
+	currentName = undefined,
+	routes,
+	tagName = "Main",
+} = Astro.props;
 ---
 
 <div

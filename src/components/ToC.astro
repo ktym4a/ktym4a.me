@@ -1,51 +1,51 @@
 ---
-import NavItem from '@/components/NavItem.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import type { ColorType, ToCType } from '@/types/index'
-import type { MarkdownHeading } from 'astro'
+import NavItem from "@/components/NavItem.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import type { ColorType, ToCType } from "@/types/index";
+import type { MarkdownHeading } from "astro";
 
 interface Props {
-    baseColor: ColorType
-    toc?:
-        | {
-              headings: MarkdownHeading[] | undefined
-              tagName: string
-          }
-        | undefined
+	baseColor: ColorType;
+	toc?:
+		| {
+				headings: MarkdownHeading[] | undefined;
+				tagName: string;
+		  }
+		| undefined;
 }
 
-const { baseColor, toc = undefined } = Astro.props
+const { baseColor, toc = undefined } = Astro.props;
 
-let tableOfContents: ToCType = []
+let tableOfContents: ToCType = [];
 if (toc?.headings) {
-    for (let heading of toc.headings) {
-        if (tableOfContents === undefined) {
-            tableOfContents = []
-        }
-        if (heading.depth === 1 || heading.depth === 2 || heading.depth === 3) {
-            if (heading.depth === 3) {
-                const lastHeading = tableOfContents[tableOfContents.length - 1]
-                if (!lastHeading || lastHeading.depth !== 2) {
-                    throw new Error(
-                        'Cannot add `h3` to table of contents without a preceding `h2`'
-                    )
-                }
-                if (!lastHeading.children) {
-                    lastHeading.children = []
-                }
+	for (const heading of toc.headings) {
+		if (tableOfContents === undefined) {
+			tableOfContents = [];
+		}
+		if (heading.depth === 1 || heading.depth === 2 || heading.depth === 3) {
+			if (heading.depth === 3) {
+				const lastHeading = tableOfContents[tableOfContents.length - 1];
+				if (!lastHeading || lastHeading.depth !== 2) {
+					throw new Error(
+						"Cannot add `h3` to table of contents without a preceding `h2`",
+					);
+				}
+				if (!lastHeading.children) {
+					lastHeading.children = [];
+				}
 
-                lastHeading.children.push({
-                    ...heading,
-                    children: []
-                })
-            } else {
-                tableOfContents.push({
-                    ...heading,
-                    children: []
-                })
-            }
-        }
-    }
+				lastHeading.children.push({
+					...heading,
+					children: [],
+				});
+			} else {
+				tableOfContents.push({
+					...heading,
+					children: [],
+				});
+			}
+		}
+	}
 }
 ---
 

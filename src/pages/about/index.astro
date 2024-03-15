@@ -1,42 +1,42 @@
 ---
-import Icon from '@/assets/images/about/icon.jpg'
-import Heading1 from '@/components/atoms/Heading1.astro'
-import Heading2 from '@/components/atoms/Heading2.astro'
-import Tag from '@/components/atoms/Tag.astro'
-import { COLORS } from '@/constants/color'
-import { SITE_NAME } from '@/constants/index'
-import Layout from '@/layouts/Layout.astro'
-import type { MarkdownHeading } from 'astro'
-import { Image } from 'astro:assets'
+import { Image } from "astro:assets";
+import Icon from "@/assets/images/about/icon.jpg";
+import Heading1 from "@/components/atoms/Heading1.astro";
+import Heading2 from "@/components/atoms/Heading2.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import { COLORS } from "@/constants/color";
+import { SITE_NAME } from "@/constants/index";
+import Layout from "@/layouts/Layout.astro";
+import type { MarkdownHeading } from "astro";
 
-const pageName = 'about'
-const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1)
-const title = `${capitalizePageName} - ${SITE_NAME}`
-const description = "ktym4a's about page"
-const baseColor = COLORS.PINK
+const pageName = "about";
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+const title = `${capitalizePageName} - ${SITE_NAME}`;
+const description = "ktym4a's about page";
+const baseColor = COLORS.PINK;
 
 const headings: MarkdownHeading[] = [
-    {
-        depth: 1,
-        text: capitalizePageName,
-        slug: capitalizePageName
-    },
-    {
-        depth: 2,
-        text: 'Profile',
-        slug: 'Profile'
-    },
-    {
-        depth: 2,
-        text: 'Experience',
-        slug: 'Experience'
-    },
-    {
-        depth: 2,
-        text: 'Interests',
-        slug: 'Interests'
-    }
-]
+	{
+		depth: 1,
+		text: capitalizePageName,
+		slug: capitalizePageName,
+	},
+	{
+		depth: 2,
+		text: "Profile",
+		slug: "Profile",
+	},
+	{
+		depth: 2,
+		text: "Experience",
+		slug: "Experience",
+	},
+	{
+		depth: 2,
+		text: "Interests",
+		slug: "Interests",
+	},
+];
 ---
 
 <Layout

@@ -1,61 +1,47 @@
 {
-    "name": "ktym4a.me",
-    "type": "module",
-    "version": "0.0.1",
-    "description": "My personal website",
-    "main": "index.js",
-    "scripts": {
-        "dev": "astro dev",
-        "start": "astro dev",
-        "build": "astro build",
-        "preview": "astro preview",
-        "check": "astro check",
-        "check:tsc": "tsc --noEmit",
-        "astro": "astro",
-        "lint": "eslint src --ext .astro --config .eslintrc.cjs",
-        "format": "prettier -w .",
-        "format:check": "prettier --check .",
-        "prepare": "husky"
-    },
-    "author": "ktym4a",
-    "license": "MIT",
-    "dependencies": {
-        "astro": "^4.5.4",
-        "astro-page-insight": "^0.4.1",
-        "sharp": "^0.33.2"
-    },
-    "devDependencies": {
-        "@astrojs/check": "^0.5.9",
-        "@astrojs/rss": "^4.0.5",
-        "@astrojs/sitemap": "^3.1.1",
-        "@astrojs/tailwind": "^5.1.0",
-        "@catppuccin/tailwindcss": "^0.1.6",
-        "@typescript-eslint/parser": "^7.2.0",
-        "astro-capo": "^0.0.1",
-        "astro-meta-tags": "^0.2.2",
-        "astro-robots-txt": "^1.0.0",
-        "astro-seo": "^0.8.3",
-        "eslint": "^8.57.0",
-        "eslint-plugin-astro": "^0.31.4",
-        "eslint-plugin-jsx-a11y": "^6.8.0",
-        "husky": "^9.0.11",
-        "lint-staged": "^15.2.2",
-        "prettier": "^3.2.5",
-        "prettier-plugin-astro": "^0.13.0",
-        "prettier-plugin-astro-organize-imports": "^0.4.3",
-        "prettier-plugin-tailwindcss": "^0.5.12",
-        "remark-code-titles": "^0.1.2",
-        "tailwindcss": "^3.4.1",
-        "typescript": "^5.4.2"
-    },
-    "lint-staged": {
-        "*.astro": [
-            "prettier -w --config .prettierrc",
-            "eslint --fix --ext .astro --config .eslintrc.cjs",
-            "astro check"
-        ],
-        "*.ts": [
-            "prettier -w --config .prettierrc"
-        ]
-    }
+	"name": "ktym4a.me",
+	"type": "module",
+	"version": "0.0.1",
+	"description": "My personal website",
+	"main": "index.js",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"check": "astro check",
+		"check:tsc": "tsc --noEmit",
+		"astro": "astro",
+		"lint": "biome check .",
+		"lint:fix": "biome check --apply .",
+		"prepare": "husky"
+	},
+	"author": "ktym4a",
+	"license": "MIT",
+	"dependencies": {
+		"astro": "^4.5.4",
+		"astro-page-insight": "^0.4.1",
+		"sharp": "^0.33.2"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.5.9",
+		"@astrojs/rss": "^4.0.5",
+		"@astrojs/sitemap": "^3.1.1",
+		"@astrojs/tailwind": "^5.1.0",
+		"@biomejs/biome": "^1.6.1",
+		"@catppuccin/tailwindcss": "^0.1.6",
+		"astro-capo": "^0.0.1",
+		"astro-meta-tags": "^0.2.2",
+		"astro-robots-txt": "^1.0.0",
+		"astro-seo": "^0.8.3",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"remark-code-titles": "^0.1.2",
+		"tailwindcss": "^3.4.1",
+		"typescript": "^5.4.2"
+	},
+	"lint-staged": {
+		"*.astro": ["biome check --apply .", "astro check"],
+		"*.ts": ["biome check --apply ."]
+	}
 }

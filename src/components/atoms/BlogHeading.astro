@@ -1,18 +1,18 @@
 ---
-import Tag from '@/components/atoms/Tag.astro'
-import type { ColorType } from '@/types/index'
-import PublicDate from './PublishedDate.astro'
-import UpdatedDate from './UpdatedDate.astro'
+import Tag from "@/components/atoms/Tag.astro";
+import type { ColorType } from "@/types/index";
+import PublicDate from "./PublishedDate.astro";
+import UpdatedDate from "./UpdatedDate.astro";
 
 interface Props {
-    baseColor: ColorType
-    publishedDate: Date
-    updatedDate?: Date | undefined
-    text: string
-    id: string
+	baseColor: ColorType;
+	publishedDate: Date;
+	updatedDate?: Date | undefined;
+	text: string;
+	id: string;
 }
 
-const { baseColor, publishedDate, updatedDate, text, id } = Astro.props
+const { baseColor, publishedDate, updatedDate, text, id } = Astro.props;
 ---
 
 <Tag text='Metadata'>

@@ -1,16 +1,16 @@
 ---
-import Link from '@/components/atoms/Link.astro'
-import type { ColorType } from '@/types/index'
+import Link from "@/components/atoms/Link.astro";
+import type { ColorType } from "@/types/index";
 
 interface Props {
-    colors: ColorType
-    currentPath: string
-    href: string
-    name?: string | undefined
-    path: string
+	colors: ColorType;
+	currentPath: string;
+	href: string;
+	name?: string | undefined;
+	path: string;
 }
 
-const { colors, currentPath, href, path, name = path } = Astro.props
+const { colors, currentPath, href, path, name = path } = Astro.props;
 ---
 
 <p class='flex gap-1 md:gap-2'>

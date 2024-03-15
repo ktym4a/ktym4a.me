@@ -1,64 +1,65 @@
 ---
-import Breadcrumb from '@/components/atoms/Breadcrumb.astro'
-import { COLORS } from '@/constants/color'
-import { type ColorType } from '@/types/index'
+import Breadcrumb from "@/components/atoms/Breadcrumb.astro";
+import { COLORS } from "@/constants/color";
+import type { ColorType } from "@/types/index";
 
 interface Props {
-    baseColor: ColorType
-    currentPath: string
-    currentName?: string | undefined
-    position: 'left' | 'main'
-    routes: string[]
+	baseColor: ColorType;
+	currentPath: string;
+	currentName?: string | undefined;
+	position: "left" | "main";
+	routes: string[];
 }
 
 const {
-    baseColor,
-    currentPath,
-    currentName = undefined,
-    position,
-    routes
-} = Astro.props
+	baseColor,
+	currentPath,
+	currentName = undefined,
+	position,
+	routes,
+} = Astro.props;
 
 type Path = {
-    href: string
-    path: string
-    name?: string
-    colors: ColorType
-}
+	href: string;
+	path: string;
+	name?: string;
+	colors: ColorType;
+};
 
 const wrapClass =
-    position === 'left' ? 'mt-2 flex gap-4' : 'ml-1 md:ml-2 flex gap-2 pr-4'
+	position === "left" ? "mt-2 flex gap-4" : "ml-1 md:ml-2 flex gap-2 pr-4";
 
-const rootPath = Astro.site?.pathname ?? '/'
+const rootPath = Astro.site?.pathname ?? "/";
 
 const paths: Path[] = [
-    {
-        href: rootPath,
-        path: 'ktym4a',
-        colors: COLORS.GREEN
-    }
-]
-if (currentPath === '404') {
-    paths.push({
-        href: paths.at(-1)?.href + '404/',
-        path: '404',
-        colors: baseColor
-    })
+	{
+		href: rootPath,
+		path: "ktym4a",
+		colors: COLORS.GREEN,
+	},
+];
+if (currentPath === "404") {
+	paths.push({
+		href: `${paths.at(-1)?.href}404/`,
+		path: "404",
+		colors: baseColor,
+	});
 } else {
-    routes.forEach((path) => {
-        paths.push({
-            href: paths.at(-1)?.href + path + '/',
-            path,
-            colors: path === 'blog' ? COLORS.MAUVE : baseColor
-        })
-    })
+	// biome-ignore lint/complexity/noForEach: <explanation>
+	routes.forEach((path) => {
+		paths.push({
+			href: `${paths.at(-1)?.href + path}/`,
+			path,
+			colors: path === "blog" ? COLORS.MAUVE : baseColor,
+		});
+	});
 }
 
 if (currentName) {
-    const lastPath = paths.at(-1)
-    if (lastPath) {
-        lastPath.name = currentName
-    }
+	const lastPath = paths.at(-1);
+	if (lastPath) {
+		lastPath.name = currentName;
+	}
 }
 ---
 

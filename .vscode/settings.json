@@ -1,3 +1,3 @@
 {
-    "eslint.validate": ["astro"]
+	"eslint.validate": ["astro"]
 }
