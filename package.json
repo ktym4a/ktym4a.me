@@ -19,7 +19,7 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^4.5.4",
+		"astro": "^4.5.5",
 		"astro-page-insight": "^0.4.1",
 		"sharp": "^0.33.2"
 	},
@@ -41,7 +41,12 @@
 		"typescript": "^5.4.2"
 	},
 	"lint-staged": {
-		"*.astro": ["biome check --apply .", "astro check"],
-		"*.ts": ["biome check --apply ."]
+		"*.astro": [
+			"biome check --apply .",
+			"astro check"
+		],
+		"*.ts": [
+			"biome check --apply ."
+		]
 	}
 }
