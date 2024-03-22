@@ -17,6 +17,9 @@ export default defineConfig({
 		}),
 		metaTags(),
 		pageInsight({
+			lh: {
+				// pwa: true,
+			},
 			experimentalCache: true,
 		}),
 	],
