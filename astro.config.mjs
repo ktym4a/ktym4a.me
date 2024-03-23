@@ -36,4 +36,7 @@ export default defineConfig({
 		},
 		remarkPlugins: [remarkCodeTitles],
 	},
+	experimental: {
+		directRenderScript: true,
+	}
 });
