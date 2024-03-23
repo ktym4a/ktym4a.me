@@ -19,12 +19,12 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^4.5.8",
+		"astro": "^4.5.9",
 		"astro-page-insight": "^0.5.2",
 		"sharp": "^0.33.2"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.5.9",
+		"@astrojs/check": "^0.5.10",
 		"@astrojs/rss": "^4.0.5",
 		"@astrojs/sitemap": "^3.1.1",
 		"@astrojs/tailwind": "^5.1.0",
