@@ -38,5 +38,5 @@ export default defineConfig({
 	},
 	experimental: {
 		directRenderScript: true,
-	}
+	},
 });
