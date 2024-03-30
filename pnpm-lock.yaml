@@ -9,8 +9,8 @@ dependencies:
     specifier: ^4.5.12
     version: 4.5.12(typescript@5.4.3)
   astro-page-insight:
-    specifier: ^0.5.3
-    version: 0.5.3(astro@4.5.12)
+    specifier: ^0.5.4
+    version: 0.5.4(astro@4.5.12)
   sharp:
     specifier: ^0.33.3
     version: 0.33.3
@@ -1425,8 +1425,8 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
-  /@types/node@20.11.30:
-    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+  /@types/node@20.12.2:
+    resolution: {integrity: sha512-zQ0NYO87hyN6Xrclcqp7f8ZbXNbRfoGWNcMvHTPQp9UUrwI0mI7XBz+cu7/W6/VClYo2g63B0cjull/srU7LgQ==}
     dependencies:
       undici-types: 5.26.5
     dev: false
@@ -1447,7 +1447,7 @@ packages:
     resolution: {integrity: sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==}
     requiresBuild: true
     dependencies:
-      '@types/node': 20.11.30
+      '@types/node': 20.12.2
     dev: false
     optional: true
 
@@ -1695,8 +1695,8 @@ packages:
       astro: 4.5.12(typescript@5.4.3)
     dev: true
 
-  /astro-page-insight@0.5.3(astro@4.5.12):
-    resolution: {integrity: sha512-vdLbF/JaluykDtL/VLbepOsL7ukjgpBhVsKhlI+rtPk+EDm0NjyxsUq6OrkFehmcuIq3UMZdXPEE9KtpqLrHnQ==}
+  /astro-page-insight@0.5.4(astro@4.5.12):
+    resolution: {integrity: sha512-rybeBPvm5NQ5IS4IN+PJQe9Lt6x9P40iUFmB5o2exGFPPAPhbSepBj6yD7A4nT04IFivB47ZZ6Bie0B70gt4lg==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
@@ -2022,7 +2022,7 @@ packages:
     engines: {node: '>=12.13.0'}
     hasBin: true
     dependencies:
-      '@types/node': 20.11.30
+      '@types/node': 20.12.2
       escape-string-regexp: 4.0.0
       is-wsl: 2.2.0
       lighthouse-logger: 2.0.1
@@ -4537,7 +4537,7 @@ packages:
     resolution: {integrity: sha512-DI7/OuAUD+GMpR6dmu8lliO2Wg5zfeh+/xsdyJZCzd8o5JgFUjCeLsBDuZjIQJdwXS3J0L/uZYrELKYqx+PXog==}
     engines: {node: '>=8.0'}
     dependencies:
-      '@types/node': 20.11.30
+      '@types/node': 20.12.2
       image-ssim: 0.2.0
       jpeg-js: 0.4.4
     dev: false
