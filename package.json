@@ -19,7 +19,7 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^4.5.10",
+		"astro": "^4.5.12",
 		"astro-page-insight": "^0.5.3",
 		"sharp": "^0.33.3"
 	},
