@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   astro:
-    specifier: ^4.5.14
-    version: 4.5.14(typescript@5.4.3)
+    specifier: ^4.5.15
+    version: 4.5.15(typescript@5.4.3)
   astro-page-insight:
     specifier: ^0.5.4
-    version: 0.5.4(astro@4.5.14)
+    version: 0.5.4(astro@4.5.15)
   sharp:
     specifier: ^0.33.3
     version: 0.33.3
@@ -27,7 +27,7 @@ devDependencies:
     version: 3.1.2
   '@astrojs/tailwind':
     specifier: ^5.1.0
-    version: 5.1.0(astro@4.5.14)(tailwindcss@3.4.3)
+    version: 5.1.0(astro@4.5.15)(tailwindcss@3.4.3)
   '@biomejs/biome':
     specifier: ^1.6.3
     version: 1.6.3
@@ -36,10 +36,10 @@ devDependencies:
     version: 0.1.6(tailwindcss@3.4.3)
   astro-capo:
     specifier: ^0.0.1
-    version: 0.0.1(astro@4.5.14)
+    version: 0.0.1(astro@4.5.15)
   astro-meta-tags:
     specifier: ^0.2.2
-    version: 0.2.2(astro@4.5.14)
+    version: 0.2.2(astro@4.5.15)
   astro-robots-txt:
     specifier: ^1.0.0
     version: 1.0.0
@@ -175,13 +175,13 @@ packages:
       zod: 3.22.4
     dev: true
 
-  /@astrojs/tailwind@5.1.0(astro@4.5.14)(tailwindcss@3.4.3):
+  /@astrojs/tailwind@5.1.0(astro@4.5.15)(tailwindcss@3.4.3):
     resolution: {integrity: sha512-BJoCDKuWhU9FT2qYg+fr6Nfb3qP4ShtyjXGHKA/4mHN94z7BGcmauQK23iy+YH5qWvTnhqkd6mQPQ1yTZTe9Ig==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 4.5.14(typescript@5.4.3)
+      astro: 4.5.15(typescript@5.4.3)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -1643,16 +1643,16 @@ packages:
       tslib: 2.6.2
     dev: false
 
-  /astro-capo@0.0.1(astro@4.5.14):
+  /astro-capo@0.0.1(astro@4.5.15):
     resolution: {integrity: sha512-KyQD1mzgEQnbqrKpYdoIZMAYejkOcIJocdGuQBH9Yzr4KqGzIR8P2DDNbV/FQXaSyq900lCZwWJH45tBIQCG8w==}
     peerDependencies:
       astro: '>= 2.8'
     dependencies:
-      astro: 4.5.14(typescript@5.4.3)
+      astro: 4.5.15(typescript@5.4.3)
       ultrahtml: 1.5.3
     dev: true
 
-  /astro-integration-kit@0.8.0(astro@4.5.14):
+  /astro-integration-kit@0.8.0(astro@4.5.15):
     resolution: {integrity: sha512-YTdSYrE6xrYpYWZghUUhsTs6Mt1H+/Mucv2VUPfhHoeY8IS9XbpA2adFEBRMd4n+sFd8W490gCUtjmWxnhEs9Q==}
     peerDependencies:
       '@astrojs/db': ^0.9.0
@@ -1682,26 +1682,26 @@ packages:
       vue:
         optional: true
     dependencies:
-      astro: 4.5.14(typescript@5.4.3)
+      astro: 4.5.15(typescript@5.4.3)
       pathe: 1.1.2
       recast: 0.23.6
     dev: false
 
-  /astro-meta-tags@0.2.2(astro@4.5.14):
+  /astro-meta-tags@0.2.2(astro@4.5.15):
     resolution: {integrity: sha512-7wl4AlklzDJqKU8BIhNVyLvgMKlKk6hJX2auYb2lFujJ4/zu2u1W7VKTx3wZ7WuGsRsZMUj6BvXz17e0KZ3jgw==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
-      astro: 4.5.14(typescript@5.4.3)
+      astro: 4.5.15(typescript@5.4.3)
     dev: true
 
-  /astro-page-insight@0.5.4(astro@4.5.14):
+  /astro-page-insight@0.5.4(astro@4.5.15):
     resolution: {integrity: sha512-rybeBPvm5NQ5IS4IN+PJQe9Lt6x9P40iUFmB5o2exGFPPAPhbSepBj6yD7A4nT04IFivB47ZZ6Bie0B70gt4lg==}
     peerDependencies:
       astro: ^4.0.0
     dependencies:
-      astro: 4.5.14(typescript@5.4.3)
-      astro-integration-kit: 0.8.0(astro@4.5.14)
+      astro: 4.5.15(typescript@5.4.3)
+      astro-integration-kit: 0.8.0(astro@4.5.15)
       chrome-launcher: 1.1.1
       lighthouse: 11.7.0
     transitivePeerDependencies:
@@ -1735,8 +1735,8 @@ packages:
       - typescript
     dev: true
 
-  /astro@4.5.14(typescript@5.4.3):
-    resolution: {integrity: sha512-OXQ9Wbcn5e2eEPrNKJjGXeCWnKamNGyvSwORL0B8BB1fp3OO/EYo/RfeQGTR9kxGNxEpokoPZL9JNgFHoVK+wA==}
+  /astro@4.5.15(typescript@5.4.3):
+    resolution: {integrity: sha512-d2+yMv4ZlWwWFzfbpXIULMniNmdPlbwGrQScacEni0WLeo4k7ETO51/bHN/i/fXwxL9IGfasdEFkk2baYXDRog==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
