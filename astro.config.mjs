@@ -20,7 +20,11 @@ export default defineConfig({
 			lh: {
 				// pwa: true,
 			},
-			experimentalCache: true,
+			cache: true,
+			// build: {
+			// 	bundle: true,
+			// 	showOnLoad: false,
+			// }
 		}),
 	],
 	site: "https://ktym4a.me/",
