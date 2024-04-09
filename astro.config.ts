@@ -1,9 +1,10 @@
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+// import remarkCodeTitles from "remark-code-titles";
+import astroWhen from "@inox-tools/astro-when";
 import metaTags from "astro-meta-tags";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
-import remarkCodeTitles from "remark-code-titles";
 
 import pageInsight from "astro-page-insight";
 
@@ -18,7 +19,7 @@ export default defineConfig({
 		metaTags(),
 		pageInsight({
 			lh: {
-				// pwa: true,
+				pwa: true,
 			},
 			cache: true,
 			// build: {
@@ -26,6 +27,7 @@ export default defineConfig({
 			// 	showOnLoad: false,
 			// }
 		}),
+		astroWhen(),
 	],
 	site: "https://ktym4a.me/",
 	base: "/",
@@ -38,7 +40,7 @@ export default defineConfig({
 				dark: "catppuccin-mocha",
 			},
 		},
-		remarkPlugins: [remarkCodeTitles],
+		// remarkPlugins: [remarkCodeTitles],
 	},
 	experimental: {
 		directRenderScript: true,
