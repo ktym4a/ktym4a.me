@@ -19,8 +19,8 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^4.7.0",
-		"astro-page-insight": "^0.6.3",
+		"astro": "^4.7.1",
+		"astro-page-insight": "^0.7.0",
 		"sharp": "^0.33.3"
 	},
 	"devDependencies": {
@@ -28,7 +28,7 @@
 		"@astrojs/rss": "^4.0.5",
 		"@astrojs/sitemap": "^3.1.4",
 		"@astrojs/tailwind": "^5.1.0",
-		"@biomejs/biome": "^1.7.1",
+		"@biomejs/biome": "^1.7.2",
 		"@catppuccin/tailwindcss": "^0.1.6",
 		"astro-capo": "^0.0.1",
 		"astro-meta-tags": "^0.2.2",
