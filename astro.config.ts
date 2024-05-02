@@ -21,10 +21,11 @@ export default defineConfig({
 				pwa: true,
 			},
 			cache: true,
+			firstFetch: "open",
 			// build: {
 			// 	bundle: true,
-			// 	showOnLoad: false,
-			// }
+			// 	showOnLoad: true,
+			// },
 		}),
 	],
 	site: "https://ktym4a.me/",
