@@ -41,12 +41,7 @@
 		"typescript": "^5.4.5"
 	},
 	"lint-staged": {
-		"*.astro": [
-			"biome check --apply .",
-			"astro check"
-		],
-		"*.ts": [
-			"biome check --apply ."
-		]
+		"*.astro": ["biome check --apply .", "astro check"],
+		"*.ts": ["biome check --apply ."]
 	}
 }
