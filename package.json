@@ -19,8 +19,8 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^4.8.2",
-		"astro-page-insight": "^0.8.1",
+		"astro": "^4.8.3",
+		"astro-page-insight": "^0.8.2",
 		"sharp": "^0.33.3"
 	},
 	"devDependencies": {
