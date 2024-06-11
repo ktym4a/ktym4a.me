@@ -13,7 +13,7 @@
 		"check:tsc": "tsc --noEmit",
 		"astro": "astro",
 		"lint": "biome check .",
-		"lint:fix": "biome check --apply .",
+		"lint:fix": "biome check --write .",
 		"prepare": "husky"
 	},
 	"author": "ktym4a",
@@ -41,7 +41,7 @@
 		"typescript": "^5.4.5"
 	},
 	"lint-staged": {
-		"*.astro": ["biome check --apply .", "astro check"],
-		"*.ts": ["biome check --apply ."]
+		"*.astro": ["biome check --write .", "astro check"],
+		"*.ts": ["biome check --write ."]
 	}
 }
