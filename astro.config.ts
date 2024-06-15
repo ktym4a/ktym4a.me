@@ -17,9 +17,7 @@ export default defineConfig({
 		}),
 		metaTags(),
 		pageInsight({
-			lh: {
-				pwa: true,
-			},
+			lh: {},
 			cache: true,
 			firstFetch: "open",
 			// build: {
