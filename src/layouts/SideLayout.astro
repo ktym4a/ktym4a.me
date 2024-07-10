@@ -3,8 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs.astro";
 import Menu from "@/components/Menu.astro";
 import NavOpen from "@/components/atoms/NavOpen.astro";
 import ThemeIcon from "@/components/atoms/ThemeIcon.astro";
-import type { ColorType } from "@/types/index";
-import type { MarkdownHeading } from "astro";
+import type { ColorType, ToCProp } from "@/types/index";
 
 interface Props {
 	activeName: string;
@@ -12,12 +11,7 @@ interface Props {
 	currentPath: string;
 	currentName?: string | undefined;
 	routes: string[];
-	toc?:
-		| {
-				headings: MarkdownHeading[] | undefined;
-				tagName: string;
-		  }
-		| undefined;
+	toc?: ToCProp;
 }
 
 const {

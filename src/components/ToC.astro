@@ -1,17 +1,11 @@
 ---
 import NavItem from "@/components/NavItem.astro";
 import Tag from "@/components/atoms/Tag.astro";
-import type { ColorType, ToCType } from "@/types/index";
-import type { MarkdownHeading } from "astro";
+import type { ColorType, ToCProp, ToCType } from "@/types/index";
 
 interface Props {
 	baseColor: ColorType;
-	toc?:
-		| {
-				headings: MarkdownHeading[] | undefined;
-				tagName: string;
-		  }
-		| undefined;
+	toc?: ToCProp;
 }
 
 const { baseColor, toc = undefined } = Astro.props;

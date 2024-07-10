@@ -3,19 +3,13 @@ import Nav from "@/components/Nav.astro";
 import SNSLinks from "@/components/SNSLinks.astro";
 import ToC from "@/components/ToC.astro";
 import Tag from "@/components/atoms/Tag.astro";
-import type { ColorType } from "@/types/index";
-import type { MarkdownHeading } from "astro";
+import type { ColorType, ToCProp } from "@/types/index";
 
 interface Props {
 	baseColor: ColorType;
 	activeName: string;
 	tagText: string;
-	toc?:
-		| {
-				headings: MarkdownHeading[] | undefined;
-				tagName: string;
-		  }
-		| undefined;
+	toc?: ToCProp;
 }
 
 const { baseColor, activeName, tagText, toc = undefined } = Astro.props;

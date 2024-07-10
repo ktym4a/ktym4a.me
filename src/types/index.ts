@@ -34,3 +34,10 @@ export type ToCType = Array<
 		children: ToCType;
 	}
 >;
+
+export type ToCProp =
+	| {
+			headings: MarkdownHeading[] | undefined;
+			tagName: string;
+	  }
+	| undefined;

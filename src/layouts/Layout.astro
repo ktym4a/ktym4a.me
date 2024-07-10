@@ -2,8 +2,7 @@
 import Head from "@/components/Head.astro";
 import MainLayout from "@/layouts/MainLayout.astro";
 import SideLayout from "@/layouts/SideLayout.astro";
-import type { ColorType } from "@/types/index";
-import type { MarkdownHeading } from "astro";
+import type { ColorType, ToCProp } from "@/types/index";
 
 interface Props {
 	activeName: string;
@@ -16,12 +15,7 @@ interface Props {
 	};
 	mainTagName?: string | undefined;
 	title: string;
-	toc?:
-		| {
-				headings: MarkdownHeading[] | undefined;
-				tagName: string;
-		  }
-		| undefined;
+	toc?: ToCProp;
 	lang?: string | undefined;
 }
 
