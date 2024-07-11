@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import ktym4a from "@/assets/images/top/ktym4a.svg";
 import Link from "@/components/atoms/Link.astro";
 import Tag from "@/components/atoms/Tag.astro";
 import { COLORS } from "@/constants/color";
@@ -19,7 +21,7 @@ const baseColor = COLORS.GREEN;
             <h1
                 class='my-2 break-words text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
             >
-                <img src="/images/ktym4a.svg" class="w-104" alt="ktym4a">
+                <Image src={ktym4a} class="w-104" alt="ktym4a" title="ktym4a">
             </h1>
         </Tag>
     </section>
