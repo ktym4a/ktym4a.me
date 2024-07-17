@@ -336,10 +336,6 @@ const { title, description, og } = Astro.props;
                 localStorage.getItem('theme')
             ) {
                 theme = localStorage.getItem('theme')
-            } else {
-                if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-                    theme = 'ctp-latte'
-                }
             }
             document.documentElement.classList.add(theme)
 
