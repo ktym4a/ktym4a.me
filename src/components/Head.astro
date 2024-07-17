@@ -329,7 +329,7 @@ const { title, description, og } = Astro.props;
             const element = document.documentElement
             element.classList.remove('ctp-latte', 'ctp-mocha')
 
-            let theme = 'ctp-latte'
+            let theme = 'ctp-mocha'
 
             if (
                 typeof localStorage !== 'undefined' &&
@@ -337,8 +337,8 @@ const { title, description, og } = Astro.props;
             ) {
                 theme = localStorage.getItem('theme')
             } else {
-                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    theme = 'ctp-mocha'
+                if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                    theme = 'ctp-latte'
                 }
             }
             document.documentElement.classList.add(theme)
