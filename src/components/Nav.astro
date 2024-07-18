@@ -49,6 +49,15 @@ const { activeName } = Astro.props;
                 title='projects'
                 type='folder'
             />
+            <NavItem
+                href='/diaries/'
+                current={activeName === 'diaries'}
+                colors={{
+                    text: COLORS.MAUVE.text as string
+                }}
+                title='diaries'
+                type='folder'
+            />
         </ul>
     </Tag>
 </nav>
