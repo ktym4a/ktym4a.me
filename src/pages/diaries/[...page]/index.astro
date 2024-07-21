@@ -1,0 +1,310 @@
+---
+import { mkdir, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+import BlogHeading from "@/components/atoms/BlogHeading.astro";
+import Link from "@/components/atoms/Link.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import { COLORS } from "@/constants/color";
+import { GITHUB_CONTENT_URL, SITE_NAME } from "@/constants/index";
+import Layout from "@/layouts/Layout.astro";
+import { getDiaries } from "@/utils/diary";
+import { formatPostDate } from "@/utils/index";
+import { generateOgImage } from "@/utils/ogp";
+
+export async function getStaticPaths() {
+	const colors = [COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const;
+
+	return await getDiaries().then((diaries) =>
+		diaries.map((diary, i) => ({
+			params: { page: diary.slug },
+			props: {
+				diary,
+				baseColor: colors[i % colors.length] as (typeof colors)[number],
+			},
+		})),
+	);
+}
+
+const { diary, baseColor } = Astro.props;
+const { Content, headings } = await diary.render();
+const GITHUB_EDIT_URL = new URL(diary.id, GITHUB_CONTENT_URL).href;
+
+const pageName = "diaries";
+const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
+const date = formatPostDate(diary.data.publishedDate);
+const mainTitle = `${date}の学び`;
+const title = `${mainTitle} - ${capitalizePageName} - ${SITE_NAME}`;
+
+const lineHight = "leading-loose";
+
+const opImageFileName = "ogp.png";
+
+if (import.meta.env.PROD) {
+	const buf = await generateOgImage(baseColor.colorCode as string, mainTitle);
+	const fileDir = join(
+		fileURLToPath(import.meta.url),
+		`../../../images/${diary.slug}/`,
+	);
+
+	await mkdir(fileDir, {
+		recursive: true,
+	});
+	await writeFile(join(fileDir, opImageFileName), buf);
+}
+---
+
+<Layout
+    activeName={pageName}
+    currentName={mainTitle}
+    title={title}
+    description={title}
+    baseColor={baseColor}
+    og={{
+        type: "article",
+        image: `${Astro.site}images/${diary.slug}/${opImageFileName}`,
+    }}
+    mainTagName="Diary"
+    toc={{
+        tagName: "ToC",
+        headings: [
+            {
+                depth: 1,
+                slug: "Title",
+                text: mainTitle,
+            },
+            ...headings,
+        ],
+    }}
+    lang="ja"
+>
+    <article class="space-y-4 md:space-y-6">
+        <BlogHeading
+            baseColor={baseColor}
+            text={mainTitle}
+            id="Title"
+            publishedDate={diary.data.publishedDate}
+        />
+        <Tag text="Content" className="gap-2">
+            <div
+                class={`blog text-pretty tracking-wide break-words ${baseColor.text} ${baseColor.blogPostColor} ${lineHight}`}
+            >
+                <Content />
+            </div>
+            <div class="mt-12 flex justify-end text-sm md:text-base">
+                <Link
+                    href={GITHUB_EDIT_URL}
+                    target="_blank"
+                    rel="noopener"
+                    colors={{
+                        hoverText: baseColor.hoverText as string,
+                        focusText: baseColor.focusText as string,
+                        focusOutline: baseColor.focusOutline as string,
+                        text: baseColor.text as string,
+                    }}
+                    class="inline-flex items-center gap-1 underline"
+                    title="GitHub"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        focusable="false"
+                        aria-hidden="true"
+                        class="h-4 w-4 md:h-5 md:w-5"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"
+                        ></path>
+                        <path
+                            d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                        >
+                        </path>
+                    </svg>
+                    <p>Edit</p>
+                </Link>
+            </div>
+        </Tag>
+    </article>
+</Layout>
+
+<style is:global>
+    html.ctp-mocha .astro-code,
+    html.ctp-mocha .astro-code span {
+        color: var(--shiki-dark) !important;
+    }
+
+    .blog > *:first-child {
+        @apply !mt-0;
+    }
+
+    .blog > *:last-child {
+        @apply !mb-0;
+    }
+
+    .blog h1 {
+        @apply mt-6 text-2xl font-bold before:pr-3 before:text-ctp-text before:content-['#'] md:mt-8 md:text-4xl;
+    }
+
+    .blog h2 {
+        @apply mt-6 text-xl font-bold before:pr-3 before:text-ctp-text before:content-['##'] md:mt-8 md:text-2xl;
+    }
+
+    .blog h3 {
+        @apply mt-3 text-lg font-bold before:pr-3 before:text-ctp-text before:content-['###'] md:mt-4 md:text-xl;
+    }
+
+    .blog h4 {
+        @apply mt-3 text-base font-bold before:pr-3 before:text-ctp-text before:content-['####'] md:mt-4 md:text-lg;
+    }
+
+    .blog h5 {
+        @apply mt-3 text-sm font-bold before:pr-3 before:text-ctp-text before:content-['#####'] md:mt-4 md:text-base;
+    }
+
+    .blog h6 {
+        @apply mt-3 text-xs font-bold before:pr-3 before:text-ctp-text before:content-['######'] md:mt-4 md:text-sm;
+    }
+
+    .blog p {
+        @apply my-4 text-ctp-text md:my-6;
+    }
+
+    .blog ul,
+    .blog ol {
+        @apply list-outside text-ctp-text;
+    }
+
+    .blog ul {
+        @apply list-disc pl-4 md:pl-6;
+    }
+
+    .blog ol {
+        @apply list-decimal pl-6 md:pl-10;
+    }
+
+    .blog > ul {
+        @apply my-3 pl-4 md:my-6 md:pl-6;
+    }
+
+    .blog > ol {
+        @apply my-3 pl-8 md:my-6 md:pl-10;
+    }
+
+    .blog li {
+        @apply my-1;
+    }
+
+    .blog > ul > li,
+    .blog > ol > li {
+        @apply my-3 md:my-4;
+    }
+
+    .blog blockquote {
+        @apply my-4 border-l-4 pl-4 italic md:my-8;
+    }
+
+    .blog blockquote p {
+        @apply py-1 md:py-2;
+    }
+
+    .blog blockquote p::before {
+        @apply content-['"'];
+    }
+
+    .blog blockquote p::after {
+        @apply content-['"'];
+    }
+
+    .blog hr {
+        @apply my-4 md:my-8;
+    }
+
+    .blog pre {
+        @apply my-4 w-full overflow-x-auto rounded-md rounded-tl-none !bg-ctp-crust px-4 pb-5 pt-3 text-xs ease-in-out focus-visible:outline-dashed focus-visible:outline-2 focus-visible:saturate-200 motion-safe:transition-filter motion-safe:duration-1000 dark:focus-visible:saturate-350 md:my-8 md:text-sm;
+    }
+
+    .blog .remark-code-title + pre {
+        @apply -mt-[1px];
+    }
+
+    .blog .remark-code-title {
+        @apply relative my-0 inline-block bg-ctp-surface0 px-3 py-1 text-sm italic text-ctp-text;
+    }
+
+    .blog .contains-task-list {
+        @apply my-4 !pl-0 md:my-8;
+    }
+
+    .blog ul.contains-task-list {
+        @apply list-none;
+    }
+
+    .blog .contains-task-list input[type="checkbox"] {
+        @apply accent-slate-200;
+    }
+
+    .blog a {
+        @apply inline-block underline decoration-dashed underline-offset-2 ease-in-out hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:saturate-200 motion-safe:transition-filter motion-safe:duration-1000 dark:hover:saturate-350 dark:focus-visible:saturate-350;
+    }
+
+    .blog a img {
+        @apply my-0;
+    }
+
+    .blog img {
+        @apply my-4 md:my-8;
+    }
+
+    .blog table {
+        @apply my-4 text-ctp-text md:my-8;
+    }
+
+    .blog table th {
+        @apply border border-ctp-text px-2 py-1;
+    }
+
+    .blog table td {
+        @apply border border-ctp-text px-2 py-1;
+    }
+
+    .blog dl {
+        @apply my-4 text-ctp-text md:my-8;
+    }
+
+    .blog dt {
+        @apply font-bold;
+    }
+
+    .blog dd {
+        @apply ml-4;
+    }
+
+    .blog iframe {
+        @apply my-4 md:my-8;
+    }
+
+    .blog section {
+        @apply my-4 mt-2 border-t pt-2 md:my-8 md:mt-4 md:pt-4;
+    }
+
+    .blog .footnotes ol {
+        @apply list-outside pl-12 text-xs;
+    }
+
+    .blog .footnotes li {
+        @apply my-2;
+    }
+
+    .blog .footnotes p {
+        @apply my-1 block text-xs;
+    }
+
+    .blog p code,
+    .blog li code {
+        @apply rounded-md bg-ctp-surface1 px-2 py-1;
+    }
+</style>

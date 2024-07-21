@@ -24,7 +24,15 @@ const projectCollection = defineCollection({
 	}),
 });
 
+const diaryCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		publishedDate: z.date(),
+	}),
+});
+
 export const collections = {
 	blog: blogCollection,
 	projects: projectCollection,
+	diary: diaryCollection,
 };

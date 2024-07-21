@@ -1,13 +1,17 @@
 ---
-import { Image } from "astro:assets";
-import ktym4a from "@/assets/images/top/ktym4a.svg";
+import Card from "@/components/Card.astro";
+import Heading2 from "@/components/atoms/Heading2.astro";
 import Link from "@/components/atoms/Link.astro";
 import Tag from "@/components/atoms/Tag.astro";
 import { COLORS } from "@/constants/color";
 import { SITE_NAME } from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
+import { getDiary } from "@/utils/diary";
+import { formatPostDate } from "../utils";
 
 const baseColor = COLORS.GREEN;
+
+const diary = await getDiary(new Date());
 ---
 
 <Layout
@@ -19,9 +23,13 @@ const baseColor = COLORS.GREEN;
     <section id='SiteName'>
         <Tag text='SiteName'>
             <h1
-                class='my-2 break-words text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+                class='mb-2 break-words text-4xl font-bold md:text-6xl lg:text-8xl'
             >
-                <Image src={ktym4a} class="w-104" alt="ktym4a" title="ktym4a" loading='eager'>
+                <span class='text-ctp-green'>kt</span><span
+                    class='text-ctp-pink'>ym</span
+                ><span class='text-ctp-blue'>4</span><span
+                    class='text-ctp-peach'>a</span
+                >
             </h1>
         </Tag>
     </section>
@@ -34,7 +42,7 @@ const baseColor = COLORS.GREEN;
                     “
                 </div>
                 <p
-                    class='text-pretty px-2 font-mono-script text-lg font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
+                    class='text-pretty px-2 font-mono-script text-2xl font-bold italic leading-tight tracking-tight text-ctp-text md:px-8 md:text-3xl lg:leading-normal'
                 >
                     <span class='text-xl text-ctp-green md:text-3xl lg:text-4xl'
                         >Do</span
@@ -59,6 +67,39 @@ const baseColor = COLORS.GREEN;
                     ”
                 </div>
             </blockquote>
+        </Tag>
+    </section>
+    <section id='Recent'>
+        <Tag text='Recent' className='gap-2'>
+            <div class="flex flex-col gap-4">
+                <Heading2
+                    baseColor={COLORS.GREEN}
+                    text='Recent Contents'
+                    id='RecentTitle'
+                />
+                <div class="grid md:grid-cols-2 gap-4 md:gap-6">
+                    {diary && (
+                        <Card
+                            text="Diary"
+                            link={{
+                                href: `/diaries/${diary.slug}/`,
+                                target: "_self",
+                            }}
+                            title={`${formatPostDate(diary.data.publishedDate)}の学び`}
+                            baseColor={COLORS.MAUVE}
+                        />
+                        <Card
+                            text="Project"
+                            link={{
+                                href: "https://astro-page-insight.pages.dev/others/demo/",
+                                target: "_blank",
+                            }}
+                            title="Astro Page Insight"
+                            baseColor={COLORS.PEACH}
+                        />
+                    )}
+                </div>
+            </div>
         </Tag>
     </section>
     <p class='ml-auto mt-4 text-pretty text-left text-xs'>

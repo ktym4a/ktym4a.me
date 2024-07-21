@@ -9,6 +9,7 @@ export enum COLOR {
 }
 
 export type ColorType = {
+	colorCode?: string;
 	text?: string;
 	hoverText?: string;
 	focusText?: string;

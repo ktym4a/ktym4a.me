@@ -4,6 +4,7 @@ export const COLORS: {
 	[key in COLOR]: ColorType;
 } = {
 	[COLOR.BLUE]: {
+		colorCode: "#89b4fa",
 		text: "text-ctp-blue",
 		hoverText: "hover:text-ctp-blue",
 		focusText: "focus-visible:text-ctp-blue",
@@ -25,6 +26,7 @@ export const COLORS: {
 		borderColor: "border-ctp-blue/50",
 	},
 	[COLOR.GREEN]: {
+		colorCode: "#a6e3a1",
 		text: "text-ctp-green",
 		hoverText: "hover:text-ctp-green",
 		focusText: "focus-visible:text-ctp-green",
@@ -46,6 +48,7 @@ export const COLORS: {
 		borderColor: "border-ctp-green/50",
 	},
 	[COLOR.PEACH]: {
+		colorCode: "#fab387",
 		text: "text-ctp-peach",
 		hoverText: "hover:text-ctp-peach",
 		focusText: "focus-visible:text-ctp-peach",
@@ -67,6 +70,7 @@ export const COLORS: {
 		borderColor: "border-ctp-peach/50",
 	},
 	[COLOR.PINK]: {
+		colorCode: "#f5c2e7",
 		text: "text-ctp-pink",
 		hoverText: "hover:text-ctp-pink",
 		focusText: "focus-visible:text-ctp-pink",
@@ -88,6 +92,7 @@ export const COLORS: {
 		borderColor: "border-ctp-pink/50",
 	},
 	[COLOR.MAUVE]: {
+		colorCode: "#cba6f7",
 		text: "text-ctp-mauve",
 		hoverText: "hover:text-ctp-mauve",
 		focusText: "focus-visible:text-ctp-mauve",
