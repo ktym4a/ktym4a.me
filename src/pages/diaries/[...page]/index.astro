@@ -6,7 +6,11 @@ import BlogHeading from "@/components/atoms/BlogHeading.astro";
 import Link from "@/components/atoms/Link.astro";
 import Tag from "@/components/atoms/Tag.astro";
 import { COLORS } from "@/constants/color";
-import { GITHUB_DIARY_URL, SITE_NAME } from "@/constants/index";
+import {
+	DIARY_LEARNING_DESCRIPTION,
+	GITHUB_DIARY_URL,
+	SITE_NAME,
+} from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
 import { getDiaries } from "@/utils/diary";
 import { formatPostDate } from "@/utils/index";
@@ -29,6 +33,7 @@ export async function getStaticPaths() {
 const { diary, baseColor } = Astro.props;
 const { Content, headings } = await diary.render();
 const GITHUB_EDIT_URL = new URL(diary.id, GITHUB_DIARY_URL).href;
+const description = DIARY_LEARNING_DESCRIPTION;
 
 const pageName = "diaries";
 const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
@@ -58,7 +63,7 @@ if (import.meta.env.PROD) {
     activeName={pageName}
     currentName={mainTitle}
     title={title}
-    description={title}
+    description={description}
     baseColor={baseColor}
     og={{
         type: "article",
