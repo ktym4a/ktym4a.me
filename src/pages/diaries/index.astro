@@ -1,10 +1,11 @@
 ---
-import DiaryCard from "@/components/DiaryCard.astro";
+import Card from "@/components/Card.astro";
 import Heading1 from "@/components/atoms/Heading1.astro";
 import { COLORS } from "@/constants/color";
 import { DIARY_LEARNING_DESCRIPTION, SITE_NAME } from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
 import { getDiaries } from "@/utils/diary";
+import { formatPostDate } from "@/utils/index";
 
 const pageName = "diaries";
 const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
@@ -27,18 +28,30 @@ const allDiaries = await getDiaries().then((diaries) =>
 ---
 
 <Layout
-    activeName='diaries'
+    activeName="diaries"
     title={title}
     description={description}
     baseColor={baseColor}
 >
     <section>
-        <Heading1 baseColor={baseColor} text='Diaries' id='Diaries' />
+        <Heading1 baseColor={baseColor} text="Diaries" id="Diaries" />
     </section>
     <section
-        id='Articles'
-        class='grid grid-cols-[repeat(auto-fill,minmax(200px,_1fr))] gap-4'
+        id="Articles"
+        class="grid grid-cols-[repeat(auto-fill,minmax(200px,_1fr))] gap-4"
     >
-        {allDiaries.map((diary) => <DiaryCard diary={diary} />)}
+        {
+            allDiaries.map((diary) => (
+                <Card
+                    text="Diary"
+                    link={{
+                        href: `/diaries/${diary.slug}/`,
+                        target: "_self",
+                    }}
+                    title={`${formatPostDate(diary.data.publishedDate)}の学び`}
+                    baseColor={diary.baseColor}
+                />
+            ))
+        }
     </section>
 </Layout>

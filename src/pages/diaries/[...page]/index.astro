@@ -16,34 +16,35 @@ export async function getStaticPaths() {
 	const colors = [COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const;
 
 	return await getDiaries().then((diaries) =>
-		diaries.map((entry, i) => ({
-			params: { page: entry.slug },
+		diaries.map((diary, i) => ({
+			params: { page: diary.slug },
 			props: {
-				entry,
+				diary,
 				baseColor: colors[i % colors.length] as (typeof colors)[number],
 			},
 		})),
 	);
 }
 
-const { entry, baseColor } = Astro.props;
-const { Content, headings } = await entry.render();
-const GITHUB_EDIT_URL = new URL(entry.id, GITHUB_CONTENT_URL).href;
+const { diary, baseColor } = Astro.props;
+const { Content, headings } = await diary.render();
+const GITHUB_EDIT_URL = new URL(diary.id, GITHUB_CONTENT_URL).href;
 
 const pageName = "diaries";
 const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
-const date = formatPostDate(entry.data.publishedDate);
-const title = `${date}の学び - ${capitalizePageName} - ${SITE_NAME}`;
+const date = formatPostDate(diary.data.publishedDate);
+const mainTitle = `${date}の学び`;
+const title = `${mainTitle} - ${capitalizePageName} - ${SITE_NAME}`;
 
 const lineHight = "leading-loose";
 
 const opImageFileName = "ogp.png";
 
 if (import.meta.env.PROD) {
-	const buf = await generateOgImage(baseColor.colorCode as string, date);
+	const buf = await generateOgImage(baseColor.colorCode as string, mainTitle);
 	const fileDir = join(
 		fileURLToPath(import.meta.url),
-		`../../../images/${entry.slug}/`,
+		`../../../images/${diary.slug}/`,
 	);
 
 	await mkdir(fileDir, {
@@ -55,13 +56,13 @@ if (import.meta.env.PROD) {
 
 <Layout
     activeName={pageName}
-    currentName={entry.data.title}
+    currentName={mainTitle}
     title={title}
     description={title}
     baseColor={baseColor}
     og={{
         type: "article",
-        image: `${Astro.site}images/${entry.slug}/${opImageFileName}`,
+        image: `${Astro.site}images/${diary.slug}/${opImageFileName}`,
     }}
     mainTagName="Diary"
     toc={{
@@ -70,7 +71,7 @@ if (import.meta.env.PROD) {
             {
                 depth: 1,
                 slug: "Title",
-                text: entry.data.title,
+                text: mainTitle,
             },
             ...headings,
         ],
@@ -80,9 +81,9 @@ if (import.meta.env.PROD) {
     <article class="space-y-4 md:space-y-6">
         <BlogHeading
             baseColor={baseColor}
-            text={entry.data.title}
+            text={mainTitle}
             id="Title"
-            publishedDate={entry.data.publishedDate}
+            publishedDate={diary.data.publishedDate}
         />
         <Tag text="Content" className="gap-2">
             <div

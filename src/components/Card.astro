@@ -1,0 +1,52 @@
+---
+import Link from "@/components/atoms/Link.astro";
+import Tag from "@/components/atoms/Tag.astro";
+import type { ColorType } from "@/types/index";
+
+interface Props {
+	text: string;
+	title: string;
+	link: {
+		href: string;
+		target: "_blank" | "_self";
+	};
+	baseColor: ColorType;
+}
+
+const { text, title, link, baseColor } = Astro.props;
+---
+
+<article class="relative">
+    <Link
+        href={link.href}
+        target={link.target}
+        colors={{
+            text: baseColor.text as string,
+            childHoverBackground: baseColor
+                .childHoverBackground as string,
+            childFocusBackground: baseColor
+                .childFocusBackground as string,
+            childHoverOutline: baseColor.childHoverOutline as string,
+            childFocusOutline: baseColor.childFocusOutline as string,
+        }}
+        class={""}
+        title={title}
+    >
+        <Tag text={text} className="h-full">
+            <div class="flex h-full flex-col gap-2 md:gap-6 justify-between">
+                <h2 class="mt-1 font-bold text-base md:text-xl">{title}</h2>
+                <div
+                    class="break-words text-sm flex items-end gap-1 flex-col justify-end text-ctp-text"
+                >
+                    <div class="text-sm md:text-lg">
+                        <span class="text-ctp-green">kt</span><span
+                            class="text-ctp-pink">ym</span
+                        ><span class="text-ctp-blue">4</span><span
+                            class="text-ctp-peach">a</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </Tag>
+    </Link>
+</article>

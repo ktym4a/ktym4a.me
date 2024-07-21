@@ -27,7 +27,6 @@ const projectCollection = defineCollection({
 const diaryCollection = defineCollection({
 	type: "content",
 	schema: z.object({
-		title: z.string(),
 		publishedDate: z.date(),
 	}),
 });

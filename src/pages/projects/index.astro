@@ -1,5 +1,5 @@
 ---
-import ProjectCard from "@/components/ProjectCard.astro";
+import Card from "@/components/Card.astro";
 import Heading1 from "@/components/atoms/Heading1.astro";
 import { COLORS } from "@/constants/color";
 import { SITE_NAME } from "@/constants/index";
@@ -39,6 +39,14 @@ const allProjects = await getProjects().then((project) =>
         id='Project'
         class='grid grid-cols-[repeat(auto-fill,minmax(300px,_1fr))] gap-4'
     >
-        {allProjects.map((project) => <ProjectCard project={project} />)}
+        {allProjects.map((project) => <Card
+            text="Project"
+            link={{
+                href: project.data.link,
+                target: "_blank",
+            }}
+            title={project.data.title}
+            baseColor={project.baseColor}
+        />)}
     </section>
 </Layout>

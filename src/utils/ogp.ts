@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import satori from "satori";
 import sharp from "sharp";
 
-export async function generateOgImage(color: string, publishedDate: string) {
+export async function generateOgImage(color: string, title: string) {
 	const svg = await satori(
 		{
 			type: "div",
@@ -100,7 +100,7 @@ export async function generateOgImage(color: string, publishedDate: string) {
 														fontSize: 90,
 														marginTop: 10,
 													},
-													children: "今日の学び",
+													children: title,
 												},
 											},
 										],
@@ -132,6 +132,7 @@ export async function generateOgImage(color: string, publishedDate: string) {
 																style: {
 																	display: "flex",
 																	fontSize: 60,
+																	textWrap: "wrap",
 																},
 																children: [
 																	{
@@ -175,17 +176,6 @@ export async function generateOgImage(color: string, publishedDate: string) {
 																		},
 																	},
 																],
-															},
-														},
-														{
-															type: "div",
-															props: {
-																style: {
-																	display: "flex",
-																	color: "#cdd6f4",
-																	fontSize: 40,
-																},
-																children: publishedDate,
 															},
 														},
 													],

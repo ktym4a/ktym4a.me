@@ -1,5 +1,6 @@
 import { DIARY_LEARNING_DESCRIPTION } from "@/constants/index";
 import { getDiaries } from "@/utils/diary";
+import { formatPostDate } from "@/utils/index";
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 
@@ -14,7 +15,7 @@ export function GET(context: APIContext) {
 		site,
 		items: diaries.map((diary) => ({
 			link: `${site}/${diary.slug}/`,
-			title: diary.data.title,
+			title: `${formatPostDate(diary.data.publishedDate)}の学び`,
 			pubDate: new Date(diary.data.publishedDate),
 		})),
 	});
