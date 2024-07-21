@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import ktym4a from "@/assets/images/top/ktym4a.svg";
 import Link from "@/components/atoms/Link.astro";
 import Tag from "@/components/atoms/Tag.astro";
 import { COLORS } from "@/constants/color";
@@ -19,9 +17,13 @@ const baseColor = COLORS.GREEN;
     <section id='SiteName'>
         <Tag text='SiteName'>
             <h1
-                class='my-2 break-words text-4xl font-bold tracking-tight md:text-6xl lg:text-8xl'
+                class='mb-2 break-words text-4xl font-bold md:text-6xl lg:text-8xl'
             >
-                <Image src={ktym4a} class="w-104" alt="ktym4a" title="ktym4a" loading='eager'>
+                <span class='text-ctp-green'>kt</span><span
+                    class='text-ctp-pink'>ym</span
+                ><span class='text-ctp-blue'>4</span><span
+                    class='text-ctp-peach'>a</span
+                >
             </h1>
         </Tag>
     </section>

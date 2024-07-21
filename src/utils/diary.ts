@@ -11,5 +11,6 @@ export const getDiaries = async (): Promise<DiaryCollection[]> => {
 };
 
 const sortDiaries = (collections: DiaryCollection[]): DiaryCollection[] => {
-	return sortByDate(collections);
+	const diaries = sortByDate(collections) as DiaryCollection[];
+	return diaries.filter((diary) => diary.slug !== "template");
 };
