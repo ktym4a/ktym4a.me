@@ -17,7 +17,7 @@ import { formatPostDate } from "@/utils/index";
 import { generateOgImage } from "@/utils/ogp";
 
 export async function getStaticPaths() {
-	const colors = [COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const;
+	const colors = [...Object.values(COLORS)];
 
 	return await getDiaries().then((diaries) =>
 		diaries.map((diary, i) => ({

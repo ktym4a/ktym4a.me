@@ -13,7 +13,7 @@ const title = `${capitalizePageName} - ${SITE_NAME}`;
 const description = DIARY_LEARNING_DESCRIPTION;
 const baseColor = COLORS.MAUVE;
 
-const colors = [COLORS.PINK, COLORS.BLUE, COLORS.PEACH] as const;
+const colors = [...Object.values(COLORS)];
 
 const allDiaries = await getDiaries().then((diaries) =>
 	diaries
