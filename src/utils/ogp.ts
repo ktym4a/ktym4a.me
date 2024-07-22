@@ -5,6 +5,8 @@ import satori from "satori";
 import sharp from "sharp";
 
 export async function generateOgImage(color: string, title: string) {
+	const tagSize = 40;
+
 	const svg = await satori(
 		{
 			type: "div",
@@ -57,7 +59,7 @@ export async function generateOgImage(color: string, title: string) {
 																style: {
 																	display: "flex",
 																	color: "#94e2d5",
-																	fontSize: 30,
+																	fontSize: tagSize,
 																},
 																children: "<",
 															},
@@ -68,7 +70,7 @@ export async function generateOgImage(color: string, title: string) {
 																style: {
 																	display: "flex",
 																	color: "#89b4fa",
-																	fontSize: 30,
+																	fontSize: tagSize,
 																	fontStyle: "italic",
 																	fontFamily:
 																		'ml italic, "NotoSansJP", sans-serif',
@@ -82,7 +84,7 @@ export async function generateOgImage(color: string, title: string) {
 																style: {
 																	display: "flex",
 																	color: "#94e2d5",
-																	fontSize: 30,
+																	fontSize: tagSize,
 																},
 																children: ">",
 															},
@@ -194,7 +196,7 @@ export async function generateOgImage(color: string, title: string) {
 																style: {
 																	display: "flex",
 																	color: "#94e2d5",
-																	fontSize: 30,
+																	fontSize: tagSize,
 																},
 																children: "</",
 															},
@@ -205,7 +207,7 @@ export async function generateOgImage(color: string, title: string) {
 																style: {
 																	display: "flex",
 																	color: "#89b4fa",
-																	fontSize: 30,
+																	fontSize: tagSize,
 																	fontStyle: "italic",
 																	fontFamily:
 																		'ml italic, "NotoSansJP", sans-serif',
@@ -219,7 +221,7 @@ export async function generateOgImage(color: string, title: string) {
 																style: {
 																	display: "flex",
 																	color: "#94e2d5",
-																	fontSize: 30,
+																	fontSize: tagSize,
 																},
 																children: ">",
 															},
