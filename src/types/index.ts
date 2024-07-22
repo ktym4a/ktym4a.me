@@ -1,11 +1,20 @@
 import type { MarkdownHeading } from "astro";
 
 export enum COLOR {
-	BLUE = "BLUE",
-	GREEN = "GREEN",
-	PEACH = "PEACH",
+	ROSEWATER = "ROSEWATER",
+	FLAMINGO = "FLAMINGO",
 	PINK = "PINK",
 	MAUVE = "MAUVE",
+	RED = "RED",
+	MAROON = "MAROON",
+	PEACH = "PEACH",
+	YELLOW = "YELLOW",
+	GREEN = "GREEN",
+	TEAL = "TEAL",
+	SKY = "SKY",
+	SAPPHIRE = "SAPPHIRE",
+	BLUE = "BLUE",
+	LAVENDER = "LAVENDER",
 }
 
 export type ColorType = {

@@ -12,7 +12,7 @@ const title = `${capitalizePageName} - ${SITE_NAME}`;
 const description = "ktym4a's projects";
 const baseColor = COLORS.PEACH;
 
-const colors = [COLORS.PINK, COLORS.BLUE, COLORS.MAUVE] as const;
+const colors = [...Object.values(COLORS)];
 
 const allProjects = await getProjects().then((project) =>
 	project
