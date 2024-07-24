@@ -1,5 +1,6 @@
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import { shield } from "@kindspells/astro-shield";
 import metaTags from "astro-meta-tags";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
@@ -15,6 +16,7 @@ export default defineConfig({
 			sitemap: true,
 		}),
 		metaTags(),
+		shield({}),
 		pageInsight({
 			lh: {},
 			cache: true,
