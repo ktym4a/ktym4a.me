@@ -1,0 +1,78 @@
+---
+import type { ColorType } from "@/types/index";
+
+interface Props {
+	prev:
+		| {
+				slug: string | undefined;
+				name?: string | undefined;
+		  }
+		| undefined;
+	next:
+		| {
+				slug: string | undefined;
+				name?: string | undefined;
+		  }
+		| undefined;
+	baseColor: ColorType;
+}
+
+const { prev, next, baseColor } = Astro.props;
+---
+
+<div class="flex justify-between items-center gap-4">
+  {
+    prev?.slug ? (
+      <div class="mt-auto flex flex-col items-center justify-center gap-2 w-auto">
+        <a
+          href={prev.slug}
+          aria-label="Previous page"
+          class={`relative z-10 motion-safe:transition-filter ease-in-out motion-safe:duration-1000 flex w-full flex-col items-center justify-center rounded-md bg-ctp-surface0 dark:bg-ctp-crust bg-ctp-surface0/30 dark:bg-ctp-crust/40 outline-dashed outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-200 dark:hover:saturate-350 dark:focus-visible:saturate-350 aspect-auto p-1 outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6 md:h-8 md:w-8 rotate-180"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 18l6 -6l-6 -6v12" />
+          </svg>
+          {prev.name ? <p class="text-xs md:text-sm">{prev.name}</p> : <div />}
+        </a>
+      </div>
+    ) : (
+      <div />
+    )
+  }
+  {
+    next?.slug && (
+      <div class="flex flex-col items-center justify-center gap-2 w-auto">
+        <a
+          href={next.slug}
+          aria-label="Next page"
+          class={`relative z-10 motion-safe:transition-filter ease-in-out motion-safe:duration-1000 flex w-full flex-col items-center justify-center rounded-md bg-ctp-surface0 dark:bg-ctp-crust bg-ctp-surface0/30 dark:bg-ctp-crust/40 outline-dashed outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-200 dark:hover:saturate-350 dark:focus-visible:saturate-350 aspect-auto p-1 outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="h-6 w-6 md:h-8 md:w-8"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 18l6 -6l-6 -6v12" />
+          </svg>
+          {next.name ? <p class="text-xs md:text-sm">{next.name}</p> : <div />}
+        </a>
+      </div>
+    )
+  }
+</div>

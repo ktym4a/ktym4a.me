@@ -17,7 +17,7 @@ const { text, className } = Astro.props;
             class='italic text-ctp-blue'>{text}</span
         ><span class='text-ctp-teal'>{`>`}</span>
     </p>
-    <div class='h-full px-2'>
+    <div class='h-full px-2 flex flex-col'>
         <slot />
     </div>
     <p class='text-xs md:text-sm'>
