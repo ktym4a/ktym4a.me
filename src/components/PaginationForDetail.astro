@@ -1,77 +1,104 @@
 ---
 import type { ColorType } from "@/types/index";
+import Link from "./atoms/Link.astro";
+import Tag from "./atoms/Tag.astro";
 
 interface Props {
 	prev:
 		| {
-				slug: string | undefined;
+				url: string | undefined;
 				name?: string | undefined;
+				baseColor: ColorType;
 		  }
 		| undefined;
 	next:
 		| {
-				slug: string | undefined;
+				url: string | undefined;
 				name?: string | undefined;
+				baseColor: ColorType;
 		  }
 		| undefined;
-	baseColor: ColorType;
 }
 
-const { prev, next, baseColor } = Astro.props;
+const { prev, next } = Astro.props;
 ---
 
 <div class="flex justify-between items-center gap-4">
   {
-    next?.slug ? (
+    next?.url ? (
       <div class="flex flex-col items-center justify-center gap-2 w-auto">
-        <a
-          href={next.slug}
-          aria-label="Next page"
-          class={`relative z-10 motion-safe:transition-filter ease-in-out motion-safe:duration-1000 flex w-full flex-col items-center justify-center rounded-md bg-ctp-surface0 dark:bg-ctp-crust bg-ctp-surface0/30 dark:bg-ctp-crust/40 outline-dashed outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-200 dark:hover:saturate-350 dark:focus-visible:saturate-350 aspect-auto p-1 outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
+        <Link
+          href={next.url}
+          target="_self"
+          colors={{
+            text: next.baseColor.text as string,
+            childHoverBackground: next.baseColor.childHoverBackground as string,
+            childFocusBackground: next.baseColor.childFocusBackground as string,
+            childHoverOutline: next.baseColor.childHoverOutline as string,
+            childFocusOutline: next.baseColor.childFocusOutline as string,
+          }}
+          class={""}
+          title={next.name || ""}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 md:h-8 md:w-8 rotate-180"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M10 18l6 -6l-6 -6v12" />
-          </svg>
-          {next.name ? <p class="text-xs md:text-sm">{next.name}</p> : <div />}
-        </a>
+          <Tag text="Next" className="h-full">
+            <div class="flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6 md:h-8 md:w-8 rotate-180"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 18l6 -6l-6 -6v12" />
+              </svg>
+              {next.name ? <p class="text-xs md:text-sm">{next.name}</p> : <div />}
+          </div>
+          </Tag>
+        </Link>
       </div>
     ) : (
       <div />
     )
   }
   {
-    prev?.slug && (
+    prev?.url && (
       <div class="mt-auto flex flex-col items-center justify-center gap-2 w-auto">
-        <a
-          href={prev.slug}
-          aria-label="Previous page"
-          class={`relative z-10 motion-safe:transition-filter ease-in-out motion-safe:duration-1000 flex w-full flex-col items-center justify-center rounded-md bg-ctp-surface0 dark:bg-ctp-crust bg-ctp-surface0/30 dark:bg-ctp-crust/40 outline-dashed outline-ctp-overlay2 hover:saturate-200 focus-visible:no-underline focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-ctp-green focus-visible:saturate-200 dark:hover:saturate-350 dark:focus-visible:saturate-350 aspect-auto p-1 outline-2 ${baseColor.focusOutline} ${baseColor.hoverOutline} ${baseColor.hoverText} ${baseColor.focusText}`}
+        <Link
+          href={prev.url}
+          target="_self"
+          colors={{
+            text: prev.baseColor.text as string,
+            childHoverBackground: prev.baseColor.childHoverBackground as string,
+            childFocusBackground: prev.baseColor.childFocusBackground as string,
+            childHoverOutline: prev.baseColor.childHoverOutline as string,
+            childFocusOutline: prev.baseColor.childFocusOutline as string,
+          }}
+          class={""}
+          title={prev.name || ""}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="h-6 w-6 md:h-8 md:w-8"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M10 18l6 -6l-6 -6v12" />
-          </svg>
-          {prev.name ? <p class="text-xs md:text-sm">{prev.name}</p> : <div />}
-        </a>
+          <Tag text="Prev" className="h-full">
+            <div class="flex items-center justify-center">
+              {prev.name ? <p class="text-xs md:text-sm">{prev.name}</p> : <div />}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="h-6 w-6 md:h-8 md:w-8"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 18l6 -6l-6 -6v12" />
+              </svg>
+            </div>
+          </Tag>
+        </Link>
       </div>
     )
   }

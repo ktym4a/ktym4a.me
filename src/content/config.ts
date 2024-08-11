@@ -31,8 +31,18 @@ const diaryCollection = defineCollection({
 	}),
 });
 
+const noteCollection = defineCollection({
+	type: "content",
+	schema: z.object({
+		title: z.string(),
+		description: z.string(),
+		publishedDate: z.date(),
+	}),
+});
+
 export const collections = {
 	blog: blogCollection,
-	projects: projectCollection,
+	project: projectCollection,
 	diary: diaryCollection,
+	note: noteCollection,
 };

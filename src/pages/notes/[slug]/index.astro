@@ -7,51 +7,46 @@ import BlogHeading from "@/components/atoms/BlogHeading.astro";
 import Link from "@/components/atoms/Link.astro";
 import Tag from "@/components/atoms/Tag.astro";
 import { COLORS } from "@/constants/color";
-import {
-	DIARY_LEARNING_DESCRIPTION,
-	GITHUB_DIARY_URL,
-	SITE_NAME,
-} from "@/constants/index";
+import { GITHUB_NOTE_URL, SITE_NAME } from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
-import { getDiaries } from "@/utils/diary";
-import { formatPostDate } from "@/utils/index";
+import { getNotes } from "@/utils/note";
 import { generateOgImage } from "@/utils/ogp";
 
 export async function getStaticPaths() {
 	const colors = [...Object.values(COLORS)];
 
-	return await getDiaries().then((diaries) =>
-		diaries
-			.map((diary, i) => ({
-				params: { slug: diary.slug },
+	return await getNotes().then((notes) =>
+		notes
+			.map((note, i) => ({
+				params: { slug: note.slug },
 				props: {
-					diary,
+					note,
 					baseColor: colors[i % colors.length] as (typeof colors)[number],
 				},
 			}))
-			.map((diary, index) => {
+			.map((note, index) => {
 				return {
-					...diary,
+					...note,
 					props: {
-						...diary.props,
+						...note.props,
 						page: {
 							next: {
-								url: diaries[index + 1]?.slug
-									? `/diaries/${diaries[index + 1]?.slug}/`
+								url: notes[index + 1]?.slug
+									? `/notes/${notes[index + 1]?.slug}/`
 									: undefined,
-								name: diaries[index + 1]?.data.publishedDate
-									? `${formatPostDate(diaries[index + 1]?.data.publishedDate)}の学び`
+								name: notes[index + 1]?.data.title
+									? notes[index + 1]?.data.title
 									: undefined,
 								baseColor: colors[
 									(index + 1) % colors.length
 								] as (typeof colors)[number],
 							},
 							previous: {
-								url: diaries[index - 1]?.slug
-									? `/diaries/${diaries[index - 1]?.slug}/`
+								url: notes[index - 1]?.slug
+									? `/notes/${notes[index - 1]?.slug}/`
 									: undefined,
-								name: diaries[index - 1]?.data.publishedDate
-									? `${formatPostDate(diaries[index - 1]?.data.publishedDate)}の学び`
+								name: notes[index - 1]?.data.title
+									? notes[index - 1]?.data.title
 									: undefined,
 								baseColor: colors[
 									(index - 1) % colors.length
@@ -64,16 +59,15 @@ export async function getStaticPaths() {
 	);
 }
 
-const { diary, baseColor, page } = Astro.props;
+const { note, baseColor, page } = Astro.props;
 
-const { Content, headings } = await diary.render();
-const GITHUB_EDIT_URL = new URL(diary.id, GITHUB_DIARY_URL).href;
-const description = DIARY_LEARNING_DESCRIPTION;
+const { Content, headings } = await note.render();
+const GITHUB_EDIT_URL = new URL(note.id, GITHUB_NOTE_URL).href;
+const description = note.data.description;
 
-const pageName = "diaries";
+const pageName = "notes";
 const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
-const date = formatPostDate(diary.data.publishedDate);
-const mainTitle = `${date}の学び`;
+const mainTitle = note.data.title;
 const title = `${mainTitle} - ${capitalizePageName} - ${SITE_NAME}`;
 
 const lineHight = "leading-loose";
@@ -84,11 +78,11 @@ if (import.meta.env.PROD) {
 	const buf = await generateOgImage(
 		baseColor.colorCode as string,
 		mainTitle,
-		"Diary",
+		"Note",
 	);
 	const fileDir = join(
 		fileURLToPath(import.meta.url),
-		`../../../images/${diary.slug}/`,
+		`../../../images/${note.slug}/`,
 	);
 
 	await mkdir(fileDir, {
@@ -106,9 +100,9 @@ if (import.meta.env.PROD) {
   baseColor={baseColor}
   og={{
     type: "article",
-    image: `${Astro.site}images/${diary.slug}/${opImageFileName}`,
+    image: `${Astro.site}images/${note.slug}/${opImageFileName}`,
   }}
-  mainTagName="Diary"
+  mainTagName="Note"
   toc={{
     tagName: "ToC",
     headings: [
@@ -127,7 +121,7 @@ if (import.meta.env.PROD) {
       baseColor={baseColor}
       text={mainTitle}
       id="Title"
-      publishedDate={diary.data.publishedDate}
+      publishedDate={note.data.publishedDate}
     />
     <Tag text="Content" className="gap-2">
       <div

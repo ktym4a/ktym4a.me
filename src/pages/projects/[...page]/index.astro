@@ -64,12 +64,13 @@ const { page } = Astro.props;
   <section>
     <Pagination
       next={{
-        slug: page.url.next,
+        url: page.url.next,
+        baseColor
       }}
       prev={{
-        slug: page.url.prev,
+        url: page.url.prev,
+        baseColor
       }}
-      baseColor={baseColor}
     />
   </section>
 </Layout>

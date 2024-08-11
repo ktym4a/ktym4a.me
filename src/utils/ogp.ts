@@ -4,7 +4,11 @@ import { fileURLToPath } from "node:url";
 import satori from "satori";
 import sharp from "sharp";
 
-export async function generateOgImage(color: string, title: string) {
+export async function generateOgImage(
+	color: string,
+	title: string,
+	tagName: string,
+) {
 	const tagSize = 40;
 
 	const svg = await satori(
@@ -75,7 +79,7 @@ export async function generateOgImage(color: string, title: string) {
 																	fontFamily:
 																		'ml italic, "NotoSansJP", sans-serif',
 																},
-																children: "Diary",
+																children: tagName,
 															},
 														},
 														{
@@ -212,7 +216,7 @@ export async function generateOgImage(color: string, title: string) {
 																	fontFamily:
 																		'ml italic, "NotoSansJP", sans-serif',
 																},
-																children: "Diary",
+																children: tagName,
 															},
 														},
 														{
@@ -247,7 +251,7 @@ export async function generateOgImage(color: string, title: string) {
 					data: await readFile(
 						join(
 							fileURLToPath(import.meta.url),
-							"../../../fonts/MonoLisa-SemiBold.ttf",
+							"../../fonts/MonoLisa-SemiBold.ttf",
 						),
 					),
 				},
@@ -256,7 +260,7 @@ export async function generateOgImage(color: string, title: string) {
 					data: await readFile(
 						join(
 							fileURLToPath(import.meta.url),
-							"../../../fonts/MonoLisa-SemiBoldItalic.ttf",
+							"../../fonts/MonoLisa-SemiBoldItalic.ttf",
 						),
 					),
 				},
@@ -265,7 +269,7 @@ export async function generateOgImage(color: string, title: string) {
 					data: await readFile(
 						join(
 							fileURLToPath(import.meta.url),
-							"../../../fonts/NotoSansJP SemiBold.ttf",
+							"../../fonts/NotoSansJP SemiBold.ttf",
 						),
 					),
 				},

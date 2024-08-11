@@ -50,7 +50,12 @@ if (currentPath === "404") {
 		paths.push({
 			href: `${paths.at(-1)?.href + path}/`,
 			path,
-			colors: path === "diaries" ? COLORS.MAUVE : baseColor,
+			colors:
+				path === "diaries"
+					? COLORS.MAUVE
+					: path === "notes"
+						? COLORS.SKY
+						: baseColor,
 		});
 	});
 }

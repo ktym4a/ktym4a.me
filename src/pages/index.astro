@@ -7,11 +7,15 @@ import { COLORS } from "@/constants/color";
 import { SITE_NAME } from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
 import { getDiary } from "@/utils/diary";
+import { getNote } from "@/utils/note";
+import { getProject } from "@/utils/projects";
 import { formatPostDate } from "../utils";
 
 const baseColor = COLORS.GREEN;
 
 const diary = await getDiary(new Date());
+const note = await getNote("note-vue-docs");
+const project = await getProject("astro-page-insight");
 ---
 
 <Layout
@@ -88,10 +92,23 @@ const diary = await getDiary(new Date());
                             title={`${formatPostDate(diary.data.publishedDate)}の学び`}
                             baseColor={COLORS.MAUVE}
                         />
+                    )}
+                    {note && (
+                        <Card
+                            text="Note"
+                            link={{
+                                href: `/notes/${note.slug}/`,
+                                target: "_self",
+                            }}
+                            title={note.data.title}
+                            baseColor={COLORS.SKY}
+                        />
+                    )}
+                    {project && (
                         <Card
                             text="Project"
                             link={{
-                                href: "https://astro-page-insight.pages.dev/others/demo/",
+                                href: project.data.link,
                                 target: "_blank",
                             }}
                             title="Astro Page Insight"
