@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { SITE_NAME } from "@/constants/index";
 import { Head as HeadCapo } from "astro-capo";
 import { SEO } from "astro-seo";
@@ -65,7 +65,7 @@ const { title, description, og } = Astro.props;
             ]
         }}
     />
-    <ViewTransitions fallback='swap' />
+    <ClientRouter fallback='swap' />
 
     <style is:global>
         @font-face {

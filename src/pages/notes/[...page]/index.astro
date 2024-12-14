@@ -6,7 +6,7 @@ import { COLORS } from "@/constants/color";
 import { NOTE_DESCRIPTION, SITE_NAME } from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
 import { getNotes } from "@/utils/note";
-import type { GetStaticPathsOptions } from "node_modules/astro/dist/@types/astro";
+import type { GetStaticPaths } from "astro";
 
 const pageName = "notes";
 const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
@@ -14,7 +14,7 @@ const title = capitalizePageName;
 const description = NOTE_DESCRIPTION;
 const baseColor = COLORS.SKY;
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+export const getStaticPaths = (async ({ paginate }) => {
 	const colors = [...Object.values(COLORS)];
 
 	return paginate(
@@ -30,7 +30,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 		),
 		{ pageSize: 10 },
 	);
-}
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 ---

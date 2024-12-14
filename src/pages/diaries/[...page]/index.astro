@@ -7,7 +7,7 @@ import { DIARY_LEARNING_DESCRIPTION, SITE_NAME } from "@/constants/index";
 import Layout from "@/layouts/Layout.astro";
 import { getDiaries } from "@/utils/diary";
 import { formatPostDate } from "@/utils/index";
-import type { GetStaticPathsOptions } from "node_modules/astro/dist/@types/astro";
+import type { GetStaticPaths } from "astro";
 
 const pageName = "diaries";
 const capitalizePageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
@@ -15,7 +15,7 @@ const title = capitalizePageName;
 const description = DIARY_LEARNING_DESCRIPTION;
 const baseColor = COLORS.MAUVE;
 
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+export const getStaticPaths = (async ({ paginate }) => {
 	const colors = [...Object.values(COLORS)];
 
 	return paginate(
@@ -31,7 +31,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 		),
 		{ pageSize: 18 },
 	);
-}
+}) satisfies GetStaticPaths;
 
 const { page } = Astro.props;
 ---

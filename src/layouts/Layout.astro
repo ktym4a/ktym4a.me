@@ -32,7 +32,7 @@ const {
 } = Astro.props;
 const routes = Astro.url.pathname.split("/").filter((path) => path);
 const currentPath =
-	title === "404 - ktym4a" ? "404" : routes.at(-1) ?? "ktym4a";
+	title === "404 - ktym4a" ? "404" : (routes.at(-1) ?? "ktym4a");
 ---
 
 <!doctype html>

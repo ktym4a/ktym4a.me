@@ -88,7 +88,7 @@ if (import.meta.env.PROD) {
 	await mkdir(fileDir, {
 		recursive: true,
 	});
-	await writeFile(join(fileDir, opImageFileName), buf);
+	await writeFile(join(fileDir, opImageFileName), buf as unknown as string);
 }
 ---
 
