@@ -1,11 +1,13 @@
 import { getCollection, getEntry } from "astro:content";
 
 import type { CollectionEntry } from "astro:content";
+import { sortByDate } from ".";
 
 export type NoteCollection = CollectionEntry<"note">;
 
 export const getNotes = async (): Promise<NoteCollection[]> => {
-	return await getCollection("note");
+	const posts = await getCollection("note");
+	return sortPosts(posts);
 };
 
 export const getNote = async (
@@ -13,4 +15,8 @@ export const getNote = async (
 ): Promise<NoteCollection | undefined> => {
 	const note = await getEntry("note", slug);
 	return note;
+};
+
+const sortPosts = (collections: NoteCollection[]): NoteCollection[] => {
+	return sortByDate(collections);
 };
