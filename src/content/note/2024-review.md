@@ -1,7 +1,7 @@
 ---
 title: 2024年の振り返りとこれから
 description: 2024年の振り返りとこれから
-publishedDate: 2024-12-27
+publishedDate: 2024-12-31
 ---
 
 ## はじめに
