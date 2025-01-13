@@ -19,7 +19,7 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^5.1.2",
+		"astro": "^5.1.6",
 		"astro-page-insight": "^0.10.0",
 		"satori": "^0.12.1",
 		"sharp": "^0.33.5"
@@ -38,8 +38,8 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^15.3.0",
 		"tailwindcss": "^3.4.17",
-		"typescript": "^5.7.2",
-		"wrangler": "^3.99.0"
+		"typescript": "^5.7.3",
+		"wrangler": "^3.101.0"
 	},
 	"lint-staged": {
 		"*.astro": ["biome check --write .", "astro check"],
