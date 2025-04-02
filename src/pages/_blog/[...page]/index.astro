@@ -116,7 +116,9 @@ const lineHight =
     </article>
 </Layout>
 
-<style is:global>
+<style is:inline>
+    @reference "../../../styles/tailwind.css";
+
     html.ctp-mocha .astro-code,
     html.ctp-mocha .astro-code span {
         color: var(--shiki-dark) !important;
