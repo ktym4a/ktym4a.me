@@ -1,5 +1,5 @@
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import metaTags from "astro-meta-tags";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
@@ -8,8 +8,10 @@ import pageInsight from "astro-page-insight";
 
 // https://astro.build/config
 export default defineConfig({
+	vite: {
+		plugins: [tailwindcss()],
+	},
 	integrations: [
-		tailwind(),
 		sitemap(),
 		robotsTxt({
 			sitemap: true,
