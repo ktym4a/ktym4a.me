@@ -19,9 +19,9 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^5.8.0",
+		"astro": "^5.8.1",
 		"astro-page-insight": "^0.10.2",
-		"satori": "^0.13.1",
+		"satori": "^0.13.2",
 		"sharp": "^0.34.2"
 	},
 	"devDependencies": {
@@ -36,10 +36,10 @@
 		"astro-robots-txt": "^1.0.0",
 		"astro-seo": "^0.8.4",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.0.0",
-		"tailwindcss": "^4.1.7",
+		"lint-staged": "^16.1.0",
+		"tailwindcss": "^4.1.8",
 		"typescript": "^5.8.3",
-		"wrangler": "^4.16.1"
+		"wrangler": "^4.18.0"
 	},
 	"lint-staged": {
 		"*.astro": ["biome check --write .", "astro check"],
