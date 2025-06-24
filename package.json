@@ -19,7 +19,7 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^5.9.3",
+		"astro": "^5.10.1",
 		"astro-page-insight": "^0.10.2",
 		"satori": "^0.15.2",
 		"sharp": "^0.34.2"
@@ -29,7 +29,7 @@
 		"@astrojs/rss": "^4.0.12",
 		"@astrojs/sitemap": "^3.4.1",
 		"@astrojs/tailwind": "^6.0.2",
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "^2.0.5",
 		"@catppuccin/tailwindcss": "^0.1.6",
 		"astro-capo": "^0.0.1",
 		"astro-meta-tags": "^0.3.2",
@@ -39,7 +39,7 @@
 		"lint-staged": "^16.1.2",
 		"tailwindcss": "^4.1.10",
 		"typescript": "^5.8.3",
-		"wrangler": "^4.20.0"
+		"wrangler": "^4.20.5"
 	},
 	"lint-staged": {
 		"*.astro": ["biome check --write .", "astro check"],
