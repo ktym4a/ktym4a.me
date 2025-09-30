@@ -19,7 +19,7 @@
 	"author": "ktym4a",
 	"license": "MIT",
 	"dependencies": {
-		"astro": "^5.13.10",
+		"astro": "^5.14.1",
 		"astro-page-insight": "^0.10.2",
 		"satori": "^0.18.3",
 		"sharp": "^0.34.4"
@@ -36,10 +36,10 @@
 		"astro-robots-txt": "^1.0.0",
 		"astro-seo": "^0.8.4",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.2.0",
+		"lint-staged": "^16.2.3",
 		"tailwindcss": "^4.1.13",
 		"typescript": "^5.9.2",
-		"wrangler": "^4.38.0"
+		"wrangler": "^4.40.2"
 	},
 	"lint-staged": {
 		"*.astro": ["biome check --write .", "astro check"],
